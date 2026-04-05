@@ -30,8 +30,14 @@ export default function Company() {
       <section style={{ paddingTop: "160px", paddingBottom: "100px" }}>
         <div className="cuen-container">
           <div className="section-label fade-up" style={{ marginBottom: "32px" }}>Company</div>
-          <h1 className="fade-up fade-up-delay-1" style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(32px, 8vw, 48px)", fontWeight: 400, color: "#1A1A1A", margin: "0 0 24px 0", lineHeight: 1.25 }}>合同会社<span className="cuen-brand">CUEN</span></h1>
-          <p className="fade-up fade-up-delay-2" style={{ fontSize: "17px", color: "#6B6B6B", lineHeight: 1.9, maxWidth: "520px", margin: 0 }}>東京・目黒区を拠点に、人と人のあいだにある可能性に気づき、事業のキッカケを生み出す会社です。</p>
+          <div className="fade-up fade-up-delay-1" style={{ margin: "0 0 24px 0" }}>
+            <img
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663454524748/2kCcYKpUpLm4gHsyVUsYHQ/CUENlogo_75384780.png"
+              alt="合同会社CUEN"
+              style={{ width: "clamp(140px, 28vw, 220px)", height: "auto", display: "block" }}
+            />
+          </div>
+          <p className="fade-up fade-up-delay-2" style={{ fontSize: "17px", color: "#6B6B6B", lineHeight: 1.9, maxWidth: "520px", margin: 0 }}>人と人のあいだにある可能性に気づき、事業のキッカケを生み出す会社です。</p>
         </div>
       </section>
 
