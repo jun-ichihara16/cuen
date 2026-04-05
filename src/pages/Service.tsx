@@ -3,8 +3,6 @@ import { Link } from "wouter";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-
-
 export default function Service() {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -17,17 +15,18 @@ export default function Service() {
   }, []);
 
   const services = [
-    { num: "01", name: "AI KANJI", tag: "Product", desc: "幹事の割り勘・PayPay番号収集・支払いリマインドをLINEで全自動化するサービス。イベント作成3分、参加者登録30秒、幹事のリマインド0回。AIが面倒をすべて引き受けます。", features: ["PayPay番号の自動収集", "割り勘計算の自動化", "支払いリマインドの自動送信", "幹事ポイント制度", "LINEで完結・参加者ログイン不要"], link: "https://kanji-relief.com/", linkLabel: "AI KANJIを見る" },
-    { num: "02", name: "店舗マーケティング・ブランド戦略・運営支援", tag: "Consulting", desc: "店舗・施設の集客力強化からブランド構築、日常運営の改善まで。現場感覚を持ったマーケターとして、戦略立案から実行・改善まで一気通貫で支援します。", features: ["店舗集客・販促戦略設計", "ブランドコンセプト・メッセージ設計", "運営改善・コスト最適化", "実行支援・PDCAサポート"] },
-    { num: "03", name: "イベント・セミナー企画", tag: "Event", desc: "企業イベント・展示会・セミナーの企画から運営まで。参加者の体験設計を重視した、記憶に残るイベントを実現します。", features: ["企画・コンセプト設計", "会場選定・手配", "集客・プロモーション", "当日運営・アフターフォロー"] },
-    { num: "04", name: "プロジェクトコンサルティング", tag: "Strategy", desc: "新規事業の立ち上げから既存事業の改善まで、プロジェクト全体の設計・管理・推進を支援します。", features: ["プロジェクト設計・計画策定", "進捗管理・課題解決", "チームビルディング支援", "成果評価・改善提案"] },
+    { num: "01", name: "AI KANJI", tag: "Product", desc: "幹事の割り勘・PayPay番号収集・支払いリマインドをLINEで全自動化。イベント作成3分、参加者登録30秒、幹事のリマインド0回。AIがすべての面倒を引き受けます。", features: ["PayPay番号の自動収集", "割り勘計算の自動化", "支払いリマインドの自動送信", "幹事ポイント制度", "LINEで完結・参加者ログイン不要"], link: "https://kanji-relief.com/", linkLabel: "AI KANJIを見る" },
+    { num: "02", name: "店舗マーケティング・ブランド戦略・運営支援", tag: "Consulting", desc: "飲食店や宿泊施設の集客強化から、ブランド構築、オペレーション改善まで。経営経験を持つマーケターが現場に入り込み、戦略立案から実行・改善までを一気通貫で支援します。", features: ["店舗集客・販促戦略設計", "ブランドコンセプト・メッセージ設計", "運営改善・コスト最適化", "実行支援・PDCAサポート"] },
+    { num: "03", name: "SEO / コンテンツマーケティング", tag: "Digital", desc: "検索エンジンとユーザーの双方に響くコンテンツ戦略を設計。単なるアクセス増ではなく、売上につながる長期的なオーガニック流入の基盤を構築します。", features: ["SEO戦略設計", "コンテンツ企画・制作", "リスティング広告運用", "効果測定・改善"] },
+    { num: "04", name: "イベント・セミナー企画", tag: "Event", desc: "企業イベント・展示会・セミナーの企画から運営まで。参加者の体験設計を重視し、ブランド価値を高め、記憶に残るイベントを実現します。", features: ["企画・コンセプト設計", "会場選定・手配", "集客・プロモーション", "当日運営・アフターフォロー"] },
+    { num: "05", name: "プロジェクトコンサルティング", tag: "Strategy", desc: "新規事業の立ち上げから既存事業のテコ入れまで。戦略を描くだけでなく、チームを巻き込みながらプロジェクト全体の設計・管理・推進をサポートします。", features: ["プロジェクト設計・計画策定", "進捗管理・課題解決", "チームビルディング支援", "成果評価・改善提案"] },
   ];
 
   const steps = [
-    { num: "01", title: "ヒアリング", body: "まず、想いを聞かせてください。課題の表面だけでなく、その奥にある文脈と目指す未来を丁寧に理解します。" },
-    { num: "02", title: "設計", body: "ヒアリングをもとに、本質的な課題を定義し、最適なアプローチを設計します。提案は一つではなく、複数の選択肢を用意します。" },
-    { num: "03", title: "実行", body: "設計した戦略を、スピード感を持って実行します。現場感覚を持ったチームが、細部まで丁寧に動きます。" },
-    { num: "04", title: "改善", body: "数字と現場の声を両方見ながら、継続的に改善します。終わりではなく、ここから始まる関係性を大切にします。" },
+    { num: "01", title: "現場の声を聴く", body: "経営陣だけでなく、現場のリアルな声を聴かせてください。表面的な課題の奥にある、本当のボトルネックを洗い出します。" },
+    { num: "02", title: "動ける戦略を立てる", body: "理想論ではなく、今のリソースで「実際に動ける」戦略を設計します。複数の選択肢から、最適なアプローチを共に選びます。" },
+    { num: "03", title: "共に汗をかく", body: "戦略を絵に描いた餅にしません。現場感覚を持つチームがプロジェクトに入り込み、スピード感を持って実行を推進します。" },
+    { num: "04", title: "数字と現場で検証する", body: "データ（数字）と現場のリアルな反応、その両方を見ながら施策をチューニングし続けます。" },
   ];
 
   return (
@@ -38,9 +37,9 @@ export default function Service() {
         <div className="cuen-container">
           <div className="section-label fade-up" style={{ marginBottom: "32px" }}>Service</div>
           <h1 className="fade-up fade-up-delay-1" style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(32px, 8vw, 48px)", fontWeight: 400, color: "#1A1A1A", margin: "0 0 24px 0", lineHeight: 1.25, maxWidth: "640px" }}>
-            提供するもの、<br />届けたいもの。
+            現場を動かし、<br />事業を前に進める。
           </h1>
-          <p className="fade-up fade-up-delay-2" style={{ fontSize: "17px", color: "#6B6B6B", lineHeight: 1.9, maxWidth: "520px", margin: 0 }}>CUENが提供するのは、施策だけではありません。想いが形になるプロセスそのものを、共につくります。</p>
+          <p className="fade-up fade-up-delay-2" style={{ fontSize: "17px", color: "#6B6B6B", lineHeight: 1.9, maxWidth: "520px", margin: 0 }}>CUENが提供するのは、単なる「施策の提案」ではありません。現場に入り込み、戦略が実行され、結果につながるまでのプロセスを共につくります。</p>
         </div>
       </section>
 
@@ -77,7 +76,7 @@ export default function Service() {
         <div className="cuen-container">
           <div className="fade-up" style={{ marginBottom: "64px" }}>
             <div className="section-label" style={{ marginBottom: "24px" }}>Approach</div>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(24px, 6vw, 36px)", fontWeight: 400, color: "#1A1A1A", margin: 0 }}>向き合い方が、すべてを決める。</h2>
+            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(24px, 6vw, 36px)", fontWeight: 400, color: "#1A1A1A", margin: 0 }}>成果を出すための、泥臭いアプローチ。</h2>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "0", borderTop: "1px solid #E8E6E1", borderLeft: "1px solid #E8E6E1" }}>
             {steps.map((step, i) => (
@@ -93,11 +92,11 @@ export default function Service() {
 
       <section style={{ padding: "100px 0", background: "#006875" }}>
         <div className="cuen-container" style={{ textAlign: "center" }}>
-          <h2 className="fade-up" style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(24px, 6vw, 36px)", fontWeight: 400, color: "#ffffff", margin: "0 0 24px 0" }}>まず、話しましょう。</h2>
-          <p className="fade-up fade-up-delay-1" style={{ fontSize: "16px", color: "rgba(255,255,255,0.75)", margin: "0 0 40px 0", lineHeight: 1.85 }}>どんな相談でも、まずは気軽にお声がけください。</p>
+          <h2 className="fade-up" style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(24px, 6vw, 36px)", fontWeight: 400, color: "#ffffff", margin: "0 0 24px 0" }}>まずは、現状のモヤモヤをお聞かせください。</h2>
+          <p className="fade-up fade-up-delay-1" style={{ fontSize: "16px", color: "rgba(255,255,255,0.75)", margin: "0 0 40px 0", lineHeight: 1.85 }}>「何から手をつければいいか分からない」という状態でも構いません。</p>
           <div className="fade-up fade-up-delay-2">
             <Link href="/contact" className="btn-cuen btn-cuen-white">
-              <span>お問い合わせ</span>
+              <span>無料相談・お問い合わせ</span>
               <span className="btn-arrow" aria-hidden="true"><svg width="16" height="9" viewBox="0 0 18 10" fill="none"><path d="M0 5H16M16 5L11.5 1M16 5L11.5 9" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
             </Link>
           </div>

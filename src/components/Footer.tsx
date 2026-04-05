@@ -49,9 +49,9 @@ export default function Footer() {
                   maxWidth: "240px",
                 }}
               >
-                人と人のあいだにある可能性を見つめ、
+                人と人のあいだにある可能性に気づき、
                 <br />
-                前向きな変化のきっかけをつくる。
+                前向きな変化のキッカケを生み出し続ける。
               </p>
             </div>
 
@@ -110,7 +110,7 @@ export default function Footer() {
                 letterSpacing: "0.08em",
               }}
             >
-              &copy; 2024 合同会社CUEN. All rights reserved.
+              &copy; 2026 CUEN LLC. All rights reserved.
             </p>
           </div>
         </div>

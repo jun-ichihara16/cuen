@@ -56,9 +56,9 @@ export default function Contact() {
       <section style={{ paddingTop: "160px", paddingBottom: "80px" }}>
         <div className="cuen-container">
           <div className="section-label fade-up" style={{ marginBottom: "32px" }}>Contact</div>
-          <h1 className="fade-up fade-up-delay-1" style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(32px, 8vw, 48px)", fontWeight: 400, color: "#1A1A1A", margin: "0 0 24px 0", lineHeight: 1.25 }}>まず、話しましょう。</h1>
+          <h1 className="fade-up fade-up-delay-1" style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(32px, 8vw, 48px)", fontWeight: 400, color: "#1A1A1A", margin: "0 0 24px 0", lineHeight: 1.25 }}>まずは、現状のモヤモヤをお聞かせください。</h1>
           <p className="fade-up fade-up-delay-2" style={{ fontSize: "17px", color: "#6B6B6B", lineHeight: 1.9, maxWidth: "520px", margin: 0 }}>
-            どんな相談でも、まずは気軽にお声がけください。想いを聞かせていただくところから、始めます。
+            「何から手をつければいいか分からない」という状態でも構いません。あなたの想いを聞かせていただくところから、始めます。
             <br />
             <span style={{ fontSize: "14px", color: "#9E9B95", marginTop: "8px", display: "inline-block" }}>※ 内容確認後、3営業日以内にご連絡いたします。</span>
           </p>

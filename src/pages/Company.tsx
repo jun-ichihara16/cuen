@@ -31,7 +31,7 @@ export default function Company() {
         <div className="cuen-container">
           <div className="section-label fade-up" style={{ marginBottom: "32px" }}>Company</div>
           <h1 className="fade-up fade-up-delay-1" style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(32px, 8vw, 48px)", fontWeight: 400, color: "#1A1A1A", margin: "0 0 24px 0", lineHeight: 1.25 }}>合同会社<span className="cuen-brand">CUEN</span></h1>
-          <p className="fade-up fade-up-delay-2" style={{ fontSize: "17px", color: "#6B6B6B", lineHeight: 1.9, maxWidth: "520px", margin: 0 }}>東京・目黒区を拠点に、人と人のあいだにある可能性を事業に変える会社です。</p>
+          <p className="fade-up fade-up-delay-2" style={{ fontSize: "17px", color: "#6B6B6B", lineHeight: 1.9, maxWidth: "520px", margin: 0 }}>東京・目黒区を拠点に、人と人のあいだにある可能性に気づき、事業のキッカケを生み出す会社です。</p>
         </div>
       </section>
 
@@ -55,11 +55,11 @@ export default function Company() {
 
       <section style={{ padding: "100px 0", background: "#006875" }}>
         <div className="cuen-container" style={{ textAlign: "center" }}>
-          <h2 className="fade-up" style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(24px, 6vw, 36px)", fontWeight: 400, color: "#ffffff", margin: "0 0 24px 0" }}>まず、話しましょう。</h2>
-          <p className="fade-up fade-up-delay-1" style={{ fontSize: "16px", color: "rgba(255,255,255,0.75)", margin: "0 0 40px 0", lineHeight: 1.85 }}>どんな相談でも、想いを聞かせていただくところから始めます。</p>
+          <h2 className="fade-up" style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(24px, 6vw, 36px)", fontWeight: 400, color: "#ffffff", margin: "0 0 24px 0" }}>まずは、現状のモヤモヤをお聞かせください。</h2>
+          <p className="fade-up fade-up-delay-1" style={{ fontSize: "16px", color: "rgba(255,255,255,0.75)", margin: "0 0 40px 0", lineHeight: 1.85 }}>「何から手をつければいいか分からない」という状態でも構いません。あなたの想いを聞かせていただくところから始めます。</p>
           <div className="fade-up fade-up-delay-2">
             <Link href="/contact" className="btn-cuen btn-cuen-white">
-              <span>お問い合わせ</span>
+              <span>無料相談・お問い合わせ</span>
               <span className="btn-arrow" aria-hidden="true"><svg width="16" height="9" viewBox="0 0 18 10" fill="none"><path d="M0 5H16M16 5L11.5 1M16 5L11.5 9" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
             </Link>
           </div>
