@@ -37,7 +37,7 @@ export default function Service() {
       <section style={{ paddingTop: "160px", paddingBottom: "100px" }}>
         <div className="cuen-container">
           <div className="section-label fade-up" style={{ marginBottom: "32px" }}>Service</div>
-          <h1 className="fade-up fade-up-delay-1" style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(36px, 5vw, 64px)", fontWeight: 400, color: "#1A1A1A", margin: "0 0 32px 0", lineHeight: 1.2, maxWidth: "640px" }}>
+          <h1 className="fade-up fade-up-delay-1" style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(32px, 8vw, 48px)", fontWeight: 400, color: "#1A1A1A", margin: "0 0 24px 0", lineHeight: 1.25, maxWidth: "640px" }}>
             提供するもの、<br />届けたいもの。
           </h1>
           <p className="fade-up fade-up-delay-2" style={{ fontSize: "17px", color: "#6B6B6B", lineHeight: 1.9, maxWidth: "520px", margin: 0 }}>CUENが提供するのは、施策だけではありません。想いが形になるプロセスそのものを、共につくります。</p>
@@ -48,13 +48,13 @@ export default function Service() {
         <div className="cuen-container">
           <div style={{ display: "flex", flexDirection: "column", gap: "0", borderTop: "1px solid #E8E6E1" }}>
             {services.map((service, i) => (
-              <div key={service.num} className={`fade-up fade-up-delay-${(i % 3) + 1}`} style={{ padding: "56px 0", borderBottom: "1px solid #E8E6E1", display: "grid", gridTemplateColumns: "120px 1fr", gap: "48px", alignItems: "start" }}>
-                <div>
-                  <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", letterSpacing: "0.12em", color: "#006875", marginBottom: "8px" }}>{service.num}</div>
+              <div key={service.num} className={`fade-up fade-up-delay-${(i % 3) + 1}`} style={{ padding: "56px 0", borderBottom: "1px solid #E8E6E1" }}>
+                <div style={{ display: "flex", gap: "12px", alignItems: "baseline", marginBottom: "16px" }}>
+                  <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", letterSpacing: "0.12em", color: "#006875" }}>{service.num}</div>
                   <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "10px", letterSpacing: "0.1em", color: "#9E9B95", textTransform: "uppercase" }}>{service.tag}</div>
                 </div>
                 <div>
-                  <h2 style={{ fontFamily: "'DM Sans', 'Noto Sans JP', sans-serif", fontSize: "20px", fontWeight: 500, color: "#1A1A1A", margin: "0 0 16px 0" }}>{service.name}</h2>
+                  <h2 style={{ fontFamily: "'DM Sans', 'Noto Sans JP', sans-serif", fontSize: "clamp(20px, 5vw, 26px)", fontWeight: 500, color: "#1A1A1A", margin: "0 0 16px 0" }}>{service.name}</h2>
                   <p style={{ fontSize: "15px", color: "#6B6B6B", lineHeight: 1.85, margin: "0 0 24px 0", maxWidth: "600px" }}>{service.desc}</p>
                   <ul style={{ listStyle: "none", padding: 0, margin: "0 0 24px 0", display: "flex", flexWrap: "wrap", gap: "8px" }}>
                     {service.features.map((f) => (
@@ -77,9 +77,9 @@ export default function Service() {
         <div className="cuen-container">
           <div className="fade-up" style={{ marginBottom: "64px" }}>
             <div className="section-label" style={{ marginBottom: "24px" }}>Approach</div>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(24px, 2.5vw, 36px)", fontWeight: 400, color: "#1A1A1A", margin: 0 }}>向き合い方が、すべてを決める。</h2>
+            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(24px, 6vw, 36px)", fontWeight: 400, color: "#1A1A1A", margin: 0 }}>向き合い方が、すべてを決める。</h2>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "0", borderTop: "1px solid #E8E6E1", borderLeft: "1px solid #E8E6E1" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "0", borderTop: "1px solid #E8E6E1", borderLeft: "1px solid #E8E6E1" }}>
             {steps.map((step, i) => (
               <div key={step.num} className={`fade-up fade-up-delay-${i + 1}`} style={{ padding: "40px 28px", borderRight: "1px solid #E8E6E1", borderBottom: "1px solid #E8E6E1" }}>
                 <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", letterSpacing: "0.12em", color: "#006875", marginBottom: "20px" }}>{step.num}</div>
@@ -93,7 +93,7 @@ export default function Service() {
 
       <section style={{ padding: "100px 0", background: "#006875" }}>
         <div className="cuen-container" style={{ textAlign: "center" }}>
-          <h2 className="fade-up" style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(24px, 3vw, 40px)", fontWeight: 400, color: "#ffffff", margin: "0 0 24px 0" }}>まず、話しましょう。</h2>
+          <h2 className="fade-up" style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(24px, 6vw, 36px)", fontWeight: 400, color: "#ffffff", margin: "0 0 24px 0" }}>まず、話しましょう。</h2>
           <p className="fade-up fade-up-delay-1" style={{ fontSize: "16px", color: "rgba(255,255,255,0.75)", margin: "0 0 40px 0", lineHeight: 1.85 }}>どんな相談でも、まずは気軽にお声がけください。</p>
           <div className="fade-up fade-up-delay-2">
             <Link href="/contact" className="btn-cuen btn-cuen-white">

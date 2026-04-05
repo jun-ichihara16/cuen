@@ -31,7 +31,7 @@ export default function About() {
       <section style={{ paddingTop: "160px", paddingBottom: "100px", position: "relative", overflow: "hidden" }}>
         <div className="cuen-container" style={{ position: "relative" }}>
           <div className="section-label fade-up" style={{ marginBottom: "32px" }}>About</div>
-          <h1 className="fade-up fade-up-delay-1" style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(36px, 5vw, 64px)", fontWeight: 400, color: "#1A1A1A", margin: "0 0 32px 0", lineHeight: 1.2, maxWidth: "640px" }}>
+          <h1 className="fade-up fade-up-delay-1" style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(32px, 8vw, 48px)", fontWeight: 400, color: "#1A1A1A", margin: "0 0 24px 0", lineHeight: 1.25, maxWidth: "640px" }}>
             なぜ、<span className="cuen-brand">CUEN</span>は
             <br />
             存在するのか。
@@ -43,25 +43,23 @@ export default function About() {
         </div>
       </section>
 
-      {/* ── Philosophy ── */}
+      {/* ── Philosophy — vertical stack ── */}
       <section style={{ padding: "100px 0", background: "#F7F6F4" }}>
         <div className="cuen-container">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 2fr", gap: "80px", alignItems: "start" }} className="mobile-stack">
+          <div>
             <div className="fade-up">
               <div className="section-label" style={{ marginBottom: "24px" }}>Philosophy</div>
-              <div style={{ width: "40px", height: "1px", background: "#E8E6E1" }} />
+              <div style={{ width: "40px", height: "1px", background: "#E8E6E1", marginBottom: "40px" }} />
             </div>
-            <div>
-              <h2 className="fade-up fade-up-delay-1" style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(22px, 2.5vw, 30px)", fontWeight: 400, color: "#1A1A1A", margin: "0 0 32px 0", lineHeight: 1.55 }}>
-                一人ひとりの想いが重なり、
-                <br />
-                未来が動き出す起点をつくる。
-              </h2>
-              <div className="fade-up fade-up-delay-2" style={{ fontSize: "16px", color: "#6B6B6B", lineHeight: 1.95 }}>
-                <p style={{ margin: "0 0 24px 0" }}>CUENは、ただ成果や効率だけを追うのではなく、「人の想い」「関係性」「調和」「前向きな変化のきっかけ」を大切にする会社です。</p>
-                <p style={{ margin: "0 0 24px 0" }}>表層的に"熱い""エモい"ではなく、綺麗事を綺麗事で終わらせず、一人ひとりをちゃんと見つめ、違いを尊重しながら関係性の中から前へ進む力を生み出す。</p>
-                <p style={{ margin: 0 }}>それが、CUENの存在意義です。</p>
-              </div>
+            <h2 className="fade-up fade-up-delay-1" style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(24px, 6vw, 36px)", fontWeight: 400, color: "#1A1A1A", margin: "0 0 32px 0", lineHeight: 1.4 }}>
+              一人ひとりの想いが重なり、
+              <br />
+              未来が動き出す起点をつくる。
+            </h2>
+            <div className="fade-up fade-up-delay-2" style={{ fontSize: "16px", color: "#6B6B6B", lineHeight: 1.95 }}>
+              <p style={{ margin: "0 0 24px 0" }}>CUENは、ただ成果や効率だけを追うのではなく、「人の想い」「関係性」「調和」「前向きな変化のきっかけ」を大切にする会社です。</p>
+              <p style={{ margin: "0 0 24px 0" }}>表層的に"熱い""エモい"ではなく、綺麗事を綺麗事で終わらせず、一人ひとりをちゃんと見つめ、違いを尊重しながら関係性の中から前へ進む力を生み出す。</p>
+              <p style={{ margin: 0 }}>それが、CUENの存在意義です。</p>
             </div>
           </div>
         </div>
@@ -72,12 +70,12 @@ export default function About() {
         <div className="cuen-container">
           <div className="fade-up" style={{ marginBottom: "64px" }}>
             <div className="section-label" style={{ marginBottom: "24px" }}>Values</div>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(24px, 2.5vw, 36px)", fontWeight: 400, color: "#1A1A1A", margin: 0 }}>
+            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(24px, 6vw, 36px)", fontWeight: 400, color: "#1A1A1A", margin: 0 }}>
               向き合い方が、すべてを決める。
             </h2>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "0", borderTop: "1px solid #E8E6E1", borderLeft: "1px solid #E8E6E1" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "0", borderTop: "1px solid #E8E6E1", borderLeft: "1px solid #E8E6E1" }}>
             {values.map((v, i) => (
               <div key={v.num} className={`fade-up fade-up-delay-${i + 1}`} style={{ padding: "40px 32px", borderRight: "1px solid #E8E6E1", borderBottom: "1px solid #E8E6E1" }}>
                 <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", letterSpacing: "0.12em", color: "#006875", marginBottom: "20px" }}>{v.num}</div>
@@ -89,18 +87,18 @@ export default function About() {
         </div>
       </section>
 
-      {/* ── CEO Profile ── */}
+      {/* ── CEO Profile — vertical stack ── */}
       <section style={{ padding: "100px 0", background: "#F7F6F4" }}>
         <div className="cuen-container">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.6fr", gap: "80px", alignItems: "start" }} className="mobile-stack">
-            <div className="fade-up">
-              <div style={{ overflow: "hidden", aspectRatio: "3/4", maxWidth: "320px" }}>
+          <div>
+            <div className="fade-up" style={{ marginBottom: "48px" }}>
+              <div style={{ overflow: "hidden", aspectRatio: "4/3", width: "100%" }}>
                 <img src={CEO_IMAGE} alt="市原 純" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", filter: "grayscale(10%)" }} />
               </div>
             </div>
             <div>
               <div className="section-label fade-up" style={{ marginBottom: "32px" }}>Representative</div>
-              <h2 className="fade-up fade-up-delay-1" style={{ fontFamily: "'DM Serif Display', serif", fontSize: "28px", fontWeight: 400, color: "#1A1A1A", margin: "0 0 4px 0" }}>市原 純</h2>
+              <h2 className="fade-up fade-up-delay-1" style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(24px, 6vw, 36px)", fontWeight: 400, color: "#1A1A1A", margin: "0 0 4px 0" }}>市原 純</h2>
               <p className="fade-up fade-up-delay-1" style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", letterSpacing: "0.1em", color: "#9E9B95", margin: "0 0 32px 0", textTransform: "uppercase" }}>Jun Ichihara — 代表社員</p>
               <div className="fade-up fade-up-delay-2" style={{ fontSize: "15px", color: "#6B6B6B", lineHeight: 1.95 }}>
                 <p style={{ margin: "0 0 20px 0" }}>東京を拠点に、店舗マーケティング・ブランド戦略・運営支援・プロジェクトコンサルティングを手がける。</p>
@@ -116,7 +114,7 @@ export default function About() {
       {/* ── CTA ── */}
       <section style={{ padding: "100px 0", background: "#006875" }}>
         <div className="cuen-container" style={{ textAlign: "center" }}>
-          <h2 className="fade-up" style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(24px, 3vw, 40px)", fontWeight: 400, color: "#ffffff", margin: "0 0 24px 0" }}>まず、話しましょう。</h2>
+          <h2 className="fade-up" style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(24px, 6vw, 36px)", fontWeight: 400, color: "#ffffff", margin: "0 0 24px 0" }}>まず、話しましょう。</h2>
           <p className="fade-up fade-up-delay-1" style={{ fontSize: "16px", color: "rgba(255,255,255,0.75)", margin: "0 0 40px 0", lineHeight: 1.85 }}>どんな相談でも、想いを聞かせていただくところから始めます。</p>
           <div className="fade-up fade-up-delay-2">
             <Link href="/contact" className="btn-cuen btn-cuen-white">

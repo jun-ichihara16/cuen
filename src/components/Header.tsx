@@ -42,21 +42,24 @@ export default function Header() {
           transition: "border-color 0.3s ease",
         }}
       >
+        {/* ① Header container — 900px width, NOT 480px */}
         <div
-          className="cuen-container"
           style={{
+            maxWidth: "900px",
+            margin: "0 auto",
+            padding: "0 40px",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
             height: "72px",
           }}
         >
-          {/* Logo — CDN image */}
+          {/* ② Logo — CDN image */}
           <Link href="/" style={{ textDecoration: "none" }}>
             <img
               src={CUEN_LOGO}
               alt="CUEN"
-              style={{ height: '28px', width: 'auto' }}
+              style={{ height: "24px", width: "auto", display: "block" }}
             />
           </Link>
 
@@ -132,7 +135,6 @@ export default function Header() {
         `}</style>
       </header>
 
-      {/* Margin decorations — PC only */}
       <ScrollProgress />
       <SideLabel />
       <SideMotif />

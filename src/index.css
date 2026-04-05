@@ -45,6 +45,50 @@ body {
   font-family: 'DM Serif Display', serif;
 }
 
+/* ─────────────────────────────────────────
+   Typography Scale — 480px Container Optimized
+───────────────────────────────────────── */
+
+.page-h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(32px, 8vw, 48px);
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--cuen-black);
+  margin: 0 0 24px 0;
+}
+
+.page-h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(24px, 6vw, 36px);
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--cuen-black);
+  margin: 0 0 24px 0;
+}
+
+.page-h3 {
+  font-family: 'DM Sans', 'Noto Sans JP', sans-serif;
+  font-size: clamp(16px, 4vw, 20px);
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--cuen-black);
+  margin: 0 0 16px 0;
+}
+
+.page-body {
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--cuen-gray);
+}
+
+.page-caption {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--cuen-muted);
+}
+
 /* CUEN brand name in headings — match logo font */
 .cuen-brand {
   font-family: 'DM Sans', sans-serif;

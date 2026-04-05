@@ -30,7 +30,7 @@ export default function Company() {
       <section style={{ paddingTop: "160px", paddingBottom: "100px" }}>
         <div className="cuen-container">
           <div className="section-label fade-up" style={{ marginBottom: "32px" }}>Company</div>
-          <h1 className="fade-up fade-up-delay-1" style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(36px, 5vw, 64px)", fontWeight: 400, color: "#1A1A1A", margin: "0 0 32px 0", lineHeight: 1.2 }}>合同会社<span className="cuen-brand">CUEN</span></h1>
+          <h1 className="fade-up fade-up-delay-1" style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(32px, 8vw, 48px)", fontWeight: 400, color: "#1A1A1A", margin: "0 0 24px 0", lineHeight: 1.25 }}>合同会社<span className="cuen-brand">CUEN</span></h1>
           <p className="fade-up fade-up-delay-2" style={{ fontSize: "17px", color: "#6B6B6B", lineHeight: 1.9, maxWidth: "520px", margin: 0 }}>東京・目黒区を拠点に、人と人のあいだにある可能性を事業に変える会社です。</p>
         </div>
       </section>
@@ -43,7 +43,7 @@ export default function Company() {
               <tbody>
                 {companyInfo.map((item, i) => (
                   <tr key={item.label} style={{ borderTop: i === 0 ? "1px solid #E8E6E1" : "none", borderBottom: "1px solid #E8E6E1" }}>
-                    <th style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", letterSpacing: "0.1em", color: "#9E9B95", textTransform: "uppercase", fontWeight: 400, textAlign: "left", padding: "24px 40px 24px 0", verticalAlign: "top", whiteSpace: "nowrap", width: "160px" }}>{item.label}</th>
+                    <th style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", letterSpacing: "0.1em", color: "#9E9B95", textTransform: "uppercase", fontWeight: 400, textAlign: "left", padding: "24px 40px 24px 0", verticalAlign: "top", whiteSpace: "nowrap", width: "100px" }}>{item.label}</th>
                     <td style={{ fontFamily: "'DM Sans', 'Noto Sans JP', sans-serif", fontSize: "15px", color: "#1A1A1A", padding: "24px 0", lineHeight: 1.85, verticalAlign: "top" }}>{item.value}</td>
                   </tr>
                 ))}
@@ -55,7 +55,7 @@ export default function Company() {
 
       <section style={{ padding: "100px 0", background: "#006875" }}>
         <div className="cuen-container" style={{ textAlign: "center" }}>
-          <h2 className="fade-up" style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(24px, 3vw, 40px)", fontWeight: 400, color: "#ffffff", margin: "0 0 24px 0" }}>まず、話しましょう。</h2>
+          <h2 className="fade-up" style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(24px, 6vw, 36px)", fontWeight: 400, color: "#ffffff", margin: "0 0 24px 0" }}>まず、話しましょう。</h2>
           <p className="fade-up fade-up-delay-1" style={{ fontSize: "16px", color: "rgba(255,255,255,0.75)", margin: "0 0 40px 0", lineHeight: 1.85 }}>どんな相談でも、想いを聞かせていただくところから始めます。</p>
           <div className="fade-up fade-up-delay-2">
             <Link href="/contact" className="btn-cuen btn-cuen-white">

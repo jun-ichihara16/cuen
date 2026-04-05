@@ -13,12 +13,10 @@ export default function Home() {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    // 0.8秒後にヒーローコンテンツを表示開始
     const introTimer = setTimeout(() => {
       setIntroComplete(true);
     }, 800);
 
-    // スタガーアニメーション（introComplete 後に発火させるため遅延を +800ms）
     const heroEls = document.querySelectorAll(".hero-reveal");
     heroEls.forEach((el, i) => {
       setTimeout(() => el.classList.add("visible"), 800 + 200 + i * 160);
@@ -42,24 +40,9 @@ export default function Home() {
   }, []);
 
   const services = [
-    {
-      num: "01",
-      name: "AI KANJI",
-      desc: "幹事の割り勘・PayPay番号収集・支払いリマインドをLINEで全自動化。AIが、面倒をなくす。",
-      href: "/service",
-    },
-    {
-      num: "02",
-      name: "店舗マーケティング・ブランド戦略・運営支援",
-      desc: "店舗・施設の集客力強化からブランド構築、日常運営の改善まで。現場感覚を持ったマーケターとして一気通貫で支援します。",
-      href: "/service",
-    },
-    {
-      num: "03",
-      name: "プロジェクトコンサルティング",
-      desc: "新規事業の立ち上げから既存事業の改善まで、プロジェクト全体の設計・管理・推進を支援します。",
-      href: "/service",
-    },
+    { num: "01", name: "AI KANJI", desc: "幹事の割り勘・PayPay番号収集・支払いリマインドをLINEで全自動化。AIが、面倒をなくす。", href: "/service" },
+    { num: "02", name: "店舗マーケティング・ブランド戦略・運営支援", desc: "店舗・施設の集客力強化からブランド構築、日常運営の改善まで。現場感覚を持ったマーケターとして一気通貫で支援します。", href: "/service" },
+    { num: "03", name: "プロジェクトコンサルティング", desc: "新規事業の立ち上げから既存事業の改善まで、プロジェクト全体の設計・管理・推進を支援します。", href: "/service" },
   ];
 
   return (
@@ -80,8 +63,8 @@ export default function Home() {
       >
         <WaveBackground />
 
-        <div className="cuen-container" style={{ position: "relative", zIndex: 1, paddingTop: "80px", paddingBottom: "80px" }}>
-          {/* Intro animation wrapper */}
+        {/* ④ paddingBottom: 120px to avoid SCROLL overlap */}
+        <div className="cuen-container" style={{ position: "relative", zIndex: 1, paddingTop: "80px", paddingBottom: "120px" }}>
           <div
             style={{
               maxWidth: "640px",
@@ -90,22 +73,16 @@ export default function Home() {
               transition: 'opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1)',
             }}
           >
-            {/* Hero Logo */}
-            <img
-              src={CUEN_LOGO}
-              alt="CUEN"
-              className="hero-reveal"
-              style={{
-                width: "clamp(120px, 20vw, 200px)",
-                height: "auto",
-                display: "block",
-                marginBottom: "40px",
-              }}
-            />
-
-            <div className="section-label hero-reveal" style={{ marginBottom: "40px" }}>
-              Consulting & Marketing
+            {/* ② Hero Logo — filter なし（白背景） */}
+            <div className="hero-reveal" style={{ marginBottom: "32px" }}>
+              <img
+                src={CUEN_LOGO}
+                alt="CUEN"
+                style={{ width: "clamp(100px, 16vw, 160px)", height: "auto", display: "block" }}
+              />
             </div>
+
+            {/* ③ "Consulting & Marketing" label REMOVED */}
 
             <h1
               style={{
@@ -115,7 +92,6 @@ export default function Home() {
                 lineHeight: 1.4,
                 color: "#1A1A1A",
                 margin: "0 0 32px 0",
-                letterSpacing: "0em",
               }}
             >
               <span className="hero-reveal" style={{ display: "block", overflow: "hidden" }}>
@@ -164,9 +140,23 @@ export default function Home() {
           </div>
         </div>
 
-        <div style={{ position: "absolute", bottom: "40px", left: "50%", transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: "8px" }}>
-          <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "10px", letterSpacing: "0.12em", color: "#9E9B95", textTransform: "uppercase" }}>Scroll</div>
-          <div style={{ width: "1px", height: "40px", background: "linear-gradient(to bottom, #9E9B95, transparent)" }} />
+        {/* ④ Scroll indicator — repositioned */}
+        <div
+          style={{
+            position: "absolute",
+            bottom: "32px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: "8px",
+            pointerEvents: "none",
+            zIndex: 2,
+          }}
+        >
+          <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "9px", letterSpacing: "0.18em", color: "#C0BDB7", textTransform: "uppercase" }}>Scroll</div>
+          <div style={{ width: "1px", height: "32px", background: "linear-gradient(to bottom, #C0BDB7, transparent)" }} />
         </div>
       </section>
 
@@ -175,7 +165,7 @@ export default function Home() {
         <div className="cuen-container">
           <div style={{ maxWidth: "720px" }}>
             <div className="section-label fade-up" style={{ marginBottom: "40px" }}>Our Philosophy</div>
-            <p className="fade-up fade-up-delay-1" style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(24px, 3vw, 36px)", fontWeight: 400, lineHeight: 1.6, color: "#1A1A1A", margin: "0 0 32px 0" }}>
+            <p className="fade-up fade-up-delay-1" style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(24px, 6vw, 36px)", fontWeight: 400, lineHeight: 1.6, color: "#1A1A1A", margin: "0 0 32px 0" }}>
               <span className="cuen-brand">CUEN</span>は、人と人のあいだにある可能性を
               ていねいに見つめ、前向きな変化のきっかけをつくる。
             </p>
@@ -198,12 +188,12 @@ export default function Home() {
         <div className="cuen-container">
           <div className="fade-up" style={{ marginBottom: "64px" }}>
             <div className="section-label" style={{ marginBottom: "24px" }}>Service</div>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(28px, 3vw, 40px)", fontWeight: 400, color: "#1A1A1A", margin: 0 }}>
+            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(24px, 6vw, 36px)", fontWeight: 400, color: "#1A1A1A", margin: 0 }}>
               提供するもの、届けたいもの。
             </h2>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "0", borderTop: "1px solid #E8E6E1" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "0", borderTop: "1px solid #E8E6E1" }}>
             {services.map((service, i) => (
               <div
                 key={service.num}
@@ -233,38 +223,29 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── CEO Message ── */}
+      {/* ⑤ CEO Message — vertical stack layout */}
       <section style={{ padding: "120px 0", background: "#F7F6F4" }}>
         <div className="cuen-container">
-          <div style={{ display: "grid", gridTemplateColumns: "clamp(200px, 35%, 380px) 1fr", gap: "clamp(40px, 6vw, 80px)", alignItems: "center" }} className="mobile-stack">
-            <div className="fade-up">
-              <div style={{ position: "relative", overflow: "hidden", aspectRatio: "3/4", maxWidth: "360px" }}>
+          <div style={{ maxWidth: "480px" }}>
+            {/* Photo — top */}
+            <div className="fade-up" style={{ marginBottom: "48px" }}>
+              <div style={{ position: "relative", overflow: "hidden", aspectRatio: "4/3", width: "100%" }}>
                 <img src={CEO_IMAGE} alt="市原 純" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", filter: "grayscale(15%)" }} />
               </div>
             </div>
 
+            {/* Text — below */}
             <div>
               <div className="section-label fade-up" style={{ marginBottom: "32px" }}>Message</div>
-              <h2 className="fade-up fade-up-delay-1" style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(24px, 2.5vw, 32px)", fontWeight: 400, color: "#1A1A1A", margin: "0 0 32px 0", lineHeight: 1.5 }}>
+              <h2 className="fade-up fade-up-delay-1" style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(22px, 5vw, 28px)", fontWeight: 400, color: "#1A1A1A", margin: "0 0 32px 0", lineHeight: 1.5 }}>
                 一人ひとりを、
                 <br />
                 ちゃんと見る。
               </h2>
               <div className="fade-up fade-up-delay-2" style={{ fontSize: "15px", color: "#6B6B6B", lineHeight: 1.95 }}>
-                <p style={{ margin: "0 0 20px 0" }}>
-                  「なぜ売れないのか」「なぜ伝わらないのか」——
-                  その問いを起点に、数多くのビジネスの現場で
-                  課題の本質を掘り下げてきました。
-                </p>
-                <p style={{ margin: "0 0 20px 0" }}>
-                  飲食・物販・宿泊施設の経営経験も持ち、
-                  現場感覚を持ったマーケターとして、
-                  戦略立案から実行・改善まで一気通貫で支援します。
-                </p>
-                <p style={{ margin: "0 0 32px 0" }}>
-                  CUENは、想いが重なるところから
-                  大切にしたい未来を一緒につくる会社でありたいと思っています。
-                </p>
+                <p style={{ margin: "0 0 20px 0" }}>「なぜ売れないのか」「なぜ伝わらないのか」——その問いを起点に、数多くのビジネスの現場で課題の本質を掘り下げてきました。</p>
+                <p style={{ margin: "0 0 20px 0" }}>飲食・物販・宿泊施設の経営経験も持ち、現場感覚を持ったマーケターとして、戦略立案から実行・改善まで一気通貫で支援します。</p>
+                <p style={{ margin: "0 0 32px 0" }}>CUENは、想いが重なるところから大切にしたい未来を一緒につくる会社でありたいと思っています。</p>
               </div>
               <div className="fade-up fade-up-delay-3">
                 <p style={{ fontFamily: "'DM Serif Display', serif", fontSize: "18px", color: "#1A1A1A", margin: "0 0 4px 0" }}>市原 純</p>
@@ -282,7 +263,7 @@ export default function Home() {
             <span style={{ background: "rgba(255,255,255,0.4)", width: "24px", height: "1px", display: "inline-block" }} />
             Contact
           </div>
-          <h2 className="fade-up fade-up-delay-1" style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(28px, 3vw, 44px)", fontWeight: 400, color: "#ffffff", margin: "0 0 24px 0", lineHeight: 1.4 }}>
+          <h2 className="fade-up fade-up-delay-1" style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(24px, 6vw, 36px)", fontWeight: 400, color: "#ffffff", margin: "0 0 24px 0", lineHeight: 1.4 }}>
             まず、話しましょう。
           </h2>
           <p className="fade-up fade-up-delay-2" style={{ fontSize: "16px", color: "rgba(255,255,255,0.75)", lineHeight: 1.85, margin: "0 0 48px 0" }}>
