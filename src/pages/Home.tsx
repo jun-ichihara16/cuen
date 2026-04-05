@@ -1,19 +1,27 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "wouter";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import WaveBackground from "../components/WaveBackground";
 
+const CUEN_LOGO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663454524748/2kCcYKpUpLm4gHsyVUsYHQ/CUENlogo_75384780.png";
 const CEO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663454524748/2kCcYKpUpLm4gHsyVUsYHQ/jun-ichihara_a82a7119.png";
 
-
 export default function Home() {
+  const [introComplete, setIntroComplete] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
 
+    // 0.8秒後にヒーローコンテンツを表示開始
+    const introTimer = setTimeout(() => {
+      setIntroComplete(true);
+    }, 800);
+
+    // スタガーアニメーション（introComplete 後に発火させるため遅延を +800ms）
     const heroEls = document.querySelectorAll(".hero-reveal");
     heroEls.forEach((el, i) => {
-      setTimeout(() => el.classList.add("visible"), 200 + i * 160);
+      setTimeout(() => el.classList.add("visible"), 800 + 200 + i * 160);
     });
 
     const observer = new IntersectionObserver(
@@ -26,7 +34,11 @@ export default function Home() {
     );
     const elements = document.querySelectorAll(".fade-up");
     elements.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
+
+    return () => {
+      clearTimeout(introTimer);
+      observer.disconnect();
+    };
   }, []);
 
   const services = [
@@ -35,7 +47,6 @@ export default function Home() {
       name: "AI KANJI",
       desc: "幹事の割り勘・PayPay番号収集・支払いリマインドをLINEで全自動化。AIが、面倒をなくす。",
       href: "/service",
-
     },
     {
       num: "02",
@@ -70,8 +81,29 @@ export default function Home() {
         <WaveBackground />
 
         <div className="cuen-container" style={{ position: "relative", zIndex: 1, paddingTop: "80px", paddingBottom: "80px" }}>
-          <div style={{ maxWidth: "640px" }}>
-            <div className="section-label hero-reveal fade-up" style={{ marginBottom: "40px" }}>
+          {/* Intro animation wrapper */}
+          <div
+            style={{
+              maxWidth: "640px",
+              opacity: introComplete ? 1 : 0,
+              transform: introComplete ? 'translateY(0)' : 'translateY(28px)',
+              transition: 'opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1)',
+            }}
+          >
+            {/* Hero Logo */}
+            <img
+              src={CUEN_LOGO}
+              alt="CUEN"
+              className="hero-reveal"
+              style={{
+                width: "clamp(120px, 20vw, 200px)",
+                height: "auto",
+                display: "block",
+                marginBottom: "40px",
+              }}
+            />
+
+            <div className="section-label hero-reveal" style={{ marginBottom: "40px" }}>
               Consulting & Marketing
             </div>
 
