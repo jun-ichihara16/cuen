@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import ScrollProgress from "./ScrollProgress";
-import SideLabel from "./SideLabel";
 import SideMotif from "./SideMotif";
 
 const CUEN_LOGO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663454524748/2kCcYKpUpLm4gHsyVUsYHQ/CUENlogo_75384780.png";
@@ -125,18 +124,17 @@ export default function Header() {
           .desktop-nav { display: flex !important; }
           .mobile-menu-btn { display: none !important; }
           .mobile-nav { display: none; }
-          .scroll-progress-wrap, .side-label-wrap, .side-motif-wrap { display: block; }
+          .scroll-progress-wrap, .side-motif-wrap { display: block; }
           @media (max-width: 768px) {
             .desktop-nav { display: none !important; }
             .mobile-menu-btn { display: flex !important; }
             .mobile-nav { display: block !important; }
-            .scroll-progress-wrap, .side-label-wrap, .side-motif-wrap { display: none !important; }
+            .scroll-progress-wrap, .side-motif-wrap { display: none !important; }
           }
         `}</style>
       </header>
 
       <ScrollProgress />
-      <SideLabel />
       <SideMotif />
     </>
   );
