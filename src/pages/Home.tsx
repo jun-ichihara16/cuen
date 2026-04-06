@@ -60,22 +60,33 @@ export default function Home() {
       {!introComplete && <IntroAnimation onComplete={handleIntroComplete} />}
       <Header />
       <div style={{ opacity: introComplete ? 1 : 0, transition: "opacity 0.5s ease", transitionDelay: "0.1s" }}>
-        <div className="content-card">
 
-          {/* ── Hero ── */}
-          <section style={{ minHeight: "100vh", display: "flex", alignItems: "center", paddingTop: "72px" }}>
-            <div className="cuen-container" style={{ paddingTop: "60px", paddingBottom: "60px" }}>
-              <h1 className="hero-reveal" style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(28px, 5vw, 40px)", fontWeight: 900, color: "var(--cuen-charcoal)", lineHeight: 1.3, margin: "0 0 24px 0", letterSpacing: "-0.01em", wordBreak: "keep-all" }}>
-                つながりを、もっとラクに。<br />もっと楽しく。
-              </h1>
-              <p className="hero-reveal" style={{ fontSize: "clamp(14px, 1.8vw, 16px)", fontWeight: 400, color: "#555", lineHeight: 1.8, margin: "0 0 40px 0", maxWidth: "480px" }}>
-                人と集まることが好きな人の、めんどくさいをなくします。
-              </p>
+        {/* ── Hero — グラデーション背景（イントロから引き継ぎ）── */}
+        <section style={{
+          minHeight: "100vh",
+          display: "flex",
+          alignItems: "center",
+          paddingTop: "72px",
+          background: "linear-gradient(135deg, #006875 0%, #004f5c 25%, #1a7a8a 50%, #C8614A 65%, #005f6e 80%, #006875 100%)",
+          backgroundSize: "400% 400%",
+          animation: "gradientShift 16s ease infinite",
+          position: "relative",
+          overflow: "hidden",
+        }}>
+          {/* Grain */}
+          <GrainOverlay />
+          <div className="cuen-container" style={{ paddingTop: "60px", paddingBottom: "60px", position: "relative", zIndex: 2 }}>
+            <h1 className="hero-reveal" style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(28px, 5vw, 40px)", fontWeight: 900, color: "#ffffff", lineHeight: 1.3, margin: "0 0 24px 0", letterSpacing: "-0.01em", wordBreak: "keep-all" }}>
+              つながりを、もっとラクに。<br />もっと楽しく。
+            </h1>
+            <p className="hero-reveal" style={{ fontSize: "clamp(14px, 1.8vw, 16px)", fontWeight: 400, color: "rgba(255,255,255,0.85)", lineHeight: 1.8, margin: "0 0 40px 0", maxWidth: "480px" }}>
+              人と集まることが好きな人の、めんどくさいをなくします。
+            </p>
               <div className="hero-reveal" style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
-                <Link href="/service" style={{ display: "inline-block", background: "var(--cuen-teal)", color: "#fff", fontWeight: 700, fontSize: "15px", padding: "14px 32px", borderRadius: "100px", textDecoration: "none", transition: "transform 0.2s ease", boxShadow: "0 4px 16px rgba(0,104,117,0.3)" }}>
+                <Link href="/service" style={{ display: "inline-block", background: "#ffffff", color: "var(--cuen-teal)", fontWeight: 700, fontSize: "15px", padding: "14px 32px", borderRadius: "100px", textDecoration: "none", transition: "transform 0.2s ease", boxShadow: "0 4px 20px rgba(0,0,0,0.15)" }}>
                   サービスを見る
                 </Link>
-                <Link href="/contact" style={{ display: "inline-block", background: "transparent", color: "var(--cuen-teal)", fontWeight: 700, fontSize: "15px", padding: "14px 32px", borderRadius: "100px", textDecoration: "none", border: "1.5px solid var(--cuen-teal)" }}>
+                <Link href="/contact" style={{ display: "inline-block", background: "transparent", color: "#ffffff", fontWeight: 700, fontSize: "15px", padding: "14px 32px", borderRadius: "100px", textDecoration: "none", border: "1.5px solid rgba(255,255,255,0.5)" }}>
                   お問い合わせ
                 </Link>
               </div>
@@ -83,6 +94,8 @@ export default function Home() {
               <img src={ILLUST_GATHERING} alt="" className="hero-reveal fv-float" style={{ width: "100%", maxWidth: "480px", height: "auto", display: "block", margin: "32px auto 0" }} />
             </div>
           </section>
+
+        <div className="content-card">
 
           {/* ── Our Philosophy ── */}
           <section style={{ padding: "100px 0", background: "var(--cuen-offwhite)" }}>
