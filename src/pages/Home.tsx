@@ -98,18 +98,11 @@ export default function Home() {
             }}>
               <video
                 autoPlay loop muted playsInline
-                style={{ width: "110%", height: "110%", objectFit: "cover", display: "block" }}
+                style={{ width: "100%", height: "auto", objectFit: "contain", display: "block" }}
               >
                 <source src="/cuen-fv-illust.mp4" type="video/mp4" />
               </video>
             </div>
-          </div>
-
-          {/* FV下端 → content-card への滑らかな移行 */}
-          <div style={{ height: "80px", position: "relative", zIndex: 1 }}>
-            <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style={{ position: "absolute", bottom: 0, width: "100%", height: "80px", display: "block" }}>
-              <path d="M0,80 L0,40 Q720,0 1440,40 L1440,80 Z" fill="var(--cuen-offwhite)" />
-            </svg>
           </div>
         </section>
 
