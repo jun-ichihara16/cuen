@@ -95,7 +95,7 @@ export default function Home() {
                 <span className="cuen-brand">CUEN</span>は、<br />人と人のあいだにある<br />可能性に気づき、<br />前向きな変化のキッカケを<br />生み出し続けます。
               </h2>
               <p className="fade-up fade-up-delay-2" style={{ fontSize: "clamp(14px, 1.8vw, 16px)", color: "#555", lineHeight: 1.8, margin: "0 0 32px 0" }}>
-                数字や効率だけでは、ビジネスは動かない。私たちは、現場で働く一人ひとりの想いや関係性を紐解き、「なぜ売れないのか」「どうすれば伝わるのか」という本質的な課題を解決します。
+                数字や効率だけでは、<br />ビジネスは動かない。<br />私たちは、現場で働く一人ひとりの<br />想いや関係性を紐解き、<br />「なぜ売れないのか」<br />「どうすれば伝わるのか」という<br />本質的な課題を解決します。
               </p>
               <a href="/about" style={{ color: "var(--cuen-teal)", fontSize: "14px", letterSpacing: "0.06em", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "8px", cursor: "pointer", position: "relative", zIndex: 10 }}>
                 CUENについて詳しく <span>&rarr;</span>
@@ -163,9 +163,9 @@ export default function Home() {
                 現場を知るからこそ、<br />描ける戦略がある。
               </h2>
               <div className="fade-up fade-up-delay-2" style={{ fontSize: "clamp(14px, 1.8vw, 16px)", color: "#666", lineHeight: 1.8 }}>
-                <p style={{ margin: "0 0 16px 0" }}>「なぜ売れないのか」「なぜ伝わらないのか」——その問いを起点に、数多くのビジネスの現場で課題の本質を掘り下げてきました。</p>
-                <p style={{ margin: "0 0 16px 0" }}>私自身、飲食店の経営を経験してきました。だからこそ、机上の空論ではなく、現場が実際に動ける戦略を立て、実行から改善まで泥臭く伴走します。</p>
-                <p style={{ margin: 0 }}>CUENは、クライアントの想いに気づき、前向きな変化のキッカケを生み出し続けるパートナーでありたいと思っています。</p>
+                <p style={{ margin: "0 0 16px 0" }}>「なぜ売れないのか」<br />「なぜ伝わらないのか」——<br />その問いを起点に、<br />数多くのビジネスの現場で<br />課題の本質を掘り下げてきました。</p>
+                <p style={{ margin: "0 0 16px 0" }}>私自身、飲食店の経営を経験してきました。<br />だからこそ、机上の空論ではなく、<br />現場が実際に動ける戦略を立て、<br />実行から改善まで泥臭く伴走します。</p>
+                <p style={{ margin: 0 }}>CUENは、クライアントの想いに気づき、<br />前向きな変化のキッカケを<br />生み出し続けるパートナーで<br />ありたいと思っています。</p>
               </div>
               <div className="fade-up fade-up-delay-3" style={{ marginTop: "24px" }}>
                 <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "16px", fontWeight: 600, color: "var(--cuen-charcoal)", margin: "0 0 4px 0" }}>市原 純</p>

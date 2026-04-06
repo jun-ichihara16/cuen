@@ -103,10 +103,10 @@ export default function About() {
 
               {/* 経歴 */}
               <div style={{ fontSize: "clamp(13px, 1.6vw, 15px)", color: "#666", lineHeight: 1.8 }}>
-                <p style={{ margin: "0 0 12px 0" }}>東京を拠点に、店舗マーケティング・ブランド戦略・運営支援・プロジェクトコンサルティングを手がける。</p>
-                <p style={{ margin: "0 0 12px 0" }}>「なぜ売れないのか」「なぜ伝わらないのか」——その問いを起点に、数多くのビジネスの現場で課題の本質を掘り下げてきた。</p>
-                <p style={{ margin: "0 0 12px 0" }}>飲食店の経営経験も活かし、現場感覚を持つマーケターとして、戦略立案から実行・改善までを一気通貫で支援する。</p>
-                <p style={{ margin: 0 }}>2024年9月、合同会社CUENを設立。AIを活用した新しいサービス「AI KANJI」を開発・展開中。</p>
+                <p style={{ margin: "0 0 12px 0" }}>東京を拠点に、<br />店舗マーケティング・ブランド戦略・<br />運営支援・プロジェクトコンサルティングを<br />手がける。</p>
+                <p style={{ margin: "0 0 12px 0" }}>「なぜ売れないのか」<br />「なぜ伝わらないのか」——<br />その問いを起点に、数多くのビジネスの<br />現場で課題の本質を掘り下げてきた。</p>
+                <p style={{ margin: "0 0 12px 0" }}>飲食店の経営経験も活かし、<br />現場感覚を持つマーケターとして、<br />戦略立案から実行・改善までを<br />一気通貫で支援する。</p>
+                <p style={{ margin: 0 }}>2024年9月、合同会社CUENを設立。<br />AIを活用した新しいサービス<br />「AI KANJI」を開発・展開中。</p>
               </div>
             </div>
           </div>
@@ -124,7 +124,7 @@ export default function About() {
           <div style={{ position: "absolute", bottom: "-30px", left: "-30px", width: "120px", height: "120px", borderRadius: "50%", background: "rgba(200,97,74,0.15)", pointerEvents: "none" }} />
           <div style={{ position: "relative", zIndex: 2 }}>
             <h2 className="fade-up" style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(20px, 4vw, 28px)", fontWeight: 700, lineHeight: 1.4, color: "#fff", margin: "0 0 16px 0", wordBreak: "keep-all" }}>まずは、現状のモヤモヤを<br />お聞かせください。</h2>
-            <p className="fade-up fade-up-delay-1" style={{ color: "rgba(255,255,255,0.85)", fontSize: "15px", margin: "0 0 32px 0", lineHeight: 1.7 }}>「何から手をつければいいか分からない」という状態でも構いません。あなたの想いを聞かせていただくところから始めます。</p>
+            <p className="fade-up fade-up-delay-1" style={{ color: "rgba(255,255,255,0.85)", fontSize: "15px", margin: "0 0 32px 0", lineHeight: 1.7 }}>「何から手をつければいいか分からない」<br />という状態でも構いません。<br />あなたの想いを聞かせていただくところから<br />始めます。</p>
             <a href="/contact" className="fade-up fade-up-delay-2" style={{ display: "inline-block", background: "var(--cuen-terracotta)", color: "#fff", fontWeight: 700, fontSize: "16px", padding: "14px 36px", borderRadius: "100px", textDecoration: "none", boxShadow: "0 4px 16px rgba(200,97,74,0.4)" }}>
               お問い合わせはこちら
             </a>
