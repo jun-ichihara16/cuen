@@ -1,13 +1,16 @@
 import { Link } from "wouter";
 
-const CUEN_LOGO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663454524748/2kCcYKpUpLm4gHsyVUsYHQ/CUEN_logo_1f6a8884.webp";
-
 export default function Footer() {
   return (
-    <footer style={{ padding: "48px 20px", background: "transparent" }}>
+    <footer style={{ padding: "60px 20px 48px", background: "transparent" }}>
       <div style={{ maxWidth: "720px", margin: "0 auto", display: "flex", flexDirection: "column", alignItems: "center", gap: "24px", textAlign: "center" }}>
         <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
-          <img src={CUEN_LOGO} alt="CUEN" style={{ height: "22px", width: "auto", display: "block", filter: "brightness(0) invert(1)" }} />
+          <img
+            src="/cuen-logo-white.png"
+            alt="CUEN"
+            className="footer-logo"
+            style={{ width: "auto", display: "block" }}
+          />
         </Link>
         <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.7)", lineHeight: 1.6, maxWidth: "300px" }}>
           人と人のあいだにある可能性に気づき、<br />前向きな変化のキッカケを生み出し続ける。
@@ -31,6 +34,10 @@ export default function Footer() {
           &copy; 2026 CUEN LLC. All rights reserved.
         </p>
       </div>
+      <style>{`
+        .footer-logo { height: 80px; }
+        @media (max-width: 768px) { .footer-logo { height: 56px; } }
+      `}</style>
     </footer>
   );
 }

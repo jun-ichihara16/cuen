@@ -50,7 +50,7 @@ export default function Header() {
         }}
       >
         <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
-          <img src={CUEN_LOGO} alt="CUEN" style={{ height: "28px", width: "auto", display: "block" }} />
+          <img src={CUEN_LOGO} alt="CUEN" style={{ height: "36px", width: "auto", display: "block" }} />
         </Link>
 
         <nav style={{ display: "flex", gap: "40px", alignItems: "center" }} className="desktop-nav">
@@ -64,7 +64,7 @@ export default function Header() {
           </Link>
         </nav>
 
-        <button onClick={() => setMenuOpen(!menuOpen)} className="mobile-menu-btn" style={{ background: "none", border: "none", cursor: "pointer", padding: "8px", display: "none", flexDirection: "column", gap: "5px" }} aria-label="メニュー">
+        <button onClick={() => setMenuOpen(!menuOpen)} className="mobile-menu-btn" style={{ background: "none", border: "none", cursor: "pointer", padding: "8px", flexDirection: "column", gap: "5px" }} aria-label="メニュー">
           <span style={{ display: "block", width: "22px", height: "1px", background: "var(--cuen-charcoal)", transition: "transform 0.3s ease", transform: menuOpen ? "translateY(6px) rotate(45deg)" : "none" }} />
           <span style={{ display: "block", width: "22px", height: "1px", background: "var(--cuen-charcoal)", transition: "opacity 0.3s ease", opacity: menuOpen ? 0 : 1 }} />
           <span style={{ display: "block", width: "22px", height: "1px", background: "var(--cuen-charcoal)", transition: "transform 0.3s ease", transform: menuOpen ? "translateY(-6px) rotate(-45deg)" : "none" }} />
