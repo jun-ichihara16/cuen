@@ -5,9 +5,9 @@ export default function IntroAnimation() {
   const [phase, setPhase] = useState(0);
   const canvasRef = useRef<HTMLDivElement>(null);
 
-  // phase 0: 揺らぎのみ表示 (0〜800ms)
-  // phase 1: Cマーク フェードイン (800ms〜)
-  // phase 2: UEN スライドイン (1600ms〜)
+  // phase 0: 揺らぎのみ (0〜800ms)
+  // phase 1: ロゴ全体フェードイン、clip-pathでCマーク部分だけ見せる (800ms〜)
+  // phase 2: clip-pathを広げてUEN部分も表示 (1600ms〜)
   // phase 3: 全体フェードアウト (2800ms〜)
   // phase 4: 完全非表示 (3600ms〜)
 
@@ -86,6 +86,12 @@ export default function IntroAnimation() {
 
   if (phase >= 4) return null;
 
+  // ロゴ画像1枚を clip-path で制御
+  // Cマーク部分 ≒ 左35%、全体 = 100%
+  const clipPath = phase >= 2
+    ? "inset(0 0 0 0)"           // 全体表示
+    : "inset(0 65% 0 0)";        // 左35%だけ表示（Cマーク）
+
   return (
     <div
       style={{
@@ -113,49 +119,21 @@ export default function IntroAnimation() {
         }}
       />
 
-      {/* ロゴ */}
-      <div style={{ position: "relative", zIndex: 1, display: "flex", alignItems: "center" }}>
-        {/* Cマーク */}
+      {/* ロゴ — 1枚画像をclip-pathで制御 */}
+      <div style={{ position: "relative", zIndex: 1 }}>
         <img
-          src="/favicon.png"
-          alt=""
+          src="/cuen-logo.png"
+          alt="CUEN"
           style={{
-            height: "56px",
+            height: "60px",
             width: "auto",
             display: "block",
-            marginRight: "-18px",
             opacity: phase >= 1 ? 1 : 0,
-            transform: phase >= 1 ? "scale(1)" : "scale(0.8)",
-            transition: "opacity 0.7s ease, transform 0.7s ease",
+            transform: phase >= 1 ? "scale(1)" : "scale(0.85)",
+            clipPath,
+            transition: "opacity 0.7s ease, transform 0.7s ease, clip-path 0.7s cubic-bezier(0.22, 1, 0.36, 1)",
           }}
         />
-
-        {/* UEN テキスト */}
-        <div
-          style={{
-            overflow: "hidden",
-            width: phase >= 2 ? "180px" : "0px",
-            transition: "width 0.7s cubic-bezier(0.22, 1, 0.36, 1)",
-          }}
-        >
-          <span
-            style={{
-              fontFamily: "'DM Sans', sans-serif",
-              fontSize: "52px",
-              fontWeight: 700,
-              color: "#006875",
-              letterSpacing: "0.04em",
-              display: "block",
-              whiteSpace: "nowrap",
-              paddingLeft: "0px",
-              opacity: phase >= 2 ? 1 : 0,
-              transform: phase >= 2 ? "translateX(0)" : "translateX(24px)",
-              transition: "opacity 0.5s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1)",
-            }}
-          >
-            UEN
-          </span>
-        </div>
       </div>
     </div>
   );
