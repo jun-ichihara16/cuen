@@ -30,81 +30,83 @@ export default function Service() {
   ];
 
   return (
-    <div style={{ background: "#ffffff", minHeight: "100vh" }}>
+    <>
       <Header />
+      <div className="content-card">
 
-      <section style={{ paddingTop: "160px", paddingBottom: "100px" }}>
-        <div className="cuen-container">
-          <div className="section-label fade-up" style={{ marginBottom: "32px" }}>Service</div>
-          <h1 className="fade-up fade-up-delay-1" style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(32px, 8vw, 48px)", fontWeight: 400, color: "#1A1A1A", margin: "0 0 24px 0", lineHeight: 1.25, maxWidth: "640px" }}>
-            現場を動かし、<br />事業を前に進める。
-          </h1>
-          <p className="fade-up fade-up-delay-2" style={{ fontSize: "17px", color: "#6B6B6B", lineHeight: 1.9, maxWidth: "520px", margin: 0 }}>CUENが提供するのは、単なる「施策の提案」ではありません。現場に入り込み、戦略が実行され、結果につながるまでのプロセスを共につくります。</p>
-        </div>
-      </section>
+        <section style={{ paddingTop: "160px", paddingBottom: "100px" }}>
+          <div className="cuen-container">
+            <div className="section-label fade-up" style={{ marginBottom: "32px" }}>Service</div>
+            <h1 className="fade-up fade-up-delay-1" style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(32px, 8vw, 48px)", fontWeight: 700, color: "var(--cuen-charcoal)", margin: "0 0 24px 0", lineHeight: 1.25, maxWidth: "640px" }}>
+              現場を動かし、<br />事業を前に進める。
+            </h1>
+            <p className="fade-up fade-up-delay-2" style={{ fontSize: "17px", color: "#666", lineHeight: 1.9, maxWidth: "520px", margin: 0 }}>CUENが提供するのは、単なる「施策の提案」ではありません。現場に入り込み、戦略が実行され、結果につながるまでのプロセスを共につくります。</p>
+          </div>
+        </section>
 
-      <section style={{ padding: "40px 0 100px" }}>
-        <div className="cuen-container">
-          <div style={{ display: "flex", flexDirection: "column", gap: "0", borderTop: "1px solid #E8E6E1" }}>
-            {services.map((service, i) => (
-              <div key={service.num} className={`fade-up fade-up-delay-${(i % 3) + 1}`} style={{ padding: "56px 0", borderBottom: "1px solid #E8E6E1" }}>
-                <div style={{ display: "flex", gap: "12px", alignItems: "baseline", marginBottom: "16px" }}>
-                  <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", letterSpacing: "0.12em", color: "#006875" }}>{service.num}</div>
-                  <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "10px", letterSpacing: "0.1em", color: "#9E9B95", textTransform: "uppercase" }}>{service.tag}</div>
+        <section style={{ padding: "40px 0 100px" }}>
+          <div className="cuen-container">
+            <div style={{ display: "flex", flexDirection: "column", gap: "0", borderTop: "1px solid #E8E6E1" }}>
+              {services.map((service, i) => (
+                <div key={service.num} className={`fade-up fade-up-delay-${(i % 3) + 1}`} style={{ padding: "56px 0", borderBottom: "1px solid #E8E6E1" }}>
+                  <div style={{ display: "flex", gap: "12px", alignItems: "baseline", marginBottom: "16px" }}>
+                    <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: "11px", letterSpacing: "0.12em", color: "#006875" }}>{service.num}</div>
+                    <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: "10px", letterSpacing: "0.1em", color: "#9E9B95", textTransform: "uppercase" }}>{service.tag}</div>
+                  </div>
+                  <div>
+                    <h2 style={{ fontFamily: "'Zen Kaku Gothic New', 'Space Grotesk', sans-serif", fontSize: "clamp(20px, 5vw, 26px)", fontWeight: 500, color: "var(--cuen-charcoal)", margin: "0 0 16px 0" }}>{service.name}</h2>
+                    <p style={{ fontSize: "15px", color: "#666", lineHeight: 1.85, margin: "0 0 24px 0", maxWidth: "600px" }}>{service.desc}</p>
+                    <ul style={{ listStyle: "none", padding: 0, margin: "0 0 24px 0", display: "flex", flexWrap: "wrap", gap: "8px" }}>
+                      {service.features.map((f) => (
+                        <li key={f} style={{ fontFamily: "'Zen Kaku Gothic New', 'Space Grotesk', sans-serif", fontSize: "12px", color: "#006875", border: "1px solid rgba(0,104,117,0.3)", padding: "4px 12px", letterSpacing: "0.03em" }}>{f}</li>
+                      ))}
+                    </ul>
+                    {service.link && (
+                      <a href={service.link} target="_blank" rel="noopener noreferrer" style={{ color: "#006875", fontSize: "14px", letterSpacing: "0.06em", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "8px" }}>
+                        {service.linkLabel} <span>&rarr;</span>
+                      </a>
+                    )}
+                  </div>
                 </div>
-                <div>
-                  <h2 style={{ fontFamily: "'DM Sans', 'Noto Sans JP', sans-serif", fontSize: "clamp(20px, 5vw, 26px)", fontWeight: 500, color: "#1A1A1A", margin: "0 0 16px 0" }}>{service.name}</h2>
-                  <p style={{ fontSize: "15px", color: "#6B6B6B", lineHeight: 1.85, margin: "0 0 24px 0", maxWidth: "600px" }}>{service.desc}</p>
-                  <ul style={{ listStyle: "none", padding: 0, margin: "0 0 24px 0", display: "flex", flexWrap: "wrap", gap: "8px" }}>
-                    {service.features.map((f) => (
-                      <li key={f} style={{ fontFamily: "'DM Sans', 'Noto Sans JP', sans-serif", fontSize: "12px", color: "#006875", border: "1px solid rgba(0,104,117,0.3)", padding: "4px 12px", letterSpacing: "0.03em" }}>{f}</li>
-                    ))}
-                  </ul>
-                  {service.link && (
-                    <a href={service.link} target="_blank" rel="noopener noreferrer" style={{ color: "#006875", fontSize: "14px", letterSpacing: "0.06em", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "8px" }}>
-                      {service.linkLabel} <span>&rarr;</span>
-                    </a>
-                  )}
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section style={{ padding: "100px 0", background: "var(--cuen-offwhite)" }}>
+          <div className="cuen-container">
+            <div className="fade-up" style={{ marginBottom: "64px" }}>
+              <div className="section-label" style={{ marginBottom: "24px" }}>Approach</div>
+              <h2 style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(24px, 6vw, 36px)", fontWeight: 700, color: "var(--cuen-charcoal)", margin: 0 }}>成果を出すための、泥臭いアプローチ。</h2>
+            </div>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "0", borderTop: "1px solid #E8E6E1", borderLeft: "1px solid #E8E6E1" }}>
+              {steps.map((step, i) => (
+                <div key={step.num} className={`fade-up fade-up-delay-${i + 1}`} style={{ padding: "40px 28px", borderRight: "1px solid #E8E6E1", borderBottom: "1px solid #E8E6E1" }}>
+                  <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: "11px", letterSpacing: "0.12em", color: "#006875", marginBottom: "20px" }}>{step.num}</div>
+                  <h3 style={{ fontFamily: "'Zen Kaku Gothic New', 'Space Grotesk', sans-serif", fontSize: "17px", fontWeight: 500, color: "var(--cuen-charcoal)", margin: "0 0 12px 0" }}>{step.title}</h3>
+                  <p style={{ fontSize: "14px", color: "#666", lineHeight: 1.85, margin: 0 }}>{step.body}</p>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section style={{ padding: "100px 0", background: "#F7F6F4" }}>
-        <div className="cuen-container">
-          <div className="fade-up" style={{ marginBottom: "64px" }}>
-            <div className="section-label" style={{ marginBottom: "24px" }}>Approach</div>
-            <h2 style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(24px, 6vw, 36px)", fontWeight: 400, color: "#1A1A1A", margin: 0 }}>成果を出すための、泥臭いアプローチ。</h2>
+        <section style={{ padding: "100px 0", background: "#004550", position: "relative", overflow: "hidden" }}>
+          <GrainOverlay />
+          <div className="cuen-container" style={{ textAlign: "center", position: "relative", zIndex: 2 }}>
+            <h2 className="fade-up" style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(24px, 6vw, 36px)", fontWeight: 700, color: "#ffffff", margin: "0 0 24px 0" }}>まずは、現状のモヤモヤをお聞かせください。</h2>
+            <p className="fade-up fade-up-delay-1" style={{ fontSize: "16px", color: "rgba(255,255,255,0.75)", margin: "0 0 40px 0", lineHeight: 1.85 }}>「何から手をつければいいか分からない」という状態でも構いません。</p>
+            <div className="fade-up fade-up-delay-2">
+              <Link href="/contact" className="btn-cuen btn-cuen-white">
+                <span>無料相談・お問い合わせ</span>
+                <span className="btn-arrow" aria-hidden="true"><svg width="16" height="9" viewBox="0 0 18 10" fill="none"><path d="M0 5H16M16 5L11.5 1M16 5L11.5 9" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
+              </Link>
+            </div>
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "0", borderTop: "1px solid #E8E6E1", borderLeft: "1px solid #E8E6E1" }}>
-            {steps.map((step, i) => (
-              <div key={step.num} className={`fade-up fade-up-delay-${i + 1}`} style={{ padding: "40px 28px", borderRight: "1px solid #E8E6E1", borderBottom: "1px solid #E8E6E1" }}>
-                <div style={{ fontFamily: "'DM Mono', monospace", fontSize: "11px", letterSpacing: "0.12em", color: "#006875", marginBottom: "20px" }}>{step.num}</div>
-                <h3 style={{ fontFamily: "'DM Sans', 'Noto Sans JP', sans-serif", fontSize: "17px", fontWeight: 500, color: "#1A1A1A", margin: "0 0 12px 0" }}>{step.title}</h3>
-                <p style={{ fontSize: "14px", color: "#6B6B6B", lineHeight: 1.85, margin: 0 }}>{step.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section style={{ padding: "100px 0", background: "#004550", position: "relative", overflow: "hidden" }}>
-        <GrainOverlay />
-        <div className="cuen-container" style={{ textAlign: "center", position: "relative", zIndex: 2 }}>
-          <h2 className="fade-up" style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(24px, 6vw, 36px)", fontWeight: 400, color: "#ffffff", margin: "0 0 24px 0" }}>まずは、現状のモヤモヤをお聞かせください。</h2>
-          <p className="fade-up fade-up-delay-1" style={{ fontSize: "16px", color: "rgba(255,255,255,0.75)", margin: "0 0 40px 0", lineHeight: 1.85 }}>「何から手をつければいいか分からない」という状態でも構いません。</p>
-          <div className="fade-up fade-up-delay-2">
-            <Link href="/contact" className="btn-cuen btn-cuen-white">
-              <span>無料相談・お問い合わせ</span>
-              <span className="btn-arrow" aria-hidden="true"><svg width="16" height="9" viewBox="0 0 18 10" fill="none"><path d="M0 5H16M16 5L11.5 1M16 5L11.5 9" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
-            </Link>
-          </div>
-        </div>
-      </section>
-
+      </div>
       <Footer />
-    </div>
+    </>
   );
 }

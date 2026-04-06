@@ -1,28 +1,24 @@
 /* =============================================================
-   CUEN Corporate Site — Design System
-   Philosophy: "開いたリング" — Open Ring
-   Brand: Quiet confidence, intellectual warmth, Tokyo minimalism
-   Colors: White × #006875 (Deep Teal) × #1A1A1A
-   Fonts: DM Serif Display (headings) + DM Sans + Noto Sans JP
+   CUEN Corporate Site — Design System v2
+   Brand: Product / Business Company
+   Colors: Teal × Terracotta × Offwhite × Charcoal
+   Fonts: Space Grotesk + Zen Kaku Gothic New
    ============================================================= */
 
 @import "tailwindcss";
 
 :root {
-  /* CUEN Brand Colors */
   --cuen-teal: #006875;
-  --cuen-teal-light: #e6f2f4;
-  --cuen-black: #1A1A1A;
-  --cuen-gray: #6B6B6B;
+  --cuen-terracotta: #C8614A;
+  --cuen-offwhite: #F5F0E8;
+  --cuen-charcoal: #2A2A2A;
+  --cuen-white: #ffffff;
   --cuen-muted: #9E9B95;
   --cuen-border: #E8E6E1;
-  --cuen-bg-warm: #F7F6F4;
 }
 
-/* Base Styles */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
+/* ── Base ── */
+*, *::before, *::after { box-sizing: border-box; }
 
 html {
   scroll-behavior: smooth;
@@ -31,127 +27,71 @@ html {
 }
 
 body {
-  font-family: 'DM Sans', 'Noto Sans JP', sans-serif;
+  font-family: 'Zen Kaku Gothic New', 'Space Grotesk', sans-serif;
   font-size: 16px;
   line-height: 1.85;
-  color: var(--cuen-black);
-  background-color: #ffffff;
+  color: var(--cuen-charcoal);
+  background-color: var(--cuen-offwhite);
   margin: 0;
   padding: 0;
 }
 
-/* Typography */
-.font-serif {
-  font-family: 'DM Serif Display', serif;
+/* ── 4色グラデーション背景アニメーション ── */
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  25%  { background-position: 100% 50%; }
+  50%  { background-position: 100% 0%; }
+  75%  { background-position: 0% 100%; }
+  100% { background-position: 0% 50%; }
 }
 
-/* ─────────────────────────────────────────
-   Typography Scale — 480px Container Optimized
-───────────────────────────────────────── */
-
-.page-h1 {
-  font-family: 'DM Serif Display', serif;
-  font-size: clamp(32px, 8vw, 48px);
-  font-weight: 400;
-  line-height: 1.25;
-  color: var(--cuen-black);
-  margin: 0 0 24px 0;
+.gradient-bg {
+  background: linear-gradient(135deg, #006875, #C8614A, #F5F0E8, #2A2A2A, #006875);
+  background-size: 400% 400%;
+  animation: gradientShift 12s ease infinite;
+  min-height: 100vh;
 }
 
-.page-h2 {
-  font-family: 'DM Serif Display', serif;
-  font-size: clamp(24px, 6vw, 36px);
-  font-weight: 400;
-  line-height: 1.4;
-  color: var(--cuen-black);
-  margin: 0 0 24px 0;
-}
-
-.page-h3 {
-  font-family: 'DM Sans', 'Noto Sans JP', sans-serif;
-  font-size: clamp(16px, 4vw, 20px);
-  font-weight: 500;
-  line-height: 1.5;
-  color: var(--cuen-black);
-  margin: 0 0 16px 0;
-}
-
-.page-body {
-  font-size: 15px;
-  line-height: 1.9;
-  color: var(--cuen-gray);
-}
-
-.page-caption {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  color: var(--cuen-muted);
-}
-
-/* CUEN brand name in headings — match logo font */
-.cuen-brand {
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 500;
-  letter-spacing: 0.04em;
+/* ── Typography ── */
+.font-heading {
+  font-family: 'Space Grotesk', 'Zen Kaku Gothic New', sans-serif;
 }
 
 .font-mono-label {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Space Grotesk', monospace;
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
-/* Scroll Animation */
+.cuen-brand {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+/* ── Scroll Animation ── */
 .fade-up {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
               transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
-.fade-up.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
+.fade-up.visible { opacity: 1; transform: translateY(0); }
 .fade-up-delay-1 { transition-delay: 0.1s; }
 .fade-up-delay-2 { transition-delay: 0.2s; }
 .fade-up-delay-3 { transition-delay: 0.3s; }
 .fade-up-delay-4 { transition-delay: 0.4s; }
 
-/* Hero Reveal — staggered load animation */
 .hero-reveal {
   opacity: 0;
   transform: translateY(28px);
   transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
               transform 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
+.hero-reveal.visible { opacity: 1; transform: translateY(0); }
 
-.hero-reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Open Ring SVG Animation */
-@keyframes drawRing {
-  from { stroke-dashoffset: 600; }
-  to { stroke-dashoffset: 0; }
-}
-
-.ring-draw {
-  stroke-dasharray: 600;
-  stroke-dashoffset: 600;
-  animation: drawRing 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  animation-delay: 0.3s;
-}
-
-/* ─────────────────────────────────────────
-   CUEN Button System — Modern Fill Sweep
-───────────────────────────────────────── */
-
-/* Base */
+/* ── Button System ── */
 .btn-cuen {
   display: inline-flex;
   align-items: center;
@@ -160,7 +100,7 @@ body {
   border: 1px solid var(--cuen-teal);
   color: var(--cuen-teal);
   background: transparent;
-  font-family: 'DM Sans', 'Noto Sans JP', sans-serif;
+  font-family: 'Space Grotesk', 'Zen Kaku Gothic New', sans-serif;
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.08em;
@@ -171,8 +111,6 @@ body {
   border-radius: 2px;
   transition: color 0.38s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
-/* Fill sweep background */
 .btn-cuen::before {
   content: '';
   position: absolute;
@@ -182,27 +120,10 @@ body {
   transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 0;
 }
+.btn-cuen:hover::before { transform: translateX(0); }
+.btn-cuen:hover { color: #ffffff; }
+.btn-cuen > * { position: relative; z-index: 1; }
 
-.btn-cuen:hover::before {
-  transform: translateX(0);
-}
-
-.btn-cuen:hover {
-  color: #ffffff;
-}
-
-/* Text and arrow sit above the sweep */
-.btn-cuen > * {
-  position: relative;
-  z-index: 1;
-}
-
-.btn-cuen > span:not(.btn-arrow) {
-  position: relative;
-  z-index: 1;
-}
-
-/* Arrow icon */
 .btn-arrow {
   display: inline-flex;
   align-items: center;
@@ -211,43 +132,37 @@ body {
   z-index: 1;
   transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
 }
+.btn-cuen:hover .btn-arrow { transform: translateX(4px); }
 
-.btn-cuen:hover .btn-arrow {
-  transform: translateX(4px);
-}
-
-/* ── Filled (primary) variant ── */
+/* Filled */
 .btn-cuen-filled {
   background: var(--cuen-teal);
   color: #ffffff;
   border-color: var(--cuen-teal);
 }
+.btn-cuen-filled::before { background: #004f5c; }
+.btn-cuen-filled:hover { color: #ffffff; }
 
-.btn-cuen-filled::before {
-  background: #004f5c;
-}
-
-.btn-cuen-filled:hover {
-  color: #ffffff;
-}
-
-/* ── White (on dark bg) variant ── */
+/* White (on dark bg) */
 .btn-cuen-white {
   border-color: rgba(255, 255, 255, 0.55);
   color: rgba(255, 255, 255, 0.9);
 }
+.btn-cuen-white::before { background: rgba(255, 255, 255, 0.15); }
+.btn-cuen-white:hover { color: rgba(255, 255, 255, 1); }
 
-.btn-cuen-white::before {
-  background: rgba(255, 255, 255, 0.15);
+/* Terracotta */
+.btn-cuen-terracotta {
+  background: var(--cuen-terracotta);
+  color: #ffffff;
+  border-color: var(--cuen-terracotta);
 }
+.btn-cuen-terracotta::before { background: #b5503a; }
+.btn-cuen-terracotta:hover { color: #ffffff; }
 
-.btn-cuen-white:hover {
-  color: rgba(255, 255, 255, 1);
-}
-
-/* Section Label */
+/* ── Section Label ── */
 .section-label {
-  font-family: 'DM Mono', monospace;
+  font-family: 'Space Grotesk', monospace;
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -256,7 +171,6 @@ body {
   align-items: center;
   gap: 12px;
 }
-
 .section-label::before {
   content: '';
   display: inline-block;
@@ -265,24 +179,15 @@ body {
   background: var(--cuen-teal);
 }
 
-/* Divider */
-.cuen-divider {
-  width: 40px;
-  height: 1px;
-  background: var(--cuen-border);
-  margin: 0;
-}
-
-/* Nav link underline animation */
+/* ── Nav Link ── */
 .nav-link {
   position: relative;
   text-decoration: none;
-  color: var(--cuen-black);
+  color: var(--cuen-charcoal);
   font-size: 13px;
   letter-spacing: 0.06em;
   transition: color 0.2s ease;
 }
-
 .nav-link::after {
   content: '';
   position: absolute;
@@ -293,36 +198,24 @@ body {
   background: var(--cuen-teal);
   transition: width 0.3s ease;
 }
+.nav-link:hover { color: var(--cuen-teal); }
+.nav-link:hover::after { width: 100%; }
 
-.nav-link:hover {
-  color: var(--cuen-teal);
-}
-
-.nav-link:hover::after {
-  width: 100%;
-}
-
-/* Form Styles */
+/* ── Form ── */
 .cuen-input {
   width: 100%;
   padding: 12px 0;
   border: none;
   border-bottom: 1px solid var(--cuen-border);
   background: transparent;
-  font-family: 'DM Sans', 'Noto Sans JP', sans-serif;
+  font-family: 'Zen Kaku Gothic New', 'Space Grotesk', sans-serif;
   font-size: 15px;
-  color: var(--cuen-black);
+  color: var(--cuen-charcoal);
   outline: none;
   transition: border-color 0.2s ease;
 }
-
-.cuen-input:focus {
-  border-bottom-color: var(--cuen-teal);
-}
-
-.cuen-input::placeholder {
-  color: var(--cuen-muted);
-}
+.cuen-input:focus { border-bottom-color: var(--cuen-teal); }
+.cuen-input::placeholder { color: var(--cuen-muted); }
 
 .cuen-textarea {
   width: 100%;
@@ -330,41 +223,36 @@ body {
   border: none;
   border-bottom: 1px solid var(--cuen-border);
   background: transparent;
-  font-family: 'DM Sans', 'Noto Sans JP', sans-serif;
+  font-family: 'Zen Kaku Gothic New', 'Space Grotesk', sans-serif;
   font-size: 15px;
-  color: var(--cuen-black);
+  color: var(--cuen-charcoal);
   outline: none;
   resize: none;
   transition: border-color 0.2s ease;
 }
+.cuen-textarea:focus { border-bottom-color: var(--cuen-teal); }
 
-.cuen-textarea:focus {
-  border-bottom-color: var(--cuen-teal);
-}
-
-/* Responsive container — SP width centered */
+/* ── SPファースト Container ── */
 .cuen-container {
   width: 100%;
-  max-width: 480px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding: 0 20px;
+  margin: 0 auto;
+  max-width: 900px;
 }
-
 @media (min-width: 768px) {
-  .cuen-container {
-    padding-left: 32px;
-    padding-right: 32px;
-  }
+  .cuen-container { padding: 0 40px; }
 }
 
-@media (max-width: 768px) {
-  .mobile-stack {
-    grid-template-columns: 1fr !important;
-  }
+/* ── White Card Wrapper ── */
+.content-card {
+  margin: 0 auto;
+  max-width: 900px;
+  background: var(--cuen-white);
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.08);
+}
 
-  .mobile-hide {
-    display: none !important;
-  }
+/* ── Mobile Stack ── */
+@media (max-width: 768px) {
+  .mobile-stack { grid-template-columns: 1fr !important; }
+  .mobile-hide { display: none !important; }
 }

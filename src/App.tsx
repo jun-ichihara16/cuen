@@ -20,5 +20,9 @@ function Router() {
 }
 
 export default function App() {
-  return <Router />;
+  return (
+    <div className="gradient-bg">
+      <Router />
+    </div>
+  );
 }

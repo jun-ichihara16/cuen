@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import ScrollProgress from "./ScrollProgress";
-import SideMotif from "./SideMotif";
 
-const CUEN_LOGO = "/cuen-logo.png";
+const CUEN_LOGO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663454524748/2kCcYKpUpLm4gHsyVUsYHQ/CUEN_logo_1f6a8884.webp";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -16,9 +14,7 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    setMenuOpen(false);
-  }, [location]);
+  useEffect(() => { setMenuOpen(false); }, [location]);
 
   const navItems = [
     { href: "/about", label: "About" },
@@ -28,114 +24,73 @@ export default function Header() {
   ];
 
   return (
-    <>
-      <header
+    <header
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 100,
+        backgroundColor: scrolled ? "rgba(255,255,255,0.92)" : "rgba(255,255,255,0.8)",
+        backdropFilter: "blur(12px)",
+        WebkitBackdropFilter: "blur(12px)",
+        borderBottom: scrolled ? "1px solid rgba(0,0,0,0.08)" : "1px solid transparent",
+        transition: "background-color 0.3s ease, border-color 0.3s ease",
+      }}
+    >
+      <div
         style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          right: 0,
-          zIndex: 100,
-          backgroundColor: "#ffffff",
-          borderBottom: scrolled ? "1px solid #E8E6E1" : "1px solid transparent",
-          transition: "border-color 0.3s ease",
+          maxWidth: "900px",
+          margin: "0 auto",
+          padding: "0 40px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          height: "72px",
         }}
       >
-        {/* ① Header container — 900px width, NOT 480px */}
-        <div
-          style={{
-            maxWidth: "900px",
-            margin: "0 auto",
-            padding: "0 40px",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            height: "72px",
-          }}
-        >
-          {/* ② Logo — CDN image */}
-          <Link href="/" style={{ textDecoration: "none" }}>
-            <img
-              src={CUEN_LOGO}
-              alt="CUEN"
-              style={{ height: "32px", width: "auto", display: "block" }}
-            />
-          </Link>
+        <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
+          <img src={CUEN_LOGO} alt="CUEN" style={{ height: "28px", width: "auto", display: "block" }} />
+        </Link>
 
-          {/* Desktop Nav */}
-          <nav
-            style={{
-              display: "flex",
-              gap: "40px",
-              alignItems: "center",
-            }}
-            className="desktop-nav"
-          >
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="nav-link"
-                style={{
-                  color: location === item.href ? "#006875" : "#1A1A1A",
-                }}
-              >
-                {item.label}
-              </Link>
-            ))}
-            <Link href="/contact" className="btn-cuen" style={{ padding: "8px 20px", fontSize: "13px" }}>
-              お問い合わせ
+        <nav style={{ display: "flex", gap: "40px", alignItems: "center" }} className="desktop-nav">
+          {navItems.map((item) => (
+            <Link key={item.href} href={item.href} className="nav-link" style={{ color: location === item.href ? "#006875" : "var(--cuen-charcoal)" }}>
+              {item.label}
             </Link>
-          </nav>
+          ))}
+          <Link href="/contact" className="btn-cuen" style={{ padding: "8px 20px", fontSize: "13px" }}>
+            お問い合わせ
+          </Link>
+        </nav>
 
-          {/* Mobile Hamburger */}
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="mobile-menu-btn"
-            style={{
-              background: "none",
-              border: "none",
-              cursor: "pointer",
-              padding: "8px",
-              display: "none",
-              flexDirection: "column",
-              gap: "5px",
-            }}
-            aria-label="メニュー"
-          >
-            <span style={{ display: "block", width: "22px", height: "1px", background: "#1A1A1A", transition: "transform 0.3s ease, opacity 0.3s ease", transform: menuOpen ? "translateY(6px) rotate(45deg)" : "none" }} />
-            <span style={{ display: "block", width: "22px", height: "1px", background: "#1A1A1A", transition: "opacity 0.3s ease", opacity: menuOpen ? 0 : 1 }} />
-            <span style={{ display: "block", width: "22px", height: "1px", background: "#1A1A1A", transition: "transform 0.3s ease, opacity 0.3s ease", transform: menuOpen ? "translateY(-6px) rotate(-45deg)" : "none" }} />
-          </button>
+        <button onClick={() => setMenuOpen(!menuOpen)} className="mobile-menu-btn" style={{ background: "none", border: "none", cursor: "pointer", padding: "8px", display: "none", flexDirection: "column", gap: "5px" }} aria-label="メニュー">
+          <span style={{ display: "block", width: "22px", height: "1px", background: "var(--cuen-charcoal)", transition: "transform 0.3s ease", transform: menuOpen ? "translateY(6px) rotate(45deg)" : "none" }} />
+          <span style={{ display: "block", width: "22px", height: "1px", background: "var(--cuen-charcoal)", transition: "opacity 0.3s ease", opacity: menuOpen ? 0 : 1 }} />
+          <span style={{ display: "block", width: "22px", height: "1px", background: "var(--cuen-charcoal)", transition: "transform 0.3s ease", transform: menuOpen ? "translateY(-6px) rotate(-45deg)" : "none" }} />
+        </button>
+      </div>
+
+      {menuOpen && (
+        <div className="mobile-nav" style={{ background: "rgba(255,255,255,0.95)", backdropFilter: "blur(12px)", borderTop: "1px solid rgba(0,0,0,0.06)", padding: "24px" }}>
+          {navItems.map((item) => (
+            <Link key={item.href} href={item.href} style={{ display: "block", padding: "14px 0", borderBottom: "1px solid rgba(0,0,0,0.06)", fontSize: "15px", color: location === item.href ? "#006875" : "var(--cuen-charcoal)", textDecoration: "none", letterSpacing: "0.04em" }}>
+              {item.label}
+            </Link>
+          ))}
         </div>
+      )}
 
-        {/* Mobile Menu */}
-        {menuOpen && (
-          <div className="mobile-nav" style={{ background: "#ffffff", borderTop: "1px solid #E8E6E1", padding: "24px" }}>
-            {navItems.map((item) => (
-              <Link key={item.href} href={item.href} style={{ display: "block", padding: "14px 0", borderBottom: "1px solid #F0EEEA", fontFamily: "'DM Sans', 'Noto Sans JP', sans-serif", fontSize: "15px", color: location === item.href ? "#006875" : "#1A1A1A", textDecoration: "none", letterSpacing: "0.04em" }}>
-                {item.label}
-              </Link>
-            ))}
-          </div>
-        )}
-
-        <style>{`
-          .desktop-nav { display: flex !important; }
-          .mobile-menu-btn { display: none !important; }
-          .mobile-nav { display: none; }
-          .scroll-progress-wrap, .side-motif-wrap { display: block; }
-          @media (max-width: 768px) {
-            .desktop-nav { display: none !important; }
-            .mobile-menu-btn { display: flex !important; }
-            .mobile-nav { display: block !important; }
-            .scroll-progress-wrap, .side-motif-wrap { display: none !important; }
-          }
-        `}</style>
-      </header>
-
-      <ScrollProgress />
-      <SideMotif />
-    </>
+      <style>{`
+        .desktop-nav { display: flex !important; }
+        .mobile-menu-btn { display: none !important; }
+        .mobile-nav { display: none; }
+        @media (max-width: 768px) {
+          .desktop-nav { display: none !important; }
+          .mobile-menu-btn { display: flex !important; }
+          .mobile-nav { display: block !important; }
+        }
+      `}</style>
+    </header>
   );
 }
