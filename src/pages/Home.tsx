@@ -88,7 +88,7 @@ export default function Home() {
         <div className="content-card" style={{ position: "relative", zIndex: 3 }}>
 
           {/* ── Our Philosophy ── */}
-          <section style={{ paddingTop: "60px", paddingBottom: "100px", background: "var(--cuen-offwhite)" }}>
+          <section style={{ paddingTop: "60px", paddingBottom: "40px", background: "var(--cuen-offwhite)" }}>
             <div className="cuen-container">
               <div className="section-label fade-up" style={{ marginBottom: "32px" }}>Our Philosophy</div>
               <h2 className="fade-up fade-up-delay-1" style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(22px, 4vw, 32px)", fontWeight: 700, lineHeight: 1.4, color: "var(--cuen-charcoal)", margin: "0 0 24px 0", wordBreak: "keep-all" }}>
@@ -101,19 +101,18 @@ export default function Home() {
                 CUENについて詳しく <span>&rarr;</span>
               </Link>
             </div>
+            {/* イラスト — セクション右下に配置 */}
+            <div className="fade-up" style={{ display: "flex", justifyContent: "flex-end", marginTop: "-40px", paddingRight: "24px" }}>
+              <img
+                src="/cuen-fv-illust.png"
+                alt=""
+                style={{ width: "min(50%, 240px)", height: "auto", display: "block", opacity: 0.85 }}
+              />
+            </div>
           </section>
 
-          {/* イラスト — PhilosophyとServiceの間 */}
-          <div className="fade-up" style={{ display: "flex", justifyContent: "center", padding: "0 24px", background: "var(--cuen-offwhite)" }}>
-            <img
-              src="/cuen-fv-illust.png"
-              alt=""
-              style={{ width: "min(80%, 380px)", height: "auto", display: "block" }}
-            />
-          </div>
-
           {/* ── Services ── */}
-          <section style={{ padding: "100px 0" }}>
+          <section style={{ padding: "60px 0 100px" }}>
             <div className="cuen-container">
               <div className="fade-up" style={{ marginBottom: "48px" }}>
                 <div className="section-label" style={{ marginBottom: "20px" }}>Service</div>
