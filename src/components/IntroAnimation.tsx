@@ -5,8 +5,8 @@ export default function IntroAnimation() {
   const [phase, setPhase] = useState(0);
   const canvasRef = useRef<HTMLDivElement>(null);
 
-  // phase 0: 揺らぎのみ (0〜800ms)
-  // phase 1: Cマーク中央にフェードイン (800ms〜)
+  // phase 0: 濃いティール背景 + 揺らぎ (0〜800ms)
+  // phase 1: 白Cマーク中央にフェードイン (800ms〜)
   // phase 2: Cが左にスライド + UEN出現 (1600ms〜)
   // phase 3: 全体フェードアウト (2800ms〜)
   // phase 4: 完全非表示 (3600ms〜)
@@ -19,7 +19,7 @@ export default function IntroAnimation() {
     return () => { clearTimeout(t0); clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
   }, []);
 
-  // Three.js 揺らぎ背景
+  // Three.js 揺らぎ背景 — 濃いティールの上に明るいティールの揺らぎ
   useEffect(() => {
     const container = canvasRef.current;
     if (!container) return;
@@ -41,18 +41,18 @@ export default function IntroAnimation() {
         void main() {
           vec2 uv = gl_FragCoord.xy / u_resolution;
           float aspect = u_resolution.x / u_resolution.y;
-          vec2 center = vec2(0.5 * aspect, 0.5);
           vec2 p = vec2(uv.x * aspect, uv.y);
           float alpha = 0.0;
-          for (int i = 0; i < 3; i++) {
+          for (int i = 0; i < 4; i++) {
             float fi = float(i);
-            float cx = center.x + 0.08 * sin(u_time * 0.5 + fi * 2.1);
-            float cy = center.y + 0.1 * cos(u_time * 0.4 + fi * 1.7);
+            float cx = 0.5 * aspect + 0.15 * sin(u_time * 0.3 + fi * 1.8);
+            float cy = 0.5 + 0.12 * cos(u_time * 0.25 + fi * 2.1);
             float d = distance(p, vec2(cx, cy));
-            alpha += 0.3 * smoothstep(0.18, 0.0, d);
+            alpha += 0.2 * smoothstep(0.25, 0.0, d);
           }
-          alpha = clamp(alpha, 0.0, 0.5);
-          gl_FragColor = vec4(0.0, 0.408, 0.459, alpha);
+          alpha = clamp(alpha, 0.0, 0.4);
+          // 明るいティール/白みがかったハイライト
+          gl_FragColor = vec4(0.15, 0.55, 0.6, alpha);
         }
       `,
       uniforms: {
@@ -69,7 +69,7 @@ export default function IntroAnimation() {
     const animate = () => {
       material.uniforms.u_time.value += 0.016;
       renderer.render(scene, camera);
-      renderer.domElement.style.filter = "blur(60px)";
+      renderer.domElement.style.filter = "blur(80px)";
       animId = requestAnimationFrame(animate);
     };
     animate();
@@ -86,18 +86,13 @@ export default function IntroAnimation() {
 
   if (phase >= 4) return null;
 
-  // Phase 1: Cマークが中央 → Phase 2: ロゴ全体が中央（Cが左へ移動）
-  // ロゴ全体の幅に対してCマーク部分は約33%
-  // Phase 1ではロゴを右にオフセットしてCマークが中央に来るようにする
-  // Phase 2でオフセット0に戻し、UEN部分をclip-pathで表示
-
   return (
     <div
       style={{
         position: "fixed",
         inset: 0,
         zIndex: 9999,
-        backgroundColor: "#ffffff",
+        backgroundColor: "#004550",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -113,33 +108,29 @@ export default function IntroAnimation() {
           position: "absolute",
           inset: 0,
           pointerEvents: "none",
-          opacity: phase >= 3 ? 0 : 0.6,
+          opacity: phase >= 3 ? 0 : 0.7,
           transition: "opacity 0.8s ease",
         }}
       />
 
-      {/* ロゴ — 位置オフセット + clip-path で制御 */}
+      {/* 白ロゴ — 位置オフセット + clip-path で制御 */}
       <div
         style={{
           position: "relative",
           zIndex: 1,
-          // Phase 1: Cマークを画面中央に持ってくるため右にオフセット
-          // Phase 2: オフセット0に戻す（ロゴ全体が中央）
           transform: phase >= 2 ? "translateX(0)" : "translateX(33%)",
           transition: "transform 0.8s cubic-bezier(0.22, 1, 0.36, 1)",
         }}
       >
         <img
-          src="/cuen-logo.png"
+          src="/cuen-logo-white.png"
           alt="CUEN"
           style={{
-            height: "60px",
+            height: "80px",
             width: "auto",
             display: "block",
             opacity: phase >= 1 ? 1 : 0,
             transform: phase >= 1 ? "scale(1)" : "scale(0.85)",
-            // Phase 1: Cマーク部分（左33%）だけ表示
-            // Phase 2: 全体表示
             clipPath: phase >= 2 ? "inset(0 0 0 0)" : "inset(0 67% 0 0)",
             transition: "opacity 0.7s ease, transform 0.7s ease, clip-path 0.8s cubic-bezier(0.22, 1, 0.36, 1)",
           }}
