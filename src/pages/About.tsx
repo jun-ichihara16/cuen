@@ -88,25 +88,37 @@ export default function About() {
 
         <section style={{ padding: "100px 0", background: "var(--cuen-offwhite)" }}>
           <div className="cuen-container">
-            <div>
-              <div className="fade-up" style={{ marginBottom: "48px" }}>
-                <div style={{ overflow: "hidden", aspectRatio: "4/3", width: "100%", borderRadius: "20px" }}>
-                  <img src={CEO_IMAGE} alt="市原 純" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", filter: "grayscale(10%)" }} />
-                </div>
+            <div className="section-label fade-up" style={{ marginBottom: "32px" }}>Representative</div>
+
+            {/* 2カラム：写真左 + 名前・経歴右 */}
+            <div className="fade-up fade-up-delay-1" style={{ display: "grid", gridTemplateColumns: "180px 1fr", gap: "32px", alignItems: "start" }}>
+              {/* 写真 */}
+              <div style={{ width: "180px", height: "220px", borderRadius: "20px", overflow: "hidden", flexShrink: 0 }}>
+                <img src={CEO_IMAGE} alt="市原 純" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }} />
               </div>
+
+              {/* 名前 + 経歴 */}
               <div>
-                <div className="section-label fade-up" style={{ marginBottom: "32px" }}>Representative</div>
-                <h2 className="fade-up fade-up-delay-1" style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(22px, 4vw, 32px)", fontWeight: 700, lineHeight: 1.4, color: "var(--cuen-charcoal)", margin: "0 0 4px 0" }}>市原 純</h2>
-                <p className="fade-up fade-up-delay-1" style={{ fontFamily: "'Space Grotesk', monospace", fontSize: "11px", letterSpacing: "0.1em", color: "#9E9B95", margin: "0 0 32px 0", textTransform: "uppercase" }}>Jun Ichihara — 代表社員</p>
-                <div className="fade-up fade-up-delay-2" style={{ fontSize: "clamp(14px, 1.8vw, 16px)", color: "#666", lineHeight: 1.8 }}>
-                  <p style={{ margin: "0 0 20px 0" }}>東京を拠点に、店舗マーケティング・ブランド戦略・運営支援・プロジェクトコンサルティングを手がける。</p>
-                  <p style={{ margin: "0 0 20px 0" }}>「なぜ売れないのか」「なぜ伝わらないのか」——その問いを起点に、数多くのビジネスの現場で課題の本質を掘り下げてきた。</p>
-                  <p style={{ margin: "0 0 20px 0" }}>飲食店の経営経験も活かし、現場感覚を持つマーケターとして、戦略立案から実行・改善までを一気通貫で支援する。</p>
+                <h2 style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(22px, 4vw, 28px)", fontWeight: 700, lineHeight: 1.3, color: "var(--cuen-charcoal)", margin: "0 0 4px 0" }}>市原 純</h2>
+                <p style={{ fontFamily: "'Space Grotesk', monospace", fontSize: "11px", letterSpacing: "0.1em", color: "#9E9B95", margin: "0 0 20px 0", textTransform: "uppercase" }}>Jun Ichihara — 代表社員</p>
+                <div style={{ fontSize: "clamp(13px, 1.6vw, 15px)", color: "#666", lineHeight: 1.8 }}>
+                  <p style={{ margin: "0 0 12px 0" }}>東京を拠点に、店舗マーケティング・ブランド戦略・運営支援・プロジェクトコンサルティングを手がける。</p>
+                  <p style={{ margin: "0 0 12px 0" }}>「なぜ売れないのか」「なぜ伝わらないのか」——その問いを起点に、数多くのビジネスの現場で課題の本質を掘り下げてきた。</p>
+                  <p style={{ margin: "0 0 12px 0" }}>飲食店の経営経験も活かし、現場感覚を持つマーケターとして、戦略立案から実行・改善までを一気通貫で支援する。</p>
                   <p style={{ margin: 0 }}>2024年9月、合同会社CUENを設立。AIを活用した新しいサービス「AI KANJI」を開発・展開中。</p>
                 </div>
               </div>
             </div>
           </div>
+
+          {/* SP版: グリッドを縦積みに */}
+          <style>{`
+            @media (max-width: 480px) {
+              .cuen-container > div[style*="grid-template-columns"] {
+                grid-template-columns: 1fr !important;
+              }
+            }
+          `}</style>
         </section>
 
         <section style={{ background: "var(--cuen-teal)", borderRadius: "24px", margin: "0 16px 60px", padding: "48px 24px", textAlign: "center", position: "relative", overflow: "hidden" }}>
