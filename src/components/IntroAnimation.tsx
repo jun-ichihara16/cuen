@@ -123,7 +123,7 @@ export default function IntroAnimation() {
             height: "56px",
             width: "auto",
             display: "block",
-            marginRight: "-6px",
+            marginRight: "-18px",
             opacity: phase >= 1 ? 1 : 0,
             transform: phase >= 1 ? "scale(1)" : "scale(0.8)",
             transition: "opacity 0.7s ease, transform 0.7s ease",
