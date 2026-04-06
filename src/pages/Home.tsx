@@ -15,7 +15,7 @@ export default function Home() {
     // ヒーロー要素のスタガーアニメーション — イントロ終了後（2.8秒後）に開始
     const heroEls = document.querySelectorAll(".hero-reveal");
     heroEls.forEach((el, i) => {
-      setTimeout(() => el.classList.add("visible"), 2800 + 200 + i * 160);
+      setTimeout(() => el.classList.add("visible"), 3600 + 200 + i * 160);
     });
 
     const observer = new IntersectionObserver(
