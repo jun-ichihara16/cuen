@@ -84,7 +84,7 @@ export default function Service() {
               <div className="section-label" style={{ marginBottom: "24px" }}>Approach</div>
               <h2 style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(22px, 4vw, 32px)", fontWeight: 700, lineHeight: 1.4, color: "var(--cuen-charcoal)", margin: 0 }}>成果を出すための、泥臭いアプローチ。</h2>
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "16px" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "16px" }}>
               {steps.map((step, i) => (
                 <div key={step.num} className={`fade-up fade-up-delay-${i + 1}`} style={{ background: "#ffffff", borderRadius: "20px", padding: "28px 24px", boxShadow: "0 2px 16px rgba(0,0,0,0.06)", border: "none", transition: "transform 0.2s ease, box-shadow 0.2s ease" }}
                   onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.transform = "translateY(-4px)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 32px rgba(0,0,0,0.10)"; }}
