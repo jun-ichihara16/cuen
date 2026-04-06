@@ -3,8 +3,9 @@ import { Link } from "wouter";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import WaveBackground from "../components/WaveBackground";
+import IntroAnimation from "../components/IntroAnimation";
 
-const CUEN_LOGO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663454524748/2kCcYKpUpLm4gHsyVUsYHQ/CUENlogo_75384780.png";
+const CUEN_LOGO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663454524748/2kCcYKpUpLm4gHsyVUsYHQ/CUEN_logo_1f6a8884.webp";
 const CEO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663454524748/2kCcYKpUpLm4gHsyVUsYHQ/jun-ichihara_a82a7119.png";
 
 export default function Home() {
@@ -48,6 +49,16 @@ export default function Home() {
 
   return (
     <div style={{ background: "#ffffff", minHeight: "100vh" }}>
+      {!introComplete && (
+        <IntroAnimation onComplete={() => setIntroComplete(true)} />
+      )}
+      <div
+        style={{
+          opacity: introComplete ? 1 : 0,
+          transition: "opacity 0.5s ease",
+          transitionDelay: "0.1s",
+        }}
+      >
       <Header />
 
       {/* ── Hero ── */}
@@ -282,6 +293,7 @@ export default function Home() {
       </section>
 
       <Footer />
+      </div>
     </div>
   );
 }
