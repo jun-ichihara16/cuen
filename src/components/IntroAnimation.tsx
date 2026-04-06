@@ -97,10 +97,28 @@ export default function IntroAnimation() {
         alignItems: "center",
         justifyContent: "center",
         opacity: phase >= 3 ? 0 : 1,
-        transform: phase >= 3 ? "scale(0.96)" : "scale(1)",
-        transition: "opacity 0.8s ease, transform 0.8s ease",
+        transform: phase >= 3 ? "translateY(-100%)" : "translateY(0)",
+        transition: "opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1)",
       }}
     >
+      {/* ざらつきノイズ */}
+      <svg style={{ position: "absolute", width: 0, height: 0 }}>
+        <filter id="grain">
+          <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
+          <feColorMatrix type="saturate" values="0" />
+        </filter>
+      </svg>
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          opacity: 0.12,
+          filter: "url(#grain)",
+          pointerEvents: "none",
+          zIndex: 1,
+        }}
+      />
+
       {/* 揺らぎ背景 */}
       <div
         ref={canvasRef}
