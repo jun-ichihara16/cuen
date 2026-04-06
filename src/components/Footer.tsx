@@ -22,14 +22,14 @@ export default function Footer() {
           <div
             style={{
               display: "flex",
-              justifyContent: "space-between",
-              alignItems: "flex-start",
-              flexWrap: "wrap",
+              flexDirection: "column",
+              alignItems: "center",
               gap: "24px",
+              textAlign: "center",
             }}
           >
             {/* Brand */}
-            <div>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
               <Link href="/" style={{ textDecoration: "none" }}>
                 <img
                   src="/cuen-logo.png"
@@ -61,6 +61,7 @@ export default function Footer() {
                 display: "flex",
                 gap: "32px",
                 flexWrap: "wrap",
+                justifyContent: "center",
               }}
             >
               {[
@@ -96,7 +97,7 @@ export default function Footer() {
           <div
             style={{
               display: "flex",
-              justifyContent: "space-between",
+              justifyContent: "center",
               alignItems: "center",
               flexWrap: "wrap",
               gap: "12px",
