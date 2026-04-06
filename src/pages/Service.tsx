@@ -64,7 +64,7 @@ export default function Service() {
                       ))}
                     </ul>
                     {service.num === "01" && (
-                      <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663454524748/2kCcYKpUpLm4gHsyVUsYHQ/illust_sample_planning-MeTpxbbNohSw8dojqgmwv9.webp" alt="" style={{ width: "100%", maxWidth: "280px", height: "auto", display: "block", margin: "16px auto 0" }} />
+                      <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663454524748/2kCcYKpUpLm4gHsyVUsYHQ/illust_sample_planning-MeTpxbbNohSw8dojqgmwv9.webp" alt="" style={{ width: "100%", maxWidth: "160px", height: "auto", display: "block", margin: "16px auto 0" }} />
                     )}
                     {service.link && (
                       <a href={service.link} target="_blank" rel="noopener noreferrer" style={{ color: "#006875", fontSize: "14px", letterSpacing: "0.06em", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "8px" }}>
