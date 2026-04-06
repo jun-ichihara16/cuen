@@ -1,16 +1,26 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const C_LOGO = "/favicon.png";
 
 export default function IntroAnimation({ onComplete }: { onComplete: () => void }) {
-  const [phase, setPhase] = useState<"c-in" | "uen-in" | "out" | "done">("c-in");
+  const [phase, setPhase] = useState<"idle" | "c-in" | "uen-in" | "out" | "done">("idle");
+  const onCompleteRef = useRef(onComplete);
+  onCompleteRef.current = onComplete;
 
   useEffect(() => {
+    // Start immediately
+    requestAnimationFrame(() => setPhase("c-in"));
+
+    // Phase 1: 600ms — Cマーク表示完了、UENスライドイン開始
     const t1 = setTimeout(() => setPhase("uen-in"), 600);
+
+    // Phase 2: 1800ms — 全体フェードアウト開始
     const t2 = setTimeout(() => setPhase("out"), 1800);
+
+    // Phase 3: 2500ms — 完了
     const t3 = setTimeout(() => {
       setPhase("done");
-      onComplete();
+      onCompleteRef.current();
     }, 2500);
 
     return () => {
@@ -18,9 +28,13 @@ export default function IntroAnimation({ onComplete }: { onComplete: () => void 
       clearTimeout(t2);
       clearTimeout(t3);
     };
-  }, [onComplete]);
+  }, []); // 空の依存配列 — マウント時に1回だけ実行
 
   if (phase === "done") return null;
+
+  const showC = phase === "c-in" || phase === "uen-in" || phase === "out";
+  const showUEN = phase === "uen-in" || phase === "out";
+  const isOut = phase === "out";
 
   return (
     <div
@@ -32,32 +46,31 @@ export default function IntroAnimation({ onComplete }: { onComplete: () => void 
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        opacity: phase === "out" ? 0 : 1,
-        transition: phase === "out" ? "opacity 0.7s ease, transform 0.7s ease" : "none",
-        transform: phase === "out" ? "scale(0.97)" : "scale(1)",
+        opacity: isOut ? 0 : 1,
+        transition: isOut ? "opacity 0.7s ease, transform 0.7s ease" : "none",
+        transform: isOut ? "scale(0.97)" : "scale(1)",
         pointerEvents: "none",
       }}
     >
       <div style={{ display: "flex", alignItems: "center", gap: "0px" }}>
-        {/* Cマーク */}
+        {/* Cマーク — フェードイン */}
         <div
           style={{
-            opacity: phase === "c-in" ? 0 : 1,
-            transform: phase === "c-in" ? "scale(0.85)" : "scale(1)",
-            transition: "opacity 0.5s ease, transform 0.5s ease",
-            transitionDelay: "0.05s",
+            opacity: showC ? 1 : 0,
+            transform: showC ? "scale(1)" : "scale(0.85)",
+            transition: "opacity 0.6s ease, transform 0.6s ease",
           }}
         >
           <img src={C_LOGO} alt="" style={{ height: "56px", width: "auto", display: "block" }} />
         </div>
 
-        {/* UEN テキスト */}
+        {/* UEN テキスト — 右からスライドイン */}
         <div
           style={{
             overflow: "hidden",
-            maxWidth: phase === "uen-in" || phase === "out" ? "240px" : "0px",
-            opacity: phase === "uen-in" || phase === "out" ? 1 : 0,
-            transition: "max-width 0.55s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s ease",
+            maxWidth: showUEN ? "240px" : "0px",
+            opacity: showUEN ? 1 : 0,
+            transition: "max-width 0.6s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.5s ease",
           }}
         >
           <span
@@ -70,8 +83,8 @@ export default function IntroAnimation({ onComplete }: { onComplete: () => void 
               display: "block",
               whiteSpace: "nowrap",
               paddingLeft: "6px",
-              transform: phase === "uen-in" || phase === "out" ? "translateX(0)" : "translateX(20px)",
-              transition: "transform 0.55s cubic-bezier(0.22, 1, 0.36, 1)",
+              transform: showUEN ? "translateX(0)" : "translateX(20px)",
+              transition: "transform 0.6s cubic-bezier(0.22, 1, 0.36, 1)",
             }}
           >
             UEN

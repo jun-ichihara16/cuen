@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { Link } from "wouter";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -50,7 +50,7 @@ export default function Home() {
   return (
     <div style={{ background: "#ffffff", minHeight: "100vh" }}>
       {!introComplete && (
-        <IntroAnimation onComplete={() => setIntroComplete(true)} />
+        <IntroAnimation onComplete={useCallback(() => setIntroComplete(true), [])} />
       )}
       <div
         style={{
