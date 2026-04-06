@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect } from "react";
 import { Link } from "wouter";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -9,18 +9,13 @@ const CUEN_LOGO = "/cuen-logo.png";
 const CEO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663454524748/2kCcYKpUpLm4gHsyVUsYHQ/jun-ichihara_a82a7119.png";
 
 export default function Home() {
-  const [introComplete, setIntroComplete] = useState(false);
-
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    const introTimer = setTimeout(() => {
-      setIntroComplete(true);
-    }, 800);
-
+    // ヒーロー要素のスタガーアニメーション — イントロ終了後（2.8秒後）に開始
     const heroEls = document.querySelectorAll(".hero-reveal");
     heroEls.forEach((el, i) => {
-      setTimeout(() => el.classList.add("visible"), 800 + 200 + i * 160);
+      setTimeout(() => el.classList.add("visible"), 2800 + 200 + i * 160);
     });
 
     const observer = new IntersectionObserver(
@@ -35,7 +30,6 @@ export default function Home() {
     elements.forEach((el) => observer.observe(el));
 
     return () => {
-      clearTimeout(introTimer);
       observer.disconnect();
     };
   }, []);
@@ -49,16 +43,8 @@ export default function Home() {
 
   return (
     <div style={{ background: "#ffffff", minHeight: "100vh" }}>
-      {!introComplete && (
-        <IntroAnimation onComplete={useCallback(() => setIntroComplete(true), [])} />
-      )}
-      <div
-        style={{
-          opacity: introComplete ? 1 : 0,
-          transition: "opacity 0.5s ease",
-          transitionDelay: "0.1s",
-        }}
-      >
+      <IntroAnimation />
+      <div>
       <Header />
 
       {/* ── Hero ── */}
@@ -77,14 +63,8 @@ export default function Home() {
 
         {/* ④ paddingBottom: 120px to avoid SCROLL overlap */}
         <div className="cuen-container" style={{ position: "relative", zIndex: 1, paddingTop: "80px", paddingBottom: "120px" }}>
-          <div
-            style={{
-              maxWidth: "640px",
-              opacity: introComplete ? 1 : 0,
-              transform: introComplete ? 'translateY(0)' : 'translateY(28px)',
-              transition: 'opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1)',
-            }}
-          >
+          <div style={{ maxWidth: "640px" }}>
+
             {/* ② Hero Logo — filter なし（白背景） */}
             <div className="hero-reveal" style={{ marginBottom: "32px" }}>
               <img
