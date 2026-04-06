@@ -61,27 +61,24 @@ export default function Home() {
       <Header />
       <div style={{ opacity: introComplete ? 1 : 0, transition: "opacity 0.5s ease", transitionDelay: "0.1s" }}>
 
-        {/* ── Hero — グラデーション背景（イントロから引き継ぎ）── */}
-        <section style={{
-          minHeight: "100vh",
-          display: "flex",
-          alignItems: "center",
-          paddingTop: "72px",
-          background: "linear-gradient(135deg, #006875 0%, #004f5c 25%, #1a7a8a 50%, #C8614A 65%, #005f6e 80%, #006875 100%)",
-          backgroundSize: "400% 400%",
-          animation: "gradientShift 16s ease infinite",
-          position: "relative",
-          overflow: "hidden",
-        }}>
-          {/* Grain */}
-          <GrainOverlay />
-          <div className="cuen-container" style={{ paddingTop: "60px", paddingBottom: "60px", position: "relative", zIndex: 2 }}>
-            <h1 className="hero-reveal" style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(28px, 5vw, 40px)", fontWeight: 900, color: "#ffffff", lineHeight: 1.3, margin: "0 0 24px 0", letterSpacing: "-0.01em", wordBreak: "keep-all" }}>
-              つながりを、もっとラクに。<br />もっと楽しく。
-            </h1>
-            <p className="hero-reveal" style={{ fontSize: "clamp(14px, 1.8vw, 16px)", fontWeight: 400, color: "rgba(255,255,255,0.85)", lineHeight: 1.8, margin: "0 0 40px 0", maxWidth: "480px" }}>
-              人と集まることが好きな人の、めんどくさいをなくします。
-            </p>
+        {/* ── Hero + Video + Content — 一体化レイアウト ── */}
+        <div style={{ position: "relative" }}>
+          {/* グラデーション背景（FVからbodyまで連続） */}
+          <div style={{
+            minHeight: "100vh",
+            display: "flex",
+            alignItems: "center",
+            paddingTop: "72px",
+            position: "relative",
+          }}>
+            <GrainOverlay />
+            <div className="cuen-container" style={{ paddingTop: "60px", paddingBottom: "60px", position: "relative", zIndex: 2 }}>
+              <h1 className="hero-reveal" style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(28px, 5vw, 40px)", fontWeight: 900, color: "#ffffff", lineHeight: 1.3, margin: "0 0 24px 0", letterSpacing: "-0.01em", wordBreak: "keep-all" }}>
+                つながりを、もっとラクに。<br />もっと楽しく。
+              </h1>
+              <p className="hero-reveal" style={{ fontSize: "clamp(14px, 1.8vw, 16px)", fontWeight: 400, color: "rgba(255,255,255,0.85)", lineHeight: 1.8, margin: "0 0 40px 0", maxWidth: "480px" }}>
+                人と集まることが好きな人の、めんどくさいをなくします。
+              </p>
               <div className="hero-reveal" style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
                 <Link href="/service" style={{ display: "inline-block", background: "#ffffff", color: "var(--cuen-teal)", fontWeight: 700, fontSize: "15px", padding: "14px 32px", borderRadius: "100px", textDecoration: "none", transition: "transform 0.2s ease", boxShadow: "0 4px 20px rgba(0,0,0,0.15)" }}>
                   サービスを見る
@@ -91,31 +88,42 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-          </section>
+          </div>
 
-        {/* ⑥ 動くイラスト動画 — ヒーローとcontent-cardの「つなぎ」 */}
-        <div style={{ position: "relative", zIndex: 5, marginTop: "-60px", marginBottom: "-120px", pointerEvents: "none" }}>
-          <div style={{ maxWidth: "420px", margin: "0 auto" }}>
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              style={{
-                width: "100%",
-                height: "auto",
-                display: "block",
-              }}
-            >
-              <source src="/cuen-fv-illust.mp4" type="video/mp4" />
-            </video>
+          {/* 白い曲線シェイプ — グラデーションからbodyへの有機的な移行 */}
+          <div style={{ position: "relative", zIndex: 2 }}>
+            {/* 上部の白い波形SVG */}
+            <svg viewBox="0 0 1440 220" preserveAspectRatio="none" style={{ display: "block", width: "100%", height: "120px", marginBottom: "-2px" }}>
+              <path d="M0,220 L0,120 Q360,0 720,80 Q1080,160 1440,60 L1440,220 Z" fill="var(--cuen-offwhite)" />
+            </svg>
+
+            {/* 動画 — 白い曲線空間に浮かぶ */}
+            <div style={{ background: "var(--cuen-offwhite)", padding: "0 0 40px" }}>
+              <div style={{ maxWidth: "400px", margin: "0 auto", position: "relative" }}>
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    display: "block",
+                    borderRadius: "40% 40% 40% 40% / 20% 20% 20% 20%",
+                    overflow: "hidden",
+                  }}
+                >
+                  <source src="/cuen-fv-illust.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
           </div>
         </div>
 
         <div className="content-card" style={{ position: "relative", zIndex: 3 }}>
 
           {/* ── Our Philosophy ── */}
-          <section style={{ paddingTop: "140px", paddingBottom: "100px", background: "var(--cuen-offwhite)" }}>
+          <section style={{ paddingTop: "80px", paddingBottom: "100px", background: "var(--cuen-offwhite)" }}>
             <div className="cuen-container">
               <div className="section-label fade-up" style={{ marginBottom: "32px" }}>Our Philosophy</div>
               <h2 className="fade-up fade-up-delay-1" style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(22px, 4vw, 32px)", fontWeight: 700, lineHeight: 1.4, color: "var(--cuen-charcoal)", margin: "0 0 24px 0", wordBreak: "keep-all" }}>
