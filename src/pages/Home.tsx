@@ -83,20 +83,18 @@ export default function Home() {
             </div>
           </div>
 
-          {/* イラスト — 透過PNG・中央揃え */}
-          <div className="hero-reveal" style={{ position: "relative", zIndex: 2, padding: "32px 0 0", display: "flex", justifyContent: "center" }}>
+          {/* イラスト — 透過PNG・右寄せ */}
+          <div className="hero-reveal" style={{ position: "relative", zIndex: 2, padding: "32px 0 0", display: "flex", justifyContent: "flex-end", maxWidth: "680px", margin: "0 auto" }}>
             <img
               src="/cuen-fv-illust.png"
               alt=""
-              style={{ width: "min(85%, 440px)", height: "auto", display: "block" }}
+              style={{ width: "min(70%, 360px)", height: "auto", display: "block", marginRight: "-20px" }}
             />
           </div>
 
-          {/* グラデーション→白のフェード（境目をなくす） */}
-          <div style={{ height: "120px", background: "linear-gradient(to bottom, transparent, var(--cuen-offwhite))", position: "relative", zIndex: 2 }} />
         </section>
 
-        <div className="content-card" style={{ position: "relative", zIndex: 3, marginTop: "-1px" }}>
+        <div className="content-card" style={{ position: "relative", zIndex: 3 }}>
 
           {/* ── Our Philosophy ── */}
           <section style={{ paddingTop: "60px", paddingBottom: "100px", background: "var(--cuen-offwhite)" }}>

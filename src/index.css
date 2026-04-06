@@ -262,6 +262,8 @@ body {
 
 /* ── White Card Wrapper ── */
 .content-card {
+  max-width: 720px;
+  margin: 0 auto;
   background: var(--cuen-offwhite);
   overflow: hidden;
 }
