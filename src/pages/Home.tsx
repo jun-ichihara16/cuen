@@ -118,7 +118,7 @@ export default function Home() {
               <div className="fade-up" style={{ marginBottom: "48px" }}>
                 <div className="section-label" style={{ marginBottom: "20px" }}>Service</div>
                 <h2 style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(22px, 4vw, 32px)", fontWeight: 700, lineHeight: 1.4, color: "var(--cuen-charcoal)", margin: 0 }}>
-                  現場を動かし、<br />事業を前に進める4つの柱。
+                  つながりと、ビジネスを動かす<br />4つのサービス。
                 </h2>
               </div>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 280px), 1fr))", gap: "16px" }}>
