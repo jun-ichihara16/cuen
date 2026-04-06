@@ -162,16 +162,17 @@ export default function Home() {
             <div className="cuen-container" style={{ position: "relative", zIndex: 1 }}>
               <div className="section-label fade-up" style={{ marginBottom: "20px" }}>Message</div>
               <h2 className="fade-up fade-up-delay-1" style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(22px, 4vw, 32px)", fontWeight: 700, lineHeight: 1.4, color: "var(--cuen-charcoal)", margin: "0 0 24px 0", wordBreak: "keep-all" }}>
-                現場を知るからこそ、<br />描ける戦略がある。
+                人がつながる瞬間に、<br />生きがいを感じてきた。
               </h2>
               <div className="fade-up fade-up-delay-2" style={{ fontSize: "clamp(14px, 1.8vw, 16px)", color: "#666", lineHeight: 1.8 }}>
-                <p style={{ margin: "0 0 16px 0" }}>「なぜ売れないのか」「なぜ伝わらないのか」——その問いを起点に、数多くのビジネスの現場で課題の本質を掘り下げてきました。</p>
-                <p style={{ margin: "0 0 16px 0" }}>私自身、飲食店の経営を経験してきました。だからこそ、机上の空論ではなく、現場が実際に動ける戦略を立て、実行から改善まで泥臭く伴走します。</p>
-                <p style={{ margin: 0 }}>CUENは、クライアントの想いに気づき、前向きな変化のキッカケを生み出し続けるパートナーでありたいと思っています。</p>
+                <p style={{ margin: "0 0 16px 0" }}>誰かの「楽しかった」が生まれる場所には、必ずそれをつくった人がいる。その人の顔を想像するとき、いつも感情が動く感覚がありました。</p>
+                <p style={{ margin: "0 0 16px 0" }}>良い場は、偶然には生まれない。場をつくる人の細やかな気遣いと、参加する人たちの誠実さが重なったとき、はじめてポジティブな機会が生まれる。</p>
+                <p style={{ margin: "0 0 16px 0" }}>CUENは、そのきっかけをつくることを、自分たちの仕事だと思っています。そして同時に、そういう場をつくれる人を、もっと増やしたいとも思っている。</p>
+                <p style={{ margin: "0 0 16px 0" }}>準備、調整、気遣い——誰かのために動ける人ほど、消耗していく現実がある。その「面倒」をなくすことで、その人が本来持っているエネルギーを、もっと大切なことに使えるように。</p>
+                <p style={{ margin: 0 }}>人と人のあいだに生まれるポジティブな機会を、この世界にもっと増やしていくために。CUENは、その役割を担いながら、同じ想いを持つ人のそばで動き続けます。</p>
               </div>
               <div className="fade-up fade-up-delay-3" style={{ marginTop: "24px" }}>
-                <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "16px", fontWeight: 600, color: "var(--cuen-charcoal)", margin: "0 0 4px 0" }}>市原 純</p>
-                <p style={{ fontFamily: "'Space Grotesk', monospace", fontSize: "12px", letterSpacing: "0.1em", color: "var(--cuen-muted)", margin: 0 }}>代表社員 / 合同会社CUEN</p>
+                <p style={{ fontFamily: "'Space Grotesk', monospace", fontSize: "12px", letterSpacing: "0.1em", color: "var(--cuen-muted)", margin: 0 }}>合同会社CUEN 代表</p>
               </div>
             </div>
           </section>
