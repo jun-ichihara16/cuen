@@ -28,84 +28,77 @@ export default function About() {
       <Header />
       <div className="content-card">
 
-        <section style={{ paddingTop: "160px", paddingBottom: "48px", position: "relative", overflow: "hidden" }}>
-          <div className="cuen-container" style={{ position: "relative" }}>
-            <div className="section-label fade-up" style={{ marginBottom: "32px" }}>About</div>
-            <h1 className="fade-up fade-up-delay-1" style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(28px, 5vw, 40px)", fontWeight: 900, color: "var(--cuen-charcoal)", margin: 0, lineHeight: 1.3, maxWidth: "640px", wordBreak: "keep-all" }}>
-              なぜ、<span className="cuen-brand">CUEN</span>は
-              <br />
-              存在するのか。
+        {/* Hero */}
+        <section style={{ paddingTop: "140px", paddingBottom: "32px" }}>
+          <div className="cuen-container">
+            <div className="section-label fade-up" style={{ marginBottom: "24px" }}>About</div>
+            <h1 className="fade-up fade-up-delay-1" style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(28px, 5vw, 40px)", fontWeight: 900, color: "var(--cuen-charcoal)", margin: 0, lineHeight: 1.3, wordBreak: "keep-all" }}>
+              なぜ、<span className="cuen-brand">CUEN</span>は<br />存在するのか。
             </h1>
           </div>
         </section>
 
-        <section style={{ padding: "40px 0 100px", background: "var(--cuen-offwhite)" }}>
+        {/* Philosophy */}
+        <section style={{ padding: "32px 0 48px", background: "var(--cuen-offwhite)" }}>
           <div className="cuen-container">
-            <div>
-              <div className="fade-up">
-                <div className="section-label" style={{ marginBottom: "24px" }}>Philosophy</div>
-                <div style={{ width: "40px", height: "1px", background: "#E8E6E1", marginBottom: "40px" }} />
-              </div>
-              <h2 className="fade-up fade-up-delay-1" style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(22px, 4vw, 32px)", fontWeight: 700, color: "var(--cuen-charcoal)", margin: "0 0 32px 0", lineHeight: 1.4, wordBreak: "keep-all" }}>
-                人と人のあいだにある<br />可能性に気づき、<br />前向きな変化のキッカケを<br />生み出し続けます。
-              </h2>
-              <div className="fade-up fade-up-delay-2" style={{ fontSize: "clamp(14px, 1.8vw, 16px)", color: "#666", lineHeight: 1.8 }}>
-                <p style={{ margin: "0 0 24px 0" }}>ビジネスを動かすのは、結局のところ「人」です。CUENは、目先の数字や効率だけを追うのではなく、現場で働く人の想いやチームの関係性を何よりも大切にします。</p>
-                <p style={{ margin: "0 0 24px 0" }}>綺麗事だけで事業は伸びません。しかし、想いがなければ人は動きません。一人ひとりの本音に気づき、違いを尊重しながら、組織が前へ進むための具体的な「キッカケ」を作ること。</p>
-                <p style={{ margin: 0 }}>それが、CUENの存在意義です。</p>
-              </div>
+            <div className="fade-up">
+              <div className="section-label" style={{ marginBottom: "16px" }}>Philosophy</div>
+            </div>
+            <h2 className="fade-up fade-up-delay-1" style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(22px, 4vw, 32px)", fontWeight: 700, color: "var(--cuen-charcoal)", margin: "0 0 24px 0", lineHeight: 1.4, wordBreak: "keep-all" }}>
+              人と人のあいだにある<br />可能性に気づき、<br />前向きな変化のキッカケを<br />生み出し続けます。
+            </h2>
+            <div className="fade-up fade-up-delay-2" style={{ fontSize: "clamp(14px, 1.8vw, 16px)", color: "#666", lineHeight: 1.8 }}>
+              <p style={{ margin: "0 0 16px 0" }}>ビジネスを動かすのは、結局のところ「人」です。CUENは、目先の数字や効率だけを追うのではなく、現場で働く人の想いやチームの関係性を何よりも大切にします。</p>
+              <p style={{ margin: "0 0 16px 0" }}>綺麗事だけで事業は伸びません。しかし、想いがなければ人は動きません。一人ひとりの本音に気づき、違いを尊重しながら、組織が前へ進むための具体的な「キッカケ」を作ること。</p>
+              <p style={{ margin: 0 }}>それが、CUENの存在意義です。</p>
             </div>
           </div>
         </section>
 
-        <section style={{ padding: "100px 0" }}>
+        {/* Values */}
+        <section style={{ padding: "48px 0" }}>
           <div className="cuen-container">
-            <div className="fade-up" style={{ marginBottom: "64px" }}>
-              <div className="section-label" style={{ marginBottom: "24px" }}>Values</div>
+            <div className="fade-up" style={{ marginBottom: "32px" }}>
+              <div className="section-label" style={{ marginBottom: "16px" }}>Values</div>
               <h2 style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(22px, 4vw, 32px)", fontWeight: 700, lineHeight: 1.4, color: "var(--cuen-charcoal)", margin: 0 }}>
-                現場を変えるための、4つの行動指針。
+                現場を変えるための、<br />4つの行動指針。
               </h2>
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "16px" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "12px" }}>
               {values.map((v, i) => (
-                <div key={v.num} className={`fade-up fade-up-delay-${i + 1}`} style={{ background: "#ffffff", borderRadius: "20px", padding: "28px 24px", boxShadow: "0 2px 16px rgba(0,0,0,0.06)", border: "none", transition: "transform 0.2s ease, box-shadow 0.2s ease" }}
-                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.transform = "translateY(-4px)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 32px rgba(0,0,0,0.10)"; }}
-                  onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 2px 16px rgba(0,0,0,0.06)"; }}
+                <div key={v.num} className={`fade-up fade-up-delay-${i + 1}`} style={{ background: "#ffffff", borderRadius: "16px", padding: "24px 20px", boxShadow: "0 2px 12px rgba(0,0,0,0.05)", transition: "transform 0.2s ease, box-shadow 0.2s ease" }}
+                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.transform = "translateY(-3px)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 6px 24px rgba(0,0,0,0.08)"; }}
+                  onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 2px 12px rgba(0,0,0,0.05)"; }}
                 >
-                  <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: "11px", letterSpacing: "0.12em", color: "#006875", marginBottom: "20px" }}>{v.num}</div>
-                  <h3 style={{ fontFamily: "'Zen Kaku Gothic New', 'Space Grotesk', sans-serif", fontSize: "clamp(17px, 2.5vw, 22px)", fontWeight: 600, color: "var(--cuen-charcoal)", margin: "0 0 16px 0" }}>{v.title}</h3>
-                  <p style={{ fontSize: "clamp(14px, 1.8vw, 16px)", color: "#666", lineHeight: 1.8, margin: 0 }}>{v.body}</p>
+                  <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: "11px", letterSpacing: "0.12em", color: "#006875", marginBottom: "12px" }}>{v.num}</div>
+                  <h3 style={{ fontSize: "clamp(15px, 2.5vw, 18px)", fontWeight: 600, color: "var(--cuen-charcoal)", margin: "0 0 10px 0", lineHeight: 1.4 }}>{v.title}</h3>
+                  <p style={{ fontSize: "clamp(13px, 1.6vw, 14px)", color: "#666", lineHeight: 1.7, margin: 0 }}>{v.body}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        <section style={{ padding: "100px 0", background: "var(--cuen-offwhite)" }}>
+        {/* Representative */}
+        <section style={{ padding: "48px 0", background: "var(--cuen-offwhite)" }}>
           <div className="cuen-container">
-            <div className="section-label fade-up" style={{ marginBottom: "32px" }}>Representative</div>
-
-            {/* 2カラム：写真+名前（左） + 経歴（右） */}
-            <div className="fade-up fade-up-delay-1 about-ceo-grid" style={{ display: "grid", gridTemplateColumns: "180px 1fr", gap: "32px", alignItems: "start" }}>
-              {/* 写真 + 名前 */}
+            <div className="section-label fade-up" style={{ marginBottom: "24px" }}>Representative</div>
+            <div className="fade-up fade-up-delay-1 about-ceo-grid" style={{ display: "grid", gridTemplateColumns: "160px 1fr", gap: "24px", alignItems: "start" }}>
               <div>
-                <div style={{ width: "180px", height: "220px", borderRadius: "20px", overflow: "hidden", marginBottom: "16px" }}>
+                <div style={{ width: "160px", height: "200px", borderRadius: "16px", overflow: "hidden", marginBottom: "12px" }}>
                   <img src={CEO_IMAGE} alt="市原 純" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }} />
                 </div>
-                <h2 style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "20px", fontWeight: 700, lineHeight: 1.3, color: "var(--cuen-charcoal)", margin: "0 0 4px 0" }}>市原 純</h2>
+                <h2 style={{ fontSize: "18px", fontWeight: 700, color: "var(--cuen-charcoal)", margin: "0 0 2px 0" }}>市原 純</h2>
                 <p style={{ fontFamily: "'Space Grotesk', monospace", fontSize: "10px", letterSpacing: "0.1em", color: "#9E9B95", margin: 0, textTransform: "uppercase" }}>Jun Ichihara — 代表社員</p>
               </div>
-
-              {/* 経歴 */}
-              <div style={{ fontSize: "clamp(13px, 1.6vw, 15px)", color: "#666", lineHeight: 1.8 }}>
-                <p style={{ margin: "0 0 12px 0" }}>東京を拠点に、店舗マーケティング・ブランド戦略・運営支援・プロジェクトコンサルティングを手がける。</p>
-                <p style={{ margin: "0 0 12px 0" }}>「なぜ売れないのか」「なぜ伝わらないのか」——その問いを起点に、数多くのビジネスの現場で課題の本質を掘り下げてきた。</p>
-                <p style={{ margin: "0 0 12px 0" }}>飲食店の経営経験も活かし、現場感覚を持つマーケターとして、戦略立案から実行・改善までを一気通貫で支援する。</p>
+              <div style={{ fontSize: "clamp(13px, 1.6vw, 14px)", color: "#666", lineHeight: 1.8 }}>
+                <p style={{ margin: "0 0 10px 0" }}>東京を拠点に、店舗マーケティング・ブランド戦略・運営支援・プロジェクトコンサルティングを手がける。</p>
+                <p style={{ margin: "0 0 10px 0" }}>「なぜ売れないのか」「なぜ伝わらないのか」——その問いを起点に、数多くのビジネスの現場で課題の本質を掘り下げてきた。</p>
+                <p style={{ margin: "0 0 10px 0" }}>飲食店の経営経験も活かし、現場感覚を持つマーケターとして、戦略立案から実行・改善までを一気通貫で支援する。</p>
                 <p style={{ margin: 0 }}>2024年9月、合同会社CUENを設立。AIを活用した新しいサービス「AI KANJI」を開発・展開中。</p>
               </div>
             </div>
           </div>
-
           <style>{`
             @media (max-width: 480px) {
               .about-ceo-grid { grid-template-columns: 1fr !important; }
@@ -113,14 +106,15 @@ export default function About() {
           `}</style>
         </section>
 
-        <section style={{ background: "var(--cuen-teal)", borderRadius: "24px", margin: "0 16px 60px", padding: "48px 24px", textAlign: "center", position: "relative", overflow: "hidden" }}>
+        {/* CTA */}
+        <section style={{ background: "var(--cuen-teal)", borderRadius: "20px", margin: "0 16px 40px", padding: "40px 24px", textAlign: "center", position: "relative", overflow: "hidden" }}>
           <GrainOverlay />
-          <div style={{ position: "absolute", top: "-40px", right: "-40px", width: "160px", height: "160px", borderRadius: "50%", background: "rgba(200,97,74,0.25)", pointerEvents: "none" }} />
-          <div style={{ position: "absolute", bottom: "-30px", left: "-30px", width: "120px", height: "120px", borderRadius: "50%", background: "rgba(200,97,74,0.15)", pointerEvents: "none" }} />
+          <div style={{ position: "absolute", top: "-40px", right: "-40px", width: "120px", height: "120px", borderRadius: "50%", background: "rgba(200,97,74,0.25)", pointerEvents: "none" }} />
+          <div style={{ position: "absolute", bottom: "-30px", left: "-30px", width: "100px", height: "100px", borderRadius: "50%", background: "rgba(200,97,74,0.15)", pointerEvents: "none" }} />
           <div style={{ position: "relative", zIndex: 2 }}>
-            <h2 className="fade-up" style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(20px, 4vw, 28px)", fontWeight: 700, lineHeight: 1.4, color: "#fff", margin: "0 0 16px 0", wordBreak: "keep-all" }}>まずは、現状のモヤモヤを<br />お聞かせください。</h2>
-            <p className="fade-up fade-up-delay-1" style={{ color: "rgba(255,255,255,0.85)", fontSize: "15px", margin: "0 0 32px 0", lineHeight: 1.7 }}>「何から手をつければいいか分からない」という状態でも構いません。あなたの想いを聞かせていただくところから始めます。</p>
-            <a href="/contact" className="fade-up fade-up-delay-2" style={{ display: "inline-block", background: "var(--cuen-terracotta)", color: "#fff", fontWeight: 700, fontSize: "16px", padding: "14px 36px", borderRadius: "100px", textDecoration: "none", boxShadow: "0 4px 16px rgba(200,97,74,0.4)" }}>
+            <h2 className="fade-up" style={{ fontSize: "clamp(20px, 4vw, 28px)", fontWeight: 700, color: "#fff", margin: "0 0 12px 0", lineHeight: 1.4 }}>まずは、現状のモヤモヤを<br />お聞かせください。</h2>
+            <p className="fade-up fade-up-delay-1" style={{ color: "rgba(255,255,255,0.85)", fontSize: "14px", margin: "0 0 24px 0", lineHeight: 1.7 }}>「何から手をつければいいか分からない」という状態でも構いません。あなたの想いを聞かせていただくところから始めます。</p>
+            <a href="/contact" className="fade-up fade-up-delay-2" style={{ display: "inline-block", background: "var(--cuen-terracotta)", color: "#fff", fontWeight: 700, fontSize: "15px", padding: "12px 32px", borderRadius: "100px", textDecoration: "none", boxShadow: "0 4px 16px rgba(200,97,74,0.4)" }}>
               お問い合わせはこちら
             </a>
           </div>

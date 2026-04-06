@@ -28,9 +28,9 @@ export default function Company() {
       <Header />
       <div className="content-card">
 
-        <section style={{ paddingTop: "160px", paddingBottom: "100px" }}>
+        <section style={{ paddingTop: "140px", paddingBottom: "32px" }}>
           <div className="cuen-container">
-            <div className="section-label fade-up" style={{ marginBottom: "32px" }}>Company</div>
+            <div className="section-label fade-up" style={{ marginBottom: "16px" }}>Company</div>
             <div className="fade-up fade-up-delay-1" style={{ margin: "0 0 24px 0" }}>
               <img
                 src="/cuen-logo.png"
@@ -42,16 +42,16 @@ export default function Company() {
           </div>
         </section>
 
-        <section style={{ padding: "40px 0 120px" }}>
+        <section style={{ padding: "32px 0 48px" }}>
           <div className="cuen-container">
             <div style={{ maxWidth: "800px" }}>
-              <div className="section-label fade-up" style={{ marginBottom: "40px" }}>Company Overview</div>
+              <div className="section-label fade-up" style={{ marginBottom: "16px" }}>Company Overview</div>
               <table className="fade-up fade-up-delay-1" style={{ width: "100%", borderCollapse: "collapse" }}>
                 <tbody>
                   {companyInfo.map((item, i) => (
                     <tr key={item.label} style={{ borderTop: i === 0 ? "1px solid #E8E6E1" : "none", borderBottom: "1px solid #E8E6E1" }}>
-                      <th style={{ fontFamily: "'Space Grotesk', monospace", fontSize: "11px", letterSpacing: "0.1em", color: "#9E9B95", textTransform: "uppercase", fontWeight: 400, textAlign: "left", padding: "24px 40px 24px 0", verticalAlign: "top", whiteSpace: "nowrap", width: "100px" }}>{item.label}</th>
-                      <td style={{ fontFamily: "'Zen Kaku Gothic New', 'Space Grotesk', sans-serif", fontSize: "15px", color: "var(--cuen-charcoal)", padding: "24px 0", lineHeight: 1.85, verticalAlign: "top" }}>{item.value}</td>
+                      <th style={{ fontFamily: "'Space Grotesk', monospace", fontSize: "11px", letterSpacing: "0.1em", color: "#9E9B95", textTransform: "uppercase", fontWeight: 400, textAlign: "left", padding: "16px 40px 16px 0", verticalAlign: "top", whiteSpace: "nowrap", width: "100px" }}>{item.label}</th>
+                      <td style={{ fontFamily: "'Zen Kaku Gothic New', 'Space Grotesk', sans-serif", fontSize: "15px", color: "var(--cuen-charcoal)", padding: "16px 0", lineHeight: 1.85, verticalAlign: "top" }}>{item.value}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -60,14 +60,14 @@ export default function Company() {
           </div>
         </section>
 
-        <section style={{ background: "var(--cuen-teal)", borderRadius: "24px", margin: "0 16px 60px", padding: "48px 24px", textAlign: "center", position: "relative", overflow: "hidden" }}>
+        <section style={{ background: "var(--cuen-teal)", borderRadius: "20px", margin: "0 16px 40px", padding: "40px 24px", textAlign: "center", position: "relative", overflow: "hidden" }}>
           <GrainOverlay />
           <div style={{ position: "absolute", top: "-40px", right: "-40px", width: "160px", height: "160px", borderRadius: "50%", background: "rgba(200,97,74,0.25)", pointerEvents: "none" }} />
           <div style={{ position: "absolute", bottom: "-30px", left: "-30px", width: "120px", height: "120px", borderRadius: "50%", background: "rgba(200,97,74,0.15)", pointerEvents: "none" }} />
           <div style={{ position: "relative", zIndex: 2 }}>
             <h2 className="fade-up" style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(20px, 4vw, 28px)", fontWeight: 700, lineHeight: 1.4, color: "#fff", margin: "0 0 16px 0", wordBreak: "keep-all" }}>まずは、現状のモヤモヤを<br />お聞かせください。</h2>
             <p className="fade-up fade-up-delay-1" style={{ color: "rgba(255,255,255,0.85)", fontSize: "15px", margin: "0 0 32px 0", lineHeight: 1.7 }}>「何から手をつければいいか分からない」という状態でも構いません。あなたの想いを聞かせていただくところから始めます。</p>
-            <a href="/contact" className="fade-up fade-up-delay-2" style={{ display: "inline-block", background: "var(--cuen-terracotta)", color: "#fff", fontWeight: 700, fontSize: "16px", padding: "14px 36px", borderRadius: "100px", textDecoration: "none", boxShadow: "0 4px 16px rgba(200,97,74,0.4)" }}>
+            <a href="/contact" className="fade-up fade-up-delay-2" style={{ display: "inline-block", background: "var(--cuen-terracotta)", color: "#fff", fontWeight: 700, fontSize: "15px", padding: "12px 32px", borderRadius: "100px", textDecoration: "none", boxShadow: "0 4px 16px rgba(200,97,74,0.4)" }}>
               お問い合わせはこちら
             </a>
           </div>

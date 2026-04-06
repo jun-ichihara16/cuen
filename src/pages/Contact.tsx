@@ -54,9 +54,9 @@ export default function Contact() {
       <Header />
       <div className="content-card">
 
-        <section style={{ paddingTop: "160px", paddingBottom: "80px" }}>
+        <section style={{ paddingTop: "140px", paddingBottom: "32px" }}>
           <div className="cuen-container">
-            <div className="section-label fade-up" style={{ marginBottom: "32px" }}>Contact</div>
+            <div className="section-label fade-up" style={{ marginBottom: "16px" }}>Contact</div>
             <h1 className="fade-up fade-up-delay-1" style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(28px, 5vw, 40px)", fontWeight: 900, color: "var(--cuen-charcoal)", margin: "0 0 24px 0", lineHeight: 1.3, wordBreak: "keep-all" }}>まずは、現状のモヤモヤを<br />お聞かせください。</h1>
             <p className="fade-up fade-up-delay-2" style={{ fontSize: "17px", color: "#666", lineHeight: 1.9, maxWidth: "520px", margin: 0 }}>
               「何から手をつければいいか分からない」という状態でも構いません。あなたの想いを聞かせていただくところから、始めます。
@@ -66,7 +66,7 @@ export default function Contact() {
           </div>
         </section>
 
-        <section style={{ padding: "40px 0 160px" }}>
+        <section style={{ padding: "32px 0 80px" }}>
           <div className="cuen-container">
             <div style={{ maxWidth: "640px" }}>
               {submitted ? (
