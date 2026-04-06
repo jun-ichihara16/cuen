@@ -97,7 +97,7 @@ export default function Home() {
               <p className="fade-up fade-up-delay-2" style={{ fontSize: "clamp(14px, 1.8vw, 16px)", color: "#555", lineHeight: 1.8, margin: "0 0 32px 0" }}>
                 数字や効率だけでは、ビジネスは動かない。私たちは、現場で働く一人ひとりの想いや関係性を紐解き、「なぜ売れないのか」「どうすれば伝わるのか」という本質的な課題を解決します。
               </p>
-              <Link href="/about" className="fade-up fade-up-delay-3" style={{ color: "var(--cuen-teal)", fontSize: "14px", letterSpacing: "0.06em", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "8px" }}>
+              <Link href="/about" style={{ color: "var(--cuen-teal)", fontSize: "14px", letterSpacing: "0.06em", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "8px" }}>
                 CUENについて詳しく <span>&rarr;</span>
               </Link>
             </div>
