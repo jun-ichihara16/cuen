@@ -6,8 +6,8 @@ export default function IntroAnimation() {
   const canvasRef = useRef<HTMLDivElement>(null);
 
   // phase 0: 揺らぎのみ (0〜800ms)
-  // phase 1: ロゴ全体フェードイン、clip-pathでCマーク部分だけ見せる (800ms〜)
-  // phase 2: clip-pathを広げてUEN部分も表示 (1600ms〜)
+  // phase 1: Cマーク中央にフェードイン (800ms〜)
+  // phase 2: Cが左にスライド + UEN出現 (1600ms〜)
   // phase 3: 全体フェードアウト (2800ms〜)
   // phase 4: 完全非表示 (3600ms〜)
 
@@ -86,11 +86,10 @@ export default function IntroAnimation() {
 
   if (phase >= 4) return null;
 
-  // ロゴ画像1枚を clip-path で制御
-  // Cマーク部分 ≒ 左35%、全体 = 100%
-  const clipPath = phase >= 2
-    ? "inset(0 0 0 0)"           // 全体表示
-    : "inset(0 65% 0 0)";        // 左35%だけ表示（Cマーク）
+  // Phase 1: Cマークが中央 → Phase 2: ロゴ全体が中央（Cが左へ移動）
+  // ロゴ全体の幅に対してCマーク部分は約33%
+  // Phase 1ではロゴを右にオフセットしてCマークが中央に来るようにする
+  // Phase 2でオフセット0に戻し、UEN部分をclip-pathで表示
 
   return (
     <div
@@ -119,8 +118,17 @@ export default function IntroAnimation() {
         }}
       />
 
-      {/* ロゴ — 1枚画像をclip-pathで制御 */}
-      <div style={{ position: "relative", zIndex: 1 }}>
+      {/* ロゴ — 位置オフセット + clip-path で制御 */}
+      <div
+        style={{
+          position: "relative",
+          zIndex: 1,
+          // Phase 1: Cマークを画面中央に持ってくるため右にオフセット
+          // Phase 2: オフセット0に戻す（ロゴ全体が中央）
+          transform: phase >= 2 ? "translateX(0)" : "translateX(33%)",
+          transition: "transform 0.8s cubic-bezier(0.22, 1, 0.36, 1)",
+        }}
+      >
         <img
           src="/cuen-logo.png"
           alt="CUEN"
@@ -130,8 +138,10 @@ export default function IntroAnimation() {
             display: "block",
             opacity: phase >= 1 ? 1 : 0,
             transform: phase >= 1 ? "scale(1)" : "scale(0.85)",
-            clipPath,
-            transition: "opacity 0.7s ease, transform 0.7s ease, clip-path 0.7s cubic-bezier(0.22, 1, 0.36, 1)",
+            // Phase 1: Cマーク部分（左33%）だけ表示
+            // Phase 2: 全体表示
+            clipPath: phase >= 2 ? "inset(0 0 0 0)" : "inset(0 67% 0 0)",
+            transition: "opacity 0.7s ease, transform 0.7s ease, clip-path 0.8s cubic-bezier(0.22, 1, 0.36, 1)",
           }}
         />
       </div>
