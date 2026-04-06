@@ -153,38 +153,26 @@ export default function Home() {
             </div>
           </section>
 
-          {/* ── CEO Message — photo with overlaid text ── */}
-          <section style={{ padding: "0" }}>
-            <div style={{ position: "relative" }}>
-              {/* Full-width photo */}
-              <div className="fade-up" style={{ width: "100%", minHeight: "500px", overflow: "hidden" }}>
-                <img src={CEO_IMAGE} alt="市原 純" style={{ width: "100%", height: "100%", minHeight: "500px", objectFit: "cover", objectPosition: "center top", filter: "grayscale(10%)" }} />
+          {/* ── CEO Message ── */}
+          <section style={{ padding: "80px 0" }}>
+            <div className="cuen-container">
+              {/* 写真 — コンパクトなサイズ */}
+              <div className="fade-up" style={{ width: "140px", height: "140px", borderRadius: "50%", overflow: "hidden", marginBottom: "32px" }}>
+                <img src={CEO_IMAGE} alt="市原 純" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }} />
               </div>
-              {/* Gradient overlay for text readability */}
-              <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "70%", background: "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.6) 100%)", pointerEvents: "none" }} />
-              {/* Text over photo */}
-              <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "0 0 48px" }}>
-                <div className="cuen-container">
-                  <div className="section-label fade-up" style={{ marginBottom: "16px", color: "rgba(255,255,255,0.7)" }}>
-                    <span style={{ background: "rgba(255,255,255,0.5)", width: "24px", height: "1px", display: "inline-block" }} />
-                    Message
-                  </div>
-                  <h2 className="fade-up fade-up-delay-1" style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(22px, 4vw, 32px)", fontWeight: 700, lineHeight: 1.4, color: "#ffffff", margin: "0 0 4px 0" }}>
-                    市原 純
-                  </h2>
-                  <p className="fade-up fade-up-delay-2" style={{ fontFamily: "'Space Grotesk', monospace", fontSize: "12px", letterSpacing: "0.1em", color: "rgba(255,255,255,0.6)", margin: 0 }}>代表社員 / 合同会社CUEN</p>
-                </div>
-              </div>
-            </div>
-            {/* Text below photo */}
-            <div className="cuen-container" style={{ padding: "48px 24px 80px" }}>
-              <h2 className="fade-up" style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(22px, 4vw, 32px)", fontWeight: 700, lineHeight: 1.4, color: "var(--cuen-charcoal)", margin: "0 0 24px 0", wordBreak: "keep-all" }}>
+
+              <div className="section-label fade-up" style={{ marginBottom: "20px" }}>Message</div>
+              <h2 className="fade-up fade-up-delay-1" style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(22px, 4vw, 32px)", fontWeight: 700, lineHeight: 1.4, color: "var(--cuen-charcoal)", margin: "0 0 24px 0", wordBreak: "keep-all" }}>
                 現場を知るからこそ、<br />描ける戦略がある。
               </h2>
-              <div className="fade-up fade-up-delay-1" style={{ fontSize: "clamp(14px, 1.8vw, 16px)", color: "#666", lineHeight: 1.8 }}>
+              <div className="fade-up fade-up-delay-2" style={{ fontSize: "clamp(14px, 1.8vw, 16px)", color: "#666", lineHeight: 1.8 }}>
                 <p style={{ margin: "0 0 16px 0" }}>「なぜ売れないのか」「なぜ伝わらないのか」——その問いを起点に、数多くのビジネスの現場で課題の本質を掘り下げてきました。</p>
                 <p style={{ margin: "0 0 16px 0" }}>私自身、飲食店の経営を経験してきました。だからこそ、机上の空論ではなく、現場が実際に動ける戦略を立て、実行から改善まで泥臭く伴走します。</p>
                 <p style={{ margin: 0 }}>CUENは、クライアントの想いに気づき、前向きな変化のキッカケを生み出し続けるパートナーでありたいと思っています。</p>
+              </div>
+              <div className="fade-up fade-up-delay-3" style={{ marginTop: "24px" }}>
+                <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "16px", fontWeight: 600, color: "var(--cuen-charcoal)", margin: "0 0 4px 0" }}>市原 純</p>
+                <p style={{ fontFamily: "'Space Grotesk', monospace", fontSize: "12px", letterSpacing: "0.1em", color: "var(--cuen-muted)", margin: 0 }}>代表社員 / 合同会社CUEN</p>
               </div>
             </div>
           </section>
