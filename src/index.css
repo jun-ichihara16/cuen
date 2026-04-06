@@ -264,8 +264,8 @@ body {
 .content-card {
   margin: 0 auto;
   max-width: 720px;
-  background: var(--cuen-white);
-  box-shadow: 0 0 60px rgba(0, 0, 0, 0.08);
+  background: var(--cuen-offwhite);
+  box-shadow: none;
   overflow: hidden;
 }
 

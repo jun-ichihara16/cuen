@@ -83,25 +83,20 @@ export default function Home() {
             </div>
           </div>
 
-          {/* 動画 — 透過・中央揃え */}
-          <div className="hero-reveal" style={{ position: "relative", zIndex: 2, padding: "32px 0 40px", display: "flex", justifyContent: "center" }}>
-            <div style={{ width: "min(80%, 400px)" }}>
-              <video
-                autoPlay loop muted playsInline
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  display: "block",
-                  mixBlendMode: "screen",
-                }}
-              >
-                <source src="/cuen-fv-illust.mp4" type="video/mp4" />
-              </video>
-            </div>
+          {/* イラスト — 透過PNG・中央揃え */}
+          <div className="hero-reveal" style={{ position: "relative", zIndex: 2, padding: "32px 0 0", display: "flex", justifyContent: "center" }}>
+            <img
+              src="/cuen-fv-illust.png"
+              alt=""
+              style={{ width: "min(85%, 440px)", height: "auto", display: "block" }}
+            />
           </div>
+
+          {/* グラデーション→白のフェード（境目をなくす） */}
+          <div style={{ height: "120px", background: "linear-gradient(to bottom, transparent, var(--cuen-offwhite))", position: "relative", zIndex: 2 }} />
         </section>
 
-        <div className="content-card" style={{ position: "relative", zIndex: 3 }}>
+        <div className="content-card" style={{ position: "relative", zIndex: 3, marginTop: "-1px" }}>
 
           {/* ── Our Philosophy ── */}
           <section style={{ paddingTop: "60px", paddingBottom: "100px", background: "var(--cuen-offwhite)" }}>
