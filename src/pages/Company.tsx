@@ -2,8 +2,10 @@ import { useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import GrainOverlay from "../components/GrainOverlay";
+import { useSEO } from "../hooks/useSEO";
 
 export default function Company() {
+  useSEO("会社概要 | 合同会社CUEN", "合同会社CUEN（CUEN LLC）の会社概要。2024年9月設立、東京都目黒区を拠点にマーケティング戦略・コンサルティング事業を展開。");
   useEffect(() => {
     window.scrollTo(0, 0);
     const observer = new IntersectionObserver(

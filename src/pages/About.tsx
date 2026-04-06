@@ -2,10 +2,12 @@ import { useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import GrainOverlay from "../components/GrainOverlay";
+import { useSEO } from "../hooks/useSEO";
 
 const CEO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663454524748/2kCcYKpUpLm4gHsyVUsYHQ/jun-ichihara_a82a7119.png";
 
 export default function About() {
+  useSEO("CUENについて | 合同会社CUEN", "なぜ、CUENは存在するのか。人と人のあいだにある可能性に気づき、前向きな変化のキッカケを生み出し続けるために。代表 市原 純のメッセージ。");
   useEffect(() => {
     window.scrollTo(0, 0);
     const observer = new IntersectionObserver(

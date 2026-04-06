@@ -2,8 +2,10 @@ import { useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import GrainOverlay from "../components/GrainOverlay";
+import { useSEO } from "../hooks/useSEO";
 
 export default function Service() {
+  useSEO("サービス一覧 | 合同会社CUEN", "AI KANJI・店舗マーケティング・ブランド戦略・イベント企画・プロジェクトコンサルティング。CUENが提供するサービスをご紹介します。");
   useEffect(() => {
     window.scrollTo(0, 0);
     const observer = new IntersectionObserver(

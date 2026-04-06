@@ -4,12 +4,14 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import IntroAnimation from "../components/IntroAnimation";
 import GrainOverlay from "../components/GrainOverlay";
+import { useSEO } from "../hooks/useSEO";
 
 
 
 const ILLUST_CONNECT = "https://d2xsxph8kpxj0f.cloudfront.net/310519663454524748/2kCcYKpUpLm4gHsyVUsYHQ/illust_sample_connect-j4KFae9uFrdt9C26FsnRU9.webp";
 
 export default function Home() {
+  useSEO("合同会社CUEN | つながりを、もっとラクに。もっと楽しく。", "合同会社CUENは、人と人のあいだにある可能性に気づき、前向きな変化のキッカケを生み出し続ける東京のコンサルティング・マーケティング会社です。");
   const [introComplete, setIntroComplete] = useState(false);
   const handleIntroComplete = useCallback(() => setIntroComplete(true), []);
 

@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { useSEO } from "../hooks/useSEO";
 
 export default function Contact() {
+  useSEO("お問い合わせ | 合同会社CUEN", "合同会社CUENへのお問い合わせ。サービスについて、AI KANJIについて、協業・パートナーシップなど、お気軽にご相談ください。");
   useEffect(() => {
     window.scrollTo(0, 0);
     const observer = new IntersectionObserver(
