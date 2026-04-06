@@ -16,7 +16,7 @@ export default function Service() {
 
   const services = [
     { num: "01", name: "AI KANJI", tag: "Product", desc: "幹事の割り勘・PayPay番号収集・支払いリマインドをLINEで全自動化。イベント作成3分、参加者登録30秒、幹事のリマインド0回。AIがすべての面倒を引き受けます。", features: ["PayPay番号の自動収集", "割り勘計算の自動化", "支払いリマインドの自動送信", "幹事ポイント制度", "LINEで完結・参加者ログイン不要"], link: "https://kanji-relief.com/", linkLabel: "AI KANJIを見る" },
-    { num: "02", name: "店舗マーケティング・ブランド戦略・運営支援", tag: "Consulting", desc: "飲食店や宿泊施設の集客強化から、ブランド構築、オペレーション改善まで。経営経験を持つマーケターが現場に入り込み、戦略立案から実行・改善までを一気通貫で支援します。", features: ["店舗集客・販促戦略設計", "ブランドコンセプト・メッセージ設計", "運営改善・コスト最適化", "実行支援・PDCAサポート"] },
+    { num: "02", name: "店舗マーケティング・\nブランド戦略・運営支援", tag: "Consulting", desc: "飲食店や宿泊施設の集客強化から、ブランド構築、オペレーション改善まで。\n経営経験を持つマーケターが現場に入り込み、戦略立案から実行・改善までを一気通貫で支援します。", features: ["店舗集客・販促戦略設計", "ブランドコンセプト・メッセージ設計", "運営改善・コスト最適化", "実行支援・PDCAサポート"] },
     { num: "03", name: "イベント・セミナー企画", tag: "Event", desc: "企業イベント・展示会・セミナーの企画から運営まで。参加者の体験設計を重視し、ブランド価値を高め、記憶に残るイベントを実現します。", features: ["企画・コンセプト設計", "会場選定・手配", "集客・プロモーション", "当日運営・アフターフォロー"] },
     { num: "04", name: "プロジェクトコンサルティング", tag: "Strategy", desc: "新規事業の立ち上げから既存事業のテコ入れまで。戦略を描くだけでなく、チームを巻き込みながらプロジェクト全体の設計・管理・推進をサポートします。", features: ["プロジェクト設計・計画策定", "進捗管理・課題解決", "チームビルディング支援", "成果評価・改善提案"] },
   ];
@@ -56,8 +56,8 @@ export default function Service() {
                     <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: "10px", letterSpacing: "0.1em", color: "#9E9B95", textTransform: "uppercase" }}>{service.tag}</div>
                   </div>
                   <div>
-                    <h2 style={{ fontFamily: "'Zen Kaku Gothic New', 'Space Grotesk', sans-serif", fontSize: "clamp(22px, 4vw, 32px)", fontWeight: 700, lineHeight: 1.4, color: "var(--cuen-charcoal)", margin: "0 0 16px 0", wordBreak: "keep-all" }}>{service.name}</h2>
-                    <p style={{ fontSize: "clamp(14px, 1.8vw, 16px)", color: "#666", lineHeight: 1.8, margin: "0 0 24px 0", maxWidth: "600px" }}>{service.desc}</p>
+                    <h2 style={{ fontFamily: "'Zen Kaku Gothic New', 'Space Grotesk', sans-serif", fontSize: "clamp(22px, 4vw, 32px)", fontWeight: 700, lineHeight: 1.4, color: "var(--cuen-charcoal)", margin: "0 0 16px 0", wordBreak: "keep-all" }}>{service.name.split('\n').map((line, j) => <span key={j}>{j > 0 && <br />}{line}</span>)}</h2>
+                    <p style={{ fontSize: "clamp(14px, 1.8vw, 16px)", color: "#666", lineHeight: 1.8, margin: "0 0 24px 0", maxWidth: "600px" }}>{service.desc.split('\n').map((line, j) => <span key={j}>{j > 0 && <br />}{line}</span>)}</p>
                     <ul style={{ listStyle: "none", padding: 0, margin: "0 0 24px 0", display: "flex", flexWrap: "wrap", gap: "8px" }}>
                       {service.features.map((f) => (
                         <li key={f} style={{ fontFamily: "'Zen Kaku Gothic New', 'Space Grotesk', sans-serif", fontSize: "12px", color: "#006875", border: "1px solid rgba(0,104,117,0.3)", padding: "4px 12px", letterSpacing: "0.03em" }}>{f}</li>
