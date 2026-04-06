@@ -166,14 +166,14 @@ export default function Home() {
           </section>
 
           {/* ── CTA ── */}
-          <section style={{ background: "var(--cuen-teal)", borderRadius: "24px", margin: "0 20px 60px", padding: "60px 40px", textAlign: "center", position: "relative", overflow: "hidden" }}>
+          <section style={{ background: "var(--cuen-teal)", borderRadius: "24px", margin: "0 16px 60px", padding: "48px 24px", textAlign: "center", position: "relative", overflow: "hidden" }}>
             <GrainOverlay />
-            <div style={{ position: "absolute", top: "-40px", right: "-40px", width: "160px", height: "160px", borderRadius: "50%", background: "rgba(200,97,74,0.25)", pointerEvents: "none" }} />
-            <div style={{ position: "absolute", bottom: "-30px", left: "-30px", width: "120px", height: "120px", borderRadius: "50%", background: "rgba(200,97,74,0.15)", pointerEvents: "none" }} />
+            <div style={{ position: "absolute", top: "-40px", right: "-40px", width: "120px", height: "120px", borderRadius: "50%", background: "rgba(200,97,74,0.25)", pointerEvents: "none" }} />
+            <div style={{ position: "absolute", bottom: "-30px", left: "-30px", width: "100px", height: "100px", borderRadius: "50%", background: "rgba(200,97,74,0.15)", pointerEvents: "none" }} />
             <div style={{ position: "relative", zIndex: 2 }}>
-              <img src={ILLUST_CONNECT} alt="" className="fade-up" style={{ width: "120px", height: "auto", margin: "0 auto 24px", display: "block" }} />
-              <h2 className="fade-up fade-up-delay-1" style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(22px, 4vw, 32px)", fontWeight: 900, color: "#fff", margin: "0 0 16px 0", lineHeight: 1.3 }}>
-                まずは、現状のモヤモヤをお聞かせください。
+              <img src={ILLUST_CONNECT} alt="" className="fade-up" style={{ width: "100px", height: "auto", margin: "0 auto 20px", display: "block", borderRadius: "50%", background: "rgba(255,255,255,0.15)", padding: "12px" }} />
+              <h2 className="fade-up fade-up-delay-1" style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(20px, 4vw, 28px)", fontWeight: 900, color: "#fff", margin: "0 0 16px 0", lineHeight: 1.4, wordBreak: "keep-all" }}>
+                まずは、現状のモヤモヤを<br />お聞かせください。
               </h2>
               <p className="fade-up fade-up-delay-2" style={{ color: "rgba(255,255,255,0.85)", fontSize: "15px", margin: "0 0 32px 0", lineHeight: 1.7 }}>
                 「何から手をつければいいか分からない」でも構いません。

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 
-const CUEN_LOGO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663454524748/2kCcYKpUpLm4gHsyVUsYHQ/CUEN_logo_1f6a8884.webp";
+const CUEN_LOGO = "/cuen-logo.png";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);

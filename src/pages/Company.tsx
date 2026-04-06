@@ -60,12 +60,12 @@ export default function Company() {
           </div>
         </section>
 
-        <section style={{ background: "var(--cuen-teal)", borderRadius: "24px", margin: "0 20px 60px", padding: "60px 40px", textAlign: "center", position: "relative", overflow: "hidden" }}>
+        <section style={{ background: "var(--cuen-teal)", borderRadius: "24px", margin: "0 16px 60px", padding: "48px 24px", textAlign: "center", position: "relative", overflow: "hidden" }}>
           <GrainOverlay />
           <div style={{ position: "absolute", top: "-40px", right: "-40px", width: "160px", height: "160px", borderRadius: "50%", background: "rgba(200,97,74,0.25)", pointerEvents: "none" }} />
           <div style={{ position: "absolute", bottom: "-30px", left: "-30px", width: "120px", height: "120px", borderRadius: "50%", background: "rgba(200,97,74,0.15)", pointerEvents: "none" }} />
           <div style={{ position: "relative", zIndex: 2 }}>
-            <h2 className="fade-up" style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(22px, 4vw, 32px)", fontWeight: 700, lineHeight: 1.4, color: "#fff", margin: "0 0 16px 0", wordBreak: "keep-all" }}>まずは、現状のモヤモヤをお聞かせください。</h2>
+            <h2 className="fade-up" style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(20px, 4vw, 28px)", fontWeight: 700, lineHeight: 1.4, color: "#fff", margin: "0 0 16px 0", wordBreak: "keep-all" }}>まずは、現状のモヤモヤを<br />お聞かせください。</h2>
             <p className="fade-up fade-up-delay-1" style={{ color: "rgba(255,255,255,0.85)", fontSize: "15px", margin: "0 0 32px 0", lineHeight: 1.7 }}>「何から手をつければいいか分からない」という状態でも構いません。あなたの想いを聞かせていただくところから始めます。</p>
             <a href="/contact" className="fade-up fade-up-delay-2" style={{ display: "inline-block", background: "var(--cuen-terracotta)", color: "#fff", fontWeight: 700, fontSize: "16px", padding: "14px 36px", borderRadius: "100px", textDecoration: "none", boxShadow: "0 4px 16px rgba(200,97,74,0.4)" }}>
               お問い合わせはこちら
