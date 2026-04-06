@@ -149,8 +149,23 @@ export default function Home() {
           </section>
 
           {/* ── CEO Message ── */}
-          <section style={{ padding: "40px 0 80px" }}>
-            <div className="cuen-container">
+          <section style={{ padding: "40px 0 80px", position: "relative", overflow: "hidden" }}>
+            {/* Cロゴ透かし */}
+            <img
+              src="/favicon.png"
+              alt=""
+              style={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                height: "80%",
+                width: "auto",
+                opacity: 0.04,
+                pointerEvents: "none",
+              }}
+            />
+            <div className="cuen-container" style={{ position: "relative", zIndex: 1 }}>
               <div className="section-label fade-up" style={{ marginBottom: "20px" }}>Message</div>
               <h2 className="fade-up fade-up-delay-1" style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(22px, 4vw, 32px)", fontWeight: 700, lineHeight: 1.4, color: "var(--cuen-charcoal)", margin: "0 0 24px 0", wordBreak: "keep-all" }}>
                 現場を知るからこそ、<br />描ける戦略がある。
