@@ -32,7 +32,7 @@ export default function Company() {
           <div className="section-label fade-up" style={{ marginBottom: "32px" }}>Company</div>
           <div className="fade-up fade-up-delay-1" style={{ margin: "0 0 24px 0" }}>
             <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663454524748/2kCcYKpUpLm4gHsyVUsYHQ/CUEN_logo_1f6a8884.webp"
+              src="/cuen-logo.png"
               alt="合同会社CUEN"
               style={{ width: "clamp(140px, 28vw, 220px)", height: "auto", display: "block" }}
             />

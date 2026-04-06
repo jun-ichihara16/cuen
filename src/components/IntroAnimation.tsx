@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const C_LOGO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663454524748/2kCcYKpUpLm4gHsyVUsYHQ/CUEN_C_logo_71e873ae.webp";
+const C_LOGO = "/favicon.png";
 
 export default function IntroAnimation({ onComplete }: { onComplete: () => void }) {
   const [phase, setPhase] = useState<"c-in" | "uen-in" | "out" | "done">("c-in");

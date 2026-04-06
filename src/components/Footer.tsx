@@ -32,7 +32,7 @@ export default function Footer() {
             <div>
               <Link href="/" style={{ textDecoration: "none" }}>
                 <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663454524748/2kCcYKpUpLm4gHsyVUsYHQ/CUEN_logo_1f6a8884.webp"
+                  src="/cuen-logo.png"
                   alt="CUEN"
                   className="footer-logo"
                   style={{
