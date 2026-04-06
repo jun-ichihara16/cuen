@@ -75,7 +75,7 @@ export default function Home() {
         }}>
           {/* Grain */}
           <GrainOverlay />
-          <div className="cuen-container" style={{ paddingTop: "60px", paddingBottom: "60px", position: "relative", zIndex: 2 }}>
+          <div className="cuen-container" style={{ paddingTop: "60px", paddingBottom: "120px", position: "relative", zIndex: 2 }}>
             <h1 className="hero-reveal" style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(28px, 5vw, 40px)", fontWeight: 900, color: "#ffffff", lineHeight: 1.3, margin: "0 0 24px 0", letterSpacing: "-0.01em", wordBreak: "keep-all" }}>
               つながりを、もっとラクに。<br />もっと楽しく。
             </h1>
@@ -91,11 +91,13 @@ export default function Home() {
                 </Link>
               </div>
               {/* ⑥ イラスト — 浮遊アニメーション */}
-              <img src={ILLUST_GATHERING} alt="" className="hero-reveal fv-float" style={{ width: "100%", maxWidth: "480px", height: "auto", display: "block", margin: "32px auto 0" }} />
+              <img src={ILLUST_GATHERING} alt="" className="hero-reveal fv-float" style={{ width: "100%", maxWidth: "480px", height: "auto", display: "block", margin: "32px auto 0", filter: "drop-shadow(0 8px 24px rgba(0,0,0,0.15))" }} />
             </div>
+          {/* グラデーション→白のフェード */}
+          <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "200px", background: "linear-gradient(to bottom, transparent 0%, #ffffff 100%)", pointerEvents: "none", zIndex: 1 }} />
           </section>
 
-        <div className="content-card">
+        <div className="content-card" style={{ marginTop: "-80px", position: "relative", zIndex: 3 }}>
 
           {/* ── Our Philosophy ── */}
           <section style={{ padding: "100px 0", background: "var(--cuen-offwhite)" }}>
