@@ -83,15 +83,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* イラスト — 透過PNG・右寄せ */}
-          <div className="hero-reveal" style={{ position: "relative", zIndex: 2, padding: "32px 0 0", display: "flex", justifyContent: "flex-end", maxWidth: "680px", margin: "0 auto" }}>
-            <img
-              src="/cuen-fv-illust.png"
-              alt=""
-              style={{ width: "min(70%, 360px)", height: "auto", display: "block", marginRight: "-20px" }}
-            />
-          </div>
-
         </section>
 
         <div className="content-card" style={{ position: "relative", zIndex: 3 }}>
@@ -111,6 +102,15 @@ export default function Home() {
               </Link>
             </div>
           </section>
+
+          {/* イラスト — PhilosophyとServiceの間 */}
+          <div className="fade-up" style={{ display: "flex", justifyContent: "center", padding: "0 24px", background: "var(--cuen-offwhite)" }}>
+            <img
+              src="/cuen-fv-illust.png"
+              alt=""
+              style={{ width: "min(80%, 380px)", height: "auto", display: "block" }}
+            />
+          </div>
 
           {/* ── Services ── */}
           <section style={{ padding: "100px 0" }}>
