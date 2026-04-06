@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import IntroAnimation from "../components/IntroAnimation";
 import GrainOverlay from "../components/GrainOverlay";
 
-const CEO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663454524748/2kCcYKpUpLm4gHsyVUsYHQ/jun-ichihara_a82a7119.png";
+
 
 const ILLUST_CONNECT = "https://d2xsxph8kpxj0f.cloudfront.net/310519663454524748/2kCcYKpUpLm4gHsyVUsYHQ/illust_sample_connect-j4KFae9uFrdt9C26FsnRU9.webp";
 
@@ -149,13 +149,8 @@ export default function Home() {
           </section>
 
           {/* ── CEO Message ── */}
-          <section style={{ padding: "80px 0" }}>
+          <section style={{ padding: "40px 0 80px" }}>
             <div className="cuen-container">
-              {/* 写真 */}
-              <div className="fade-up" style={{ width: "100%", aspectRatio: "16/9", borderRadius: "20px", overflow: "hidden", marginBottom: "40px" }}>
-                <img src={CEO_IMAGE} alt="市原 純" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 20%", filter: "grayscale(10%)" }} />
-              </div>
-
               <div className="section-label fade-up" style={{ marginBottom: "20px" }}>Message</div>
               <h2 className="fade-up fade-up-delay-1" style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(22px, 4vw, 32px)", fontWeight: 700, lineHeight: 1.4, color: "var(--cuen-charcoal)", margin: "0 0 24px 0", wordBreak: "keep-all" }}>
                 現場を知るからこそ、<br />描ける戦略がある。
