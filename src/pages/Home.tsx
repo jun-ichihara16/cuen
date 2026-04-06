@@ -83,22 +83,19 @@ export default function Home() {
             </div>
           </div>
 
-          {/* 動画 — FV内にblob形状で埋め込み（白背景が馴染む） */}
-          <div className="hero-reveal" style={{ position: "relative", zIndex: 2, padding: "40px 0 0", display: "flex", justifyContent: "center" }}>
+          {/* 動画 — 右寄せ・小さめ・blob形状 */}
+          <div className="hero-reveal" style={{ position: "relative", zIndex: 2, padding: "24px 0 0", display: "flex", justifyContent: "flex-end", paddingRight: "5%" }}>
             <div style={{
-              width: "min(85%, 420px)",
-              aspectRatio: "1 / 0.75",
+              width: "min(65%, 320px)",
               borderRadius: "48% 52% 55% 45% / 40% 45% 55% 60%",
               overflow: "hidden",
               background: "#ffffff",
-              boxShadow: "0 20px 60px rgba(0,0,0,0.2)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
+              boxShadow: "0 16px 48px rgba(0,0,0,0.18)",
+              padding: "16px",
             }}>
               <video
                 autoPlay loop muted playsInline
-                style={{ width: "100%", height: "auto", objectFit: "contain", display: "block" }}
+                style={{ width: "100%", height: "auto", objectFit: "contain", display: "block", borderRadius: "40%" }}
               >
                 <source src="/cuen-fv-illust.mp4" type="video/mp4" />
               </video>
