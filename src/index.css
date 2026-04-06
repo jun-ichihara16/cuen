@@ -262,10 +262,7 @@ body {
 
 /* ── White Card Wrapper ── */
 .content-card {
-  margin: 0 auto;
-  max-width: 720px;
   background: var(--cuen-offwhite);
-  box-shadow: none;
   overflow: hidden;
 }
 
