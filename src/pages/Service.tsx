@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { Link } from "wouter";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import GrainOverlay from "../components/GrainOverlay";
 
 export default function Service() {
   useEffect(() => {
@@ -89,8 +90,9 @@ export default function Service() {
         </div>
       </section>
 
-      <section style={{ padding: "100px 0", background: "#006875" }}>
-        <div className="cuen-container" style={{ textAlign: "center" }}>
+      <section style={{ padding: "100px 0", background: "#004550", position: "relative", overflow: "hidden" }}>
+        <GrainOverlay />
+        <div className="cuen-container" style={{ textAlign: "center", position: "relative", zIndex: 2 }}>
           <h2 className="fade-up" style={{ fontFamily: "'DM Serif Display', serif", fontSize: "clamp(24px, 6vw, 36px)", fontWeight: 400, color: "#ffffff", margin: "0 0 24px 0" }}>まずは、現状のモヤモヤをお聞かせください。</h2>
           <p className="fade-up fade-up-delay-1" style={{ fontSize: "16px", color: "rgba(255,255,255,0.75)", margin: "0 0 40px 0", lineHeight: 1.85 }}>「何から手をつければいいか分からない」という状態でも構いません。</p>
           <div className="fade-up fade-up-delay-2">

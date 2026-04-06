@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import WaveBackground from "../components/WaveBackground";
 import IntroAnimation from "../components/IntroAnimation";
+import GrainOverlay from "../components/GrainOverlay";
 
 const CUEN_LOGO = "/cuen-logo.png";
 const CEO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663454524748/2kCcYKpUpLm4gHsyVUsYHQ/jun-ichihara_a82a7119.png";
@@ -245,8 +246,9 @@ export default function Home() {
       </section>
 
       {/* ── CTA ── */}
-      <section style={{ padding: "120px 0", background: "#006875" }}>
-        <div className="cuen-container" style={{ textAlign: "center" }}>
+      <section style={{ padding: "120px 0", background: "#004550", position: "relative", overflow: "hidden" }}>
+        <GrainOverlay />
+        <div className="cuen-container" style={{ textAlign: "center", position: "relative", zIndex: 2 }}>
           <div className="section-label fade-up" style={{ justifyContent: "center", color: "rgba(255,255,255,0.6)", marginBottom: "32px" }}>
             <span style={{ background: "rgba(255,255,255,0.4)", width: "24px", height: "1px", display: "inline-block" }} />
             Contact

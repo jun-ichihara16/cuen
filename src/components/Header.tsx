@@ -58,7 +58,7 @@ export default function Header() {
             <img
               src={CUEN_LOGO}
               alt="CUEN"
-              style={{ height: "24px", width: "auto", display: "block" }}
+              style={{ height: "32px", width: "auto", display: "block" }}
             />
           </Link>
 
