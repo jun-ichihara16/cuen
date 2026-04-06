@@ -40,7 +40,7 @@ export default function Header() {
     >
       <div
         style={{
-          maxWidth: "900px",
+          maxWidth: "720px",
           margin: "0 auto",
           padding: "0 40px",
           display: "flex",
@@ -59,7 +59,7 @@ export default function Header() {
               {item.label}
             </Link>
           ))}
-          <Link href="/contact" className="btn-cuen" style={{ padding: "8px 20px", fontSize: "13px" }}>
+          <Link href="/contact" style={{ background: "var(--cuen-teal)", color: "#ffffff", fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontWeight: 700, fontSize: "14px", padding: "10px 24px", borderRadius: "100px", textDecoration: "none", whiteSpace: "nowrap", transition: "background 0.2s ease" }}>
             お問い合わせ
           </Link>
         </nav>

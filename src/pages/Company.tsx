@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { Link } from "wouter";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import GrainOverlay from "../components/GrainOverlay";
@@ -39,7 +38,7 @@ export default function Company() {
                 style={{ width: "clamp(140px, 28vw, 220px)", height: "auto", display: "block" }}
               />
             </div>
-            <p className="fade-up fade-up-delay-2" style={{ fontSize: "17px", color: "#666", lineHeight: 1.9, maxWidth: "520px", margin: 0 }}>人と人のあいだにある可能性に気づき、事業と人との関係性を前進させるキッカケを生み出す会社です。</p>
+            <p className="fade-up fade-up-delay-2" style={{ fontSize: "clamp(14px, 1.8vw, 16px)", color: "#666", lineHeight: 1.8, maxWidth: "520px", margin: 0 }}>人と人のあいだにある可能性に気づき、事業と人との関係性を前進させるキッカケを生み出す会社です。</p>
           </div>
         </section>
 
@@ -61,17 +60,16 @@ export default function Company() {
           </div>
         </section>
 
-        <section style={{ padding: "100px 0", background: "#004550", position: "relative", overflow: "hidden" }}>
+        <section style={{ background: "var(--cuen-teal)", borderRadius: "24px", margin: "0 20px 60px", padding: "60px 40px", textAlign: "center", position: "relative", overflow: "hidden" }}>
           <GrainOverlay />
-          <div className="cuen-container" style={{ textAlign: "center", position: "relative", zIndex: 2 }}>
-            <h2 className="fade-up" style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(24px, 6vw, 36px)", fontWeight: 700, color: "#ffffff", margin: "0 0 24px 0" }}>まずは、現状のモヤモヤをお聞かせください。</h2>
-            <p className="fade-up fade-up-delay-1" style={{ fontSize: "16px", color: "rgba(255,255,255,0.75)", margin: "0 0 40px 0", lineHeight: 1.85 }}>「何から手をつければいいか分からない」という状態でも構いません。あなたの想いを聞かせていただくところから始めます。</p>
-            <div className="fade-up fade-up-delay-2">
-              <Link href="/contact" className="btn-cuen btn-cuen-white">
-                <span>無料相談・お問い合わせ</span>
-                <span className="btn-arrow" aria-hidden="true"><svg width="16" height="9" viewBox="0 0 18 10" fill="none"><path d="M0 5H16M16 5L11.5 1M16 5L11.5 9" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
-              </Link>
-            </div>
+          <div style={{ position: "absolute", top: "-40px", right: "-40px", width: "160px", height: "160px", borderRadius: "50%", background: "rgba(200,97,74,0.25)", pointerEvents: "none" }} />
+          <div style={{ position: "absolute", bottom: "-30px", left: "-30px", width: "120px", height: "120px", borderRadius: "50%", background: "rgba(200,97,74,0.15)", pointerEvents: "none" }} />
+          <div style={{ position: "relative", zIndex: 2 }}>
+            <h2 className="fade-up" style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(22px, 4vw, 32px)", fontWeight: 700, lineHeight: 1.4, color: "#fff", margin: "0 0 16px 0", wordBreak: "keep-all" }}>まずは、現状のモヤモヤをお聞かせください。</h2>
+            <p className="fade-up fade-up-delay-1" style={{ color: "rgba(255,255,255,0.85)", fontSize: "15px", margin: "0 0 32px 0", lineHeight: 1.7 }}>「何から手をつければいいか分からない」という状態でも構いません。あなたの想いを聞かせていただくところから始めます。</p>
+            <a href="/contact" className="fade-up fade-up-delay-2" style={{ display: "inline-block", background: "var(--cuen-terracotta)", color: "#fff", fontWeight: 700, fontSize: "16px", padding: "14px 36px", borderRadius: "100px", textDecoration: "none", boxShadow: "0 4px 16px rgba(200,97,74,0.4)" }}>
+              お問い合わせはこちら
+            </a>
           </div>
         </section>
 

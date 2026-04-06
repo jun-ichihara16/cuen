@@ -36,19 +36,26 @@ body {
   padding: 0;
 }
 
-/* ── 4色グラデーション背景アニメーション ── */
+/* ── グラデーション背景アニメーション（ティールメイン） ── */
 @keyframes gradientShift {
   0%   { background-position: 0% 50%; }
-  25%  { background-position: 100% 50%; }
-  50%  { background-position: 100% 0%; }
-  75%  { background-position: 0% 100%; }
+  33%  { background-position: 100% 50%; }
+  66%  { background-position: 50% 100%; }
   100% { background-position: 0% 50%; }
 }
 
 .gradient-bg {
-  background: linear-gradient(135deg, #006875, #C8614A, #F5F0E8, #2A2A2A, #006875);
+  background: linear-gradient(
+    135deg,
+    #006875 0%,
+    #004f5c 25%,
+    #1a7a8a 50%,
+    #C8614A 65%,
+    #005f6e 80%,
+    #006875 100%
+  );
   background-size: 400% 400%;
-  animation: gradientShift 12s ease infinite;
+  animation: gradientShift 16s ease infinite;
   min-height: 100vh;
 }
 
@@ -235,18 +242,18 @@ body {
 /* ── SPファースト Container ── */
 .cuen-container {
   width: 100%;
-  padding: 0 20px;
+  padding: 0 24px;
   margin: 0 auto;
-  max-width: 900px;
+  max-width: 680px;
 }
 @media (min-width: 768px) {
-  .cuen-container { padding: 0 40px; }
+  .cuen-container { padding: 0 40px; max-width: 680px; }
 }
 
 /* ── White Card Wrapper ── */
 .content-card {
   margin: 0 auto;
-  max-width: 900px;
+  max-width: 720px;
   background: var(--cuen-white);
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.08);
 }
