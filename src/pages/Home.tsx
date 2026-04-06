@@ -83,19 +83,17 @@ export default function Home() {
             </div>
           </div>
 
-          {/* 動画 — 右寄せ・小さめ・blob形状 */}
-          <div className="hero-reveal" style={{ position: "relative", zIndex: 2, padding: "24px 0 0", display: "flex", justifyContent: "flex-end", paddingRight: "5%" }}>
-            <div style={{
-              width: "min(65%, 320px)",
-              borderRadius: "48% 52% 55% 45% / 40% 45% 55% 60%",
-              overflow: "hidden",
-              background: "#ffffff",
-              boxShadow: "0 16px 48px rgba(0,0,0,0.18)",
-              padding: "16px",
-            }}>
+          {/* 動画 — 透過・中央揃え */}
+          <div className="hero-reveal" style={{ position: "relative", zIndex: 2, padding: "32px 0 40px", display: "flex", justifyContent: "center" }}>
+            <div style={{ width: "min(80%, 400px)" }}>
               <video
                 autoPlay loop muted playsInline
-                style={{ width: "100%", height: "auto", objectFit: "contain", display: "block", borderRadius: "40%" }}
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  display: "block",
+                  mixBlendMode: "screen",
+                }}
               >
                 <source src="/cuen-fv-illust.mp4" type="video/mp4" />
               </video>
@@ -153,9 +151,9 @@ export default function Home() {
           {/* ── CEO Message ── */}
           <section style={{ padding: "80px 0" }}>
             <div className="cuen-container">
-              {/* 写真 — コンパクトなサイズ */}
-              <div className="fade-up" style={{ width: "140px", height: "140px", borderRadius: "50%", overflow: "hidden", marginBottom: "32px" }}>
-                <img src={CEO_IMAGE} alt="市原 純" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }} />
+              {/* 写真 */}
+              <div className="fade-up" style={{ width: "100%", aspectRatio: "16/9", borderRadius: "20px", overflow: "hidden", marginBottom: "40px" }}>
+                <img src={CEO_IMAGE} alt="市原 純" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 20%", filter: "grayscale(10%)" }} />
               </div>
 
               <div className="section-label fade-up" style={{ marginBottom: "20px" }}>Message</div>
