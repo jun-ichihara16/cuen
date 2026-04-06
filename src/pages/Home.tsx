@@ -128,7 +128,7 @@ export default function Home() {
                     onMouseEnter={cardHover} onMouseLeave={cardLeave}
                     onClick={() => window.location.href = s.href}
                   >
-                    <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: "12px", letterSpacing: "0.12em", color: "var(--cuen-teal)", marginBottom: "12px" }}>{s.num}</div>
+                    <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: "16px", fontWeight: 600, letterSpacing: "0.08em", color: "var(--cuen-teal)", marginBottom: "12px" }}>{s.num}</div>
                     <h3 style={{ fontSize: "clamp(17px, 2.5vw, 22px)", fontWeight: 600, color: "var(--cuen-charcoal)", margin: "0 0 10px 0", lineHeight: 1.4 }}>{s.name}</h3>
                     <p style={{ fontSize: "clamp(14px, 1.8vw, 16px)", color: "#666", lineHeight: 1.7, margin: 0 }}>{s.desc}</p>
                   </div>

@@ -54,7 +54,7 @@ export default function Service() {
                   onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 2px 16px rgba(0,0,0,0.06)"; }}
                 >
                   <div style={{ display: "flex", gap: "12px", alignItems: "baseline", marginBottom: "16px" }}>
-                    <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: "11px", letterSpacing: "0.12em", color: "#006875" }}>{service.num}</div>
+                    <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: "16px", fontWeight: 600, letterSpacing: "0.08em", color: "#006875" }}>{service.num}</div>
                     <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: "10px", letterSpacing: "0.1em", color: "#9E9B95", textTransform: "uppercase" }}>{service.tag}</div>
                   </div>
                   <div>
@@ -92,7 +92,7 @@ export default function Service() {
                   onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.transform = "translateY(-4px)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 32px rgba(0,0,0,0.10)"; }}
                   onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 2px 16px rgba(0,0,0,0.06)"; }}
                 >
-                  <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: "11px", letterSpacing: "0.12em", color: "#006875", marginBottom: "20px" }}>{step.num}</div>
+                  <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: "16px", fontWeight: 600, letterSpacing: "0.08em", color: "#006875", marginBottom: "20px" }}>{step.num}</div>
                   <h3 style={{ fontFamily: "'Zen Kaku Gothic New', 'Space Grotesk', sans-serif", fontSize: "clamp(17px, 2.5vw, 22px)", fontWeight: 600, color: "var(--cuen-charcoal)", margin: "0 0 12px 0" }}>{step.title}</h3>
                   <p style={{ fontSize: "clamp(14px, 1.8vw, 16px)", color: "#666", lineHeight: 1.8, margin: 0 }}>{step.body}</p>
                 </div>

@@ -72,7 +72,7 @@ export default function About() {
                   onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.transform = "translateY(-3px)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 6px 24px rgba(0,0,0,0.08)"; }}
                   onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.transform = "translateY(0)"; (e.currentTarget as HTMLElement).style.boxShadow = "0 2px 12px rgba(0,0,0,0.05)"; }}
                 >
-                  <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: "11px", letterSpacing: "0.12em", color: "#006875", marginBottom: "12px" }}>{v.num}</div>
+                  <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: "16px", fontWeight: 600, letterSpacing: "0.08em", color: "#006875", marginBottom: "12px" }}>{v.num}</div>
                   <h3 style={{ fontSize: "clamp(15px, 2.5vw, 18px)", fontWeight: 600, color: "var(--cuen-charcoal)", margin: "0 0 10px 0", lineHeight: 1.4 }}>{v.title}</h3>
                   <p style={{ fontSize: "clamp(13px, 1.6vw, 14px)", color: "#666", lineHeight: 1.7, margin: 0 }}>{v.body}</p>
                 </div>
