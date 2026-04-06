@@ -75,7 +75,7 @@ export default function Home() {
         }}>
           {/* Grain */}
           <GrainOverlay />
-          <div className="cuen-container" style={{ paddingTop: "60px", paddingBottom: "120px", position: "relative", zIndex: 2 }}>
+          <div className="cuen-container" style={{ paddingTop: "60px", paddingBottom: "60px", position: "relative", zIndex: 2 }}>
             <h1 className="hero-reveal" style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(28px, 5vw, 40px)", fontWeight: 900, color: "#ffffff", lineHeight: 1.3, margin: "0 0 24px 0", letterSpacing: "-0.01em", wordBreak: "keep-all" }}>
               つながりを、もっとラクに。<br />もっと楽しく。
             </h1>
@@ -90,38 +90,32 @@ export default function Home() {
                   お問い合わせ
                 </Link>
               </div>
-              {/* ⑥ 動くイラスト動画 */}
-              <div className="hero-reveal" style={{ width: "100%", maxWidth: "520px", margin: "40px auto 0", position: "relative" }}>
-                {/* 動画上部のグラデーションマスク（背景に溶け込む） */}
-                <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "40px", background: "linear-gradient(to bottom, rgba(0,104,117,0.3) 0%, transparent 100%)", zIndex: 1, pointerEvents: "none", borderRadius: "20px 20px 0 0" }} />
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    display: "block",
-                    borderRadius: "20px",
-                    mixBlendMode: "multiply",
-                    filter: "drop-shadow(0 12px 32px rgba(0,0,0,0.2))",
-                  }}
-                >
-                  <source src="/cuen-fv-illust.mp4" type="video/mp4" />
-                </video>
-                {/* 動画下部のフェード（白に溶け込む） */}
-                <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "80px", background: "linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.9) 70%, #ffffff 100%)", zIndex: 1, pointerEvents: "none", borderRadius: "0 0 20px 20px" }} />
-              </div>
             </div>
-          {/* グラデーション→白のフェード */}
-          <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "250px", background: "linear-gradient(to bottom, transparent 0%, #ffffff 100%)", pointerEvents: "none", zIndex: 1 }} />
           </section>
 
-        <div className="content-card" style={{ marginTop: "-80px", position: "relative", zIndex: 3 }}>
+        {/* ⑥ 動くイラスト動画 — ヒーローとcontent-cardの「つなぎ」 */}
+        <div style={{ position: "relative", zIndex: 5, marginTop: "-60px", marginBottom: "-120px", pointerEvents: "none" }}>
+          <div style={{ maxWidth: "420px", margin: "0 auto" }}>
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              style={{
+                width: "100%",
+                height: "auto",
+                display: "block",
+              }}
+            >
+              <source src="/cuen-fv-illust.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+
+        <div className="content-card" style={{ position: "relative", zIndex: 3 }}>
 
           {/* ── Our Philosophy ── */}
-          <section style={{ padding: "100px 0", background: "var(--cuen-offwhite)" }}>
+          <section style={{ paddingTop: "140px", paddingBottom: "100px", background: "var(--cuen-offwhite)" }}>
             <div className="cuen-container">
               <div className="section-label fade-up" style={{ marginBottom: "32px" }}>Our Philosophy</div>
               <h2 className="fade-up fade-up-delay-1" style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(22px, 4vw, 32px)", fontWeight: 700, lineHeight: 1.4, color: "var(--cuen-charcoal)", margin: "0 0 24px 0", wordBreak: "keep-all" }}>
