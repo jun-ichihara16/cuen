@@ -37,7 +37,7 @@ export default function Company() {
               style={{ width: "clamp(140px, 28vw, 220px)", height: "auto", display: "block" }}
             />
           </div>
-          <p className="fade-up fade-up-delay-2" style={{ fontSize: "17px", color: "#6B6B6B", lineHeight: 1.9, maxWidth: "520px", margin: 0 }}>人と人のあいだにある可能性に気づき、事業のキッカケを生み出す会社です。</p>
+          <p className="fade-up fade-up-delay-2" style={{ fontSize: "17px", color: "#6B6B6B", lineHeight: 1.9, maxWidth: "520px", margin: 0 }}>人と人のあいだにある可能性に気づき、事業と人との関係性を前進させるキッカケを生み出す会社です。</p>
         </div>
       </section>
 
