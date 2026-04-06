@@ -6,7 +6,7 @@ import IntroAnimation from "../components/IntroAnimation";
 import GrainOverlay from "../components/GrainOverlay";
 
 const CEO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663454524748/2kCcYKpUpLm4gHsyVUsYHQ/jun-ichihara_a82a7119.png";
-const ILLUST_GATHERING = "https://d2xsxph8kpxj0f.cloudfront.net/310519663454524748/2kCcYKpUpLm4gHsyVUsYHQ/illust_sample_gathering-gBhq42qeJTySxV9CGa57K9.webp";
+
 const ILLUST_CONNECT = "https://d2xsxph8kpxj0f.cloudfront.net/310519663454524748/2kCcYKpUpLm4gHsyVUsYHQ/illust_sample_connect-j4KFae9uFrdt9C26FsnRU9.webp";
 
 export default function Home() {
@@ -90,11 +90,32 @@ export default function Home() {
                   お問い合わせ
                 </Link>
               </div>
-              {/* ⑥ イラスト — 浮遊アニメーション */}
-              <img src={ILLUST_GATHERING} alt="" className="hero-reveal fv-float" style={{ width: "100%", maxWidth: "480px", height: "auto", display: "block", margin: "32px auto 0", filter: "drop-shadow(0 8px 24px rgba(0,0,0,0.15))" }} />
+              {/* ⑥ 動くイラスト動画 */}
+              <div className="hero-reveal" style={{ width: "100%", maxWidth: "520px", margin: "40px auto 0", position: "relative" }}>
+                {/* 動画上部のグラデーションマスク（背景に溶け込む） */}
+                <div style={{ position: "absolute", top: 0, left: 0, right: 0, height: "40px", background: "linear-gradient(to bottom, rgba(0,104,117,0.3) 0%, transparent 100%)", zIndex: 1, pointerEvents: "none", borderRadius: "20px 20px 0 0" }} />
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    display: "block",
+                    borderRadius: "20px",
+                    mixBlendMode: "multiply",
+                    filter: "drop-shadow(0 12px 32px rgba(0,0,0,0.2))",
+                  }}
+                >
+                  <source src="/cuen-fv-illust.mp4" type="video/mp4" />
+                </video>
+                {/* 動画下部のフェード（白に溶け込む） */}
+                <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "80px", background: "linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.9) 70%, #ffffff 100%)", zIndex: 1, pointerEvents: "none", borderRadius: "0 0 20px 20px" }} />
+              </div>
             </div>
           {/* グラデーション→白のフェード */}
-          <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "200px", background: "linear-gradient(to bottom, transparent 0%, #ffffff 100%)", pointerEvents: "none", zIndex: 1 }} />
+          <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "250px", background: "linear-gradient(to bottom, transparent 0%, #ffffff 100%)", pointerEvents: "none", zIndex: 1 }} />
           </section>
 
         <div className="content-card" style={{ marginTop: "-80px", position: "relative", zIndex: 3 }}>
