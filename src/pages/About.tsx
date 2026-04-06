@@ -47,9 +47,7 @@ export default function About() {
                 <div style={{ width: "40px", height: "1px", background: "#E8E6E1", marginBottom: "40px" }} />
               </div>
               <h2 className="fade-up fade-up-delay-1" style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(22px, 4vw, 32px)", fontWeight: 700, color: "var(--cuen-charcoal)", margin: "0 0 32px 0", lineHeight: 1.4, wordBreak: "keep-all" }}>
-                人と人のあいだにある可能性に気づき、
-                <br />
-                前向きな変化のキッカケを生み出し続ける。
+                人と人のあいだにある<br />可能性に気づき、<br />前向きな変化のキッカケを<br />生み出し続けます。
               </h2>
               <div className="fade-up fade-up-delay-2" style={{ fontSize: "clamp(14px, 1.8vw, 16px)", color: "#666", lineHeight: 1.8 }}>
                 <p style={{ margin: "0 0 24px 0" }}>ビジネスを動かすのは、結局のところ「人」です。CUENは、目先の数字や効率だけを追うのではなく、現場で働く人の想いやチームの関係性を何よりも大切にします。</p>
