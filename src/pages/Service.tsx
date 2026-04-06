@@ -39,7 +39,7 @@ export default function Service() {
             <h1 className="fade-up fade-up-delay-1" style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(28px, 5vw, 40px)", fontWeight: 900, color: "var(--cuen-charcoal)", margin: "0 0 24px 0", lineHeight: 1.3, maxWidth: "640px", wordBreak: "keep-all" }}>
               現場を動かし、<br />事業を前に進める。
             </h1>
-            <p className="fade-up fade-up-delay-2" style={{ fontSize: "clamp(14px, 1.8vw, 16px)", color: "#666", lineHeight: 1.8, maxWidth: "520px", margin: 0 }}>CUENが提供するのは、単なる「施策の提案」ではありません。現場に入り込み、戦略が実行され、結果につながるまでのプロセスを共につくります。</p>
+            <p className="fade-up fade-up-delay-2" style={{ fontSize: "clamp(14px, 1.8vw, 16px)", color: "#666", lineHeight: 1.8, maxWidth: "520px", margin: 0 }}>CUENが提供するのは、<br />単なる「施策の提案」ではありません。<br />現場に入り込み、戦略が実行され、<br />結果につながるまでのプロセスを共につくります。</p>
           </div>
         </section>
 

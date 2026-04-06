@@ -37,7 +37,7 @@ export default function About() {
               存在するのか。
             </h1>
             <p className="fade-up fade-up-delay-2" style={{ fontSize: "clamp(14px, 1.8vw, 16px)", color: "#666", lineHeight: 1.8, maxWidth: "520px", margin: 0 }}>
-              人と人のあいだにある可能性に気づき、前向きな変化のキッカケを生み出し続けるために。
+              人と人のあいだにある可能性に気づき、<br />前向きな変化のキッカケを<br />生み出し続けるために。
             </p>
           </div>
         </section>

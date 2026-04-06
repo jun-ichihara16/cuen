@@ -110,7 +110,7 @@ export default function Home() {
             <div className="cuen-container">
               <div className="section-label fade-up" style={{ marginBottom: "32px" }}>Our Philosophy</div>
               <h2 className="fade-up fade-up-delay-1" style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(22px, 4vw, 32px)", fontWeight: 700, lineHeight: 1.4, color: "var(--cuen-charcoal)", margin: "0 0 24px 0", wordBreak: "keep-all" }}>
-                <span className="cuen-brand">CUEN</span>は、人と人のあいだにある可能性に気づき、前向きな変化のキッカケを生み出し続けます。
+                <span className="cuen-brand">CUEN</span>は、<br />人と人のあいだにある<br />可能性に気づき、<br />前向きな変化のキッカケを<br />生み出し続けます。
               </h2>
               <p className="fade-up fade-up-delay-2" style={{ fontSize: "clamp(14px, 1.8vw, 16px)", color: "#555", lineHeight: 1.8, margin: "0 0 32px 0" }}>
                 数字や効率だけでは、ビジネスは動かない。私たちは、現場で働く一人ひとりの想いや関係性を紐解き、「なぜ売れないのか」「どうすれば伝わるのか」という本質的な課題を解決します。
@@ -127,7 +127,7 @@ export default function Home() {
               <div className="fade-up" style={{ marginBottom: "48px" }}>
                 <div className="section-label" style={{ marginBottom: "20px" }}>Service</div>
                 <h2 style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(22px, 4vw, 32px)", fontWeight: 700, lineHeight: 1.4, color: "var(--cuen-charcoal)", margin: 0 }}>
-                  現場を動かし、事業を前に進める4つの柱。
+                  現場を動かし、<br />事業を前に進める4つの柱。
                 </h2>
               </div>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 280px), 1fr))", gap: "16px" }}>
