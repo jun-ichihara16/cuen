@@ -79,8 +79,8 @@ export default function Home() {
                   お問い合わせ
                 </Link>
               </div>
-              {/* ⑥ イラスト */}
-              <img src={ILLUST_GATHERING} alt="" className="hero-reveal" style={{ width: "100%", maxWidth: "480px", height: "auto", display: "block", margin: "32px auto 0" }} />
+              {/* ⑥ イラスト — 浮遊アニメーション */}
+              <img src={ILLUST_GATHERING} alt="" className="hero-reveal fv-float" style={{ width: "100%", maxWidth: "480px", height: "auto", display: "block", margin: "32px auto 0" }} />
             </div>
           </section>
 
@@ -159,7 +159,7 @@ export default function Home() {
               </h2>
               <div className="fade-up fade-up-delay-1" style={{ fontSize: "clamp(14px, 1.8vw, 16px)", color: "#666", lineHeight: 1.8 }}>
                 <p style={{ margin: "0 0 16px 0" }}>「なぜ売れないのか」「なぜ伝わらないのか」——その問いを起点に、数多くのビジネスの現場で課題の本質を掘り下げてきました。</p>
-                <p style={{ margin: "0 0 16px 0" }}>私自身、飲食・物販・宿泊施設の経営を経験してきました。だからこそ、机上の空論ではなく、現場が実際に動ける戦略を立て、実行から改善まで泥臭く伴走します。</p>
+                <p style={{ margin: "0 0 16px 0" }}>私自身、飲食店の経営を経験してきました。だからこそ、机上の空論ではなく、現場が実際に動ける戦略を立て、実行から改善まで泥臭く伴走します。</p>
                 <p style={{ margin: 0 }}>CUENは、クライアントの想いに気づき、前向きな変化のキッカケを生み出し続けるパートナーでありたいと思っています。</p>
               </div>
             </div>

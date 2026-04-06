@@ -17,10 +17,10 @@ export default function Header() {
   useEffect(() => { setMenuOpen(false); }, [location]);
 
   const navItems = [
-    { href: "/about", label: "About" },
-    { href: "/service", label: "Service" },
-    { href: "/company", label: "Company" },
-    { href: "/contact", label: "Contact" },
+    { href: "/about", label: "CUENについて" },
+    { href: "/service", label: "サービス" },
+    { href: "/company", label: "会社概要" },
+    { href: "/contact", label: "お問い合わせ" },
   ];
 
   return (
@@ -59,8 +59,8 @@ export default function Header() {
               {item.label}
             </Link>
           ))}
-          <Link href="/contact" style={{ background: "var(--cuen-teal)", color: "#ffffff", fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontWeight: 700, fontSize: "14px", padding: "10px 24px", borderRadius: "100px", textDecoration: "none", whiteSpace: "nowrap", transition: "background 0.2s ease" }}>
-            お問い合わせ
+          <Link href="/contact" style={{ background: "var(--cuen-teal)", color: "#ffffff", fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontWeight: 700, fontSize: "13px", padding: "8px 20px", borderRadius: "100px", textDecoration: "none", whiteSpace: "nowrap", transition: "background 0.2s ease" }}>
+            無料相談
           </Link>
         </nav>
 

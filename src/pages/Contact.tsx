@@ -57,7 +57,7 @@ export default function Contact() {
         <section style={{ paddingTop: "160px", paddingBottom: "80px" }}>
           <div className="cuen-container">
             <div className="section-label fade-up" style={{ marginBottom: "32px" }}>Contact</div>
-            <h1 className="fade-up fade-up-delay-1" style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(32px, 8vw, 48px)", fontWeight: 700, color: "var(--cuen-charcoal)", margin: "0 0 24px 0", lineHeight: 1.25 }}>まずは、現状のモヤモヤをお聞かせください。</h1>
+            <h1 className="fade-up fade-up-delay-1" style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(28px, 5vw, 40px)", fontWeight: 900, color: "var(--cuen-charcoal)", margin: "0 0 24px 0", lineHeight: 1.3, wordBreak: "keep-all" }}>まずは、現状のモヤモヤを<br />お聞かせください。</h1>
             <p className="fade-up fade-up-delay-2" style={{ fontSize: "17px", color: "#666", lineHeight: 1.9, maxWidth: "520px", margin: 0 }}>
               「何から手をつければいいか分からない」という状態でも構いません。あなたの想いを聞かせていただくところから、始めます。
               <br />

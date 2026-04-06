@@ -17,10 +17,10 @@ export default function Footer() {
         </p>
         <nav style={{ display: "flex", gap: "24px", flexWrap: "wrap", justifyContent: "center" }}>
           {[
-            { href: "/about", label: "About" },
-            { href: "/service", label: "Service" },
-            { href: "/company", label: "Company" },
-            { href: "/contact", label: "Contact" },
+            { href: "/about", label: "CUENについて" },
+            { href: "/service", label: "サービス" },
+            { href: "/company", label: "会社概要" },
+            { href: "/contact", label: "お問い合わせ" },
           ].map((item) => (
             <Link key={item.href} href={item.href} style={{ fontSize: "12px", color: "rgba(255,255,255,0.5)", textDecoration: "none", letterSpacing: "0.06em", transition: "color 0.2s ease" }}
               onMouseEnter={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.9)")}
