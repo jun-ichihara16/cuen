@@ -28,21 +28,18 @@ export default function About() {
       <Header />
       <div className="content-card">
 
-        <section style={{ paddingTop: "160px", paddingBottom: "100px", position: "relative", overflow: "hidden" }}>
+        <section style={{ paddingTop: "160px", paddingBottom: "48px", position: "relative", overflow: "hidden" }}>
           <div className="cuen-container" style={{ position: "relative" }}>
             <div className="section-label fade-up" style={{ marginBottom: "32px" }}>About</div>
-            <h1 className="fade-up fade-up-delay-1" style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(28px, 5vw, 40px)", fontWeight: 900, color: "var(--cuen-charcoal)", margin: "0 0 24px 0", lineHeight: 1.3, maxWidth: "640px", wordBreak: "keep-all" }}>
+            <h1 className="fade-up fade-up-delay-1" style={{ fontFamily: "'Space Grotesk', 'Zen Kaku Gothic New', sans-serif", fontSize: "clamp(28px, 5vw, 40px)", fontWeight: 900, color: "var(--cuen-charcoal)", margin: 0, lineHeight: 1.3, maxWidth: "640px", wordBreak: "keep-all" }}>
               なぜ、<span className="cuen-brand">CUEN</span>は
               <br />
               存在するのか。
             </h1>
-            <p className="fade-up fade-up-delay-2" style={{ fontSize: "clamp(14px, 1.8vw, 16px)", color: "#666", lineHeight: 1.8, maxWidth: "520px", margin: 0 }}>
-              人と人のあいだにある可能性に気づき、<br />前向きな変化のキッカケを<br />生み出し続けるために。
-            </p>
           </div>
         </section>
 
-        <section style={{ padding: "100px 0", background: "var(--cuen-offwhite)" }}>
+        <section style={{ padding: "40px 0 100px", background: "var(--cuen-offwhite)" }}>
           <div className="cuen-container">
             <div>
               <div className="fade-up">
