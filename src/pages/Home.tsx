@@ -97,7 +97,7 @@ export default function Home() {
                 <span className="cuen-brand">CUEN</span>は、<br />人と人のあいだにある<br />可能性に気づき、<br />前向きな変化のキッカケを<br />生み出し続けます。
               </h2>
               <p className="fade-up fade-up-delay-2" style={{ fontSize: "clamp(14px, 1.8vw, 16px)", color: "#555", lineHeight: 1.8, margin: "0 0 32px 0" }}>
-                数字や効率だけでは、ビジネスは動かない。私たちは、現場で働く一人ひとりの想いや関係性を紐解き、「なぜ売れないのか」「どうすれば伝わるのか」という本質的な課題を解決します。
+                「楽しかった」「また会いたい」。そんな場所をつくれる人を、CUENはそっと後押しします。人と人のあいだに生まれる可能性を、もっと広げるために。
               </p>
               <a href="/about" style={{ color: "var(--cuen-teal)", fontSize: "14px", letterSpacing: "0.06em", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "8px", cursor: "pointer", position: "relative", zIndex: 10 }}>
                 CUENについて詳しく <span>&rarr;</span>
