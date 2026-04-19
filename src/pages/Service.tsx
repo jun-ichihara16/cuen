@@ -58,7 +58,7 @@ export default function Service() {
                     <div style={{ fontFamily: "'Space Grotesk', monospace", fontSize: "10px", letterSpacing: "0.1em", color: "#9E9B95", textTransform: "uppercase" }}>{service.tag}</div>
                   </div>
                   <div>
-                    <h2 style={{ fontFamily: "'Zen Kaku Gothic New', 'Space Grotesk', sans-serif", fontSize: "clamp(22px, 4vw, 32px)", fontWeight: 700, lineHeight: 1.4, color: "var(--cuen-charcoal)", margin: "0 0 16px 0", wordBreak: "keep-all" }}>{service.name}</h2>
+                    <h2 style={{ fontFamily: "'Zen Kaku Gothic New', 'Space Grotesk', sans-serif", fontSize: "clamp(18px, 3.5vw, 26px)", fontWeight: 700, lineHeight: 1.4, color: "var(--cuen-charcoal)", margin: "0 0 16px 0", overflowWrap: "break-word" }}>{service.name}</h2>
                     <p style={{ fontSize: "clamp(14px, 1.8vw, 16px)", color: "#666", lineHeight: 1.8, margin: "0 0 10px 0" }}>{service.desc}</p>
                     <ul style={{ listStyle: "none", padding: 0, margin: "0 0 10px 0", display: "flex", flexWrap: "wrap", gap: "8px" }}>
                       {service.features.map((f) => (
